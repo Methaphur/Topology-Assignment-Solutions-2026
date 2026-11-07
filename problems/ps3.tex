@@ -1,0 +1,62 @@
+% Problem Set 3 -- 10 problems. (The original PDF's header misprints "Problem Set 2".)
+% Do not edit except to fix statement typos.
+\problemset{3}{}
+
+\problem{3}{1}{Give an example of a $T_1$ space where a sequence converges to more than one
+point. Conclude that a $T_1$ space is not necessarily a Hausdorff space.}
+
+\problem{3}{2}{Prove that the product topology $\T_{\mathrm{prod}}$ on $\R^n$ (where each
+factor $\R$ is equipped with its standard Euclidean topology) coincides with the Euclidean
+topology $\T_{\mathrm{Euc}}$ on $\R^n$ induced by the standard Euclidean metric.}
+
+\problem{3}{3}{Let $\{X_\alpha\}_{\alpha\in\Lambda}$ be a family of topological spaces, and
+let $\phi\colon\Lambda\to\Lambda$ be a bijection. Prove that the product spaces
+$X=\prod_{\alpha\in\Lambda}X_\alpha$ and $X_\phi=\prod_{\alpha\in\Lambda}X_{\phi(\alpha)}$,
+both equipped with their respective product topologies, are homeomorphic.}
+
+\problem{3}{4}{Let $\{X_\alpha\}_{\alpha\in\Lambda}$ be a family of topological spaces, and
+for each $\alpha\in\Lambda$, let $Y_\alpha\subseteq X_\alpha$ be equipped with the subspace
+topology. Prove that the product topology on $Y=\prod_{\alpha\in\Lambda}Y_\alpha$ coincides
+with the subspace topology on $Y$ induced by the product topology on
+$X=\prod_{\alpha\in\Lambda}X_\alpha$.}
+
+\problem{3}{5}{Let $\{X_\alpha\}_{\alpha\in\Lambda}$ be an indexed collection of topological
+spaces, and let $X=\prod_{\alpha\in\Lambda}X_\alpha$ be equipped with the product topology
+$\T_{\mathrm{prod}}$. For any fixed index $\beta\in\Lambda$, consider the $\beta$-th
+coordinate projection map
+\[ p_\beta\colon\prod_{\alpha\in\Lambda}X_\alpha\longrightarrow X_\beta,\qquad
+   p_\beta\bigl((x_\alpha)_{\alpha\in\Lambda}\bigr)=x_\beta. \]
+Prove that $p_\beta$ is an open map. Is $p_\beta$ necessarily a closed map?}
+
+\problem{3}{6}{Let $L$ be a line in the plane $\R^2$, and $\R_\ell$ be the lower limit
+topology on $\R$. Discuss the topology $L$ inherits as a subspace of $\R_\ell\times\R$ and as
+a subspace of $\R_\ell\times\R_\ell$.}
+
+\problem{3}{7}{Compare (i) the ordered square $I_o^2$, (ii) the topology $I^2$ inherits as a
+subspace of the product topology $\R^2$, and (iii) the product topology on $I\times I$.}
+
+\problem{3}{8}{Let $X$ be a topological space, and
+$\Delta=\{(x,x)\in X\times X\mid x\in X\}$ be the diagonal of $X\times X$, equipped with the
+subspace topology inherited from the product topology on $X\times X$.
+\begin{enumerate}[label=(\roman*)]
+  \item Prove that $X$ is Hausdorff if and only if the diagonal $\Delta$ is a closed subset
+        of $X\times X$.
+  \item Prove that the diagonal map $d\colon X\to\Delta$ defined by $d(x)=(x,x)$ is a
+        homeomorphism.
+\end{enumerate}}
+
+\problem{3}{9}{Let $X$ and $Y$ be topological spaces, and let $f,g\colon X\to Y$ be
+continuous maps. Assume that $Y$ is a Hausdorff space. Prove the following statements:
+\begin{enumerate}[label=(\roman*)]
+  \item The coincidence set $E=\{x\in X\mid f(x)=g(x)\}$ is closed in $X$.
+  \item If $D$ is a dense subset of $X$ and $f|_D=g|_D$, then $f=g$ on all of $X$.
+  \item The graph of $f$, defined as $\Gamma_f=\{(x,f(x))\in X\times Y\mid x\in X\}$, is
+        closed in the product space $X\times Y$.
+  \item Assume that $f\colon X\to Y$ is a continuous, open, and surjective map. Then the
+        fiber relation set $R=\{(x_1,x_2)\in X\times X\mid f(x_1)=f(x_2)\}$ is closed in
+        $X\times X$ if and only if $Y$ is Hausdorff.
+\end{enumerate}}
+
+\problem{3}{10}{Let $X$ be a topological space and $A\subset X$ be dense in $X$. Let $Y$ be a
+Hausdorff space and $f\colon A\to Y$ be a continuous map. Show that if $f$ may be extended to
+a continuous map $g\colon X\to Y$, then $g$ is uniquely determined by $f$.}

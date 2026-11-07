@@ -1,0 +1,44 @@
+% Problem Set 7 -- 6 problems = Munkres, Topology (2nd ed.), Section 22 Exercises 1-6.
+% Do not edit except to fix statement typos.
+\problemset{7}{Munkres \S22}
+
+\problem{7}{1}{Check the details of Example 3.\footnote{Example 3 of \S22 (The Quotient
+Topology) in J.\,R.~Munkres, \emph{Topology}, 2nd ed.}}
+
+\problem{7}{2}{\leavevmode
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p\colon X\to Y$ be a continuous map. Show that if there is a continuous map
+        $f\colon Y\to X$ such that $p\circ f$ equals the identity map of $Y$, then $p$ is a
+        quotient map.
+  \item If $A\subset X$, a \emph{retraction} of $X$ onto $A$ is a continuous map
+        $r\colon X\to A$ such that $r(a)=a$ for each $a\in A$. Show that a retraction is a
+        quotient map.
+\end{enumerate}}
+
+\problem{7}{3}{Let $\pi_1\colon\R\times\R\to\R$ be projection on the first coordinate. Let
+$A$ be the subspace of $\R\times\R$ consisting of all points $x\times y$ for which either
+$x\ge 0$ or $y=0$ (or both); let $q\colon A\to\R$ be obtained by restricting $\pi_1$. Show
+that $q$ is a quotient map that is neither open nor closed.}
+
+\problem{7}{4}{\leavevmode
+\begin{enumerate}[label=(\alph*)]
+  \item Define an equivalence relation on the plane $X=\R^2$ as follows:
+        \[ x_0\times y_0\sim x_1\times y_1\quad\text{if}\quad x_0+y_0^2=x_1+y_1^2. \]
+        Let $X^*$ be the corresponding quotient space. It is homeomorphic to a familiar
+        space; what is it? [\emph{Hint:} Set $g(x\times y)=x+y^2$.]
+  \item Repeat (a) for the equivalence relation
+        \[ x_0\times y_0\sim x_1\times y_1\quad\text{if}\quad x_0^2+y_0^2=x_1^2+y_1^2. \]
+\end{enumerate}}
+
+\problem{7}{5}{Let $p\colon X\to Y$ be an open map. Show that if $A$ is open in $X$, then the
+map $q\colon A\to p(A)$ obtained by restricting $p$ is an open map.}
+
+\problem{7}{6}{Recall that $\R_K$ denotes the real line in the $K$-topology (see \S13). Let
+$Y$ be the quotient space obtained from $\R_K$ by collapsing the set $K$ to a point; let
+$p\colon\R_K\to Y$ be the quotient map.
+\begin{enumerate}[label=(\alph*)]
+  \item Show that $Y$ satisfies the $T_1$ axiom, but is not Hausdorff.
+  \item Show that $p\times p\colon\R_K\times\R_K\to Y\times Y$ is not a quotient map.
+        [\emph{Hint:} The diagonal is not closed in $Y\times Y$, but its inverse image is
+        closed in $\R_K\times\R_K$.]
+\end{enumerate}}

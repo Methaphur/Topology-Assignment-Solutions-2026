@@ -1,0 +1,56 @@
+% Problem Set 4 -- 11 problems. Do not edit except to fix statement typos.
+\problemset{4}{}
+
+\problem{4}{1}{Let $X$ and $Y$ be two topological spaces; and $a\in X$, $b\in Y$ be two given
+points. Prove that the maps $f\colon X\to X\times Y$ and $g\colon Y\to X\times Y$ given by
+\[ f(x)=(x,b)\quad\text{and}\quad g(y)=(a,y) \]
+are embeddings.}
+
+\problem{4}{2}{Suppose that $f,g\colon X\to\R$ are two continuous maps.
+\begin{enumerate}[label=(\roman*).]
+  \item Prove that the set $\{x\in X\mid f(x)\le g(x)\}$ is closed in $X$.
+  \item Prove that the map $h\colon X\to\R$ given by $h(x)=\min\{f(x),g(x)\}$ is continuous.
+\end{enumerate}}
+
+\problem{4}{3}{Let $\{A_\alpha\}$ be a collection of subsets of $X$ such that
+$X=\bigcup_\alpha A_\alpha$. Suppose that $f\colon X\to Y$ is a map such that the restriction
+map $f|_{A_\alpha}\colon A_\alpha\to Y$ is continuous for each $\alpha$.
+\begin{enumerate}[label=(\roman*).]
+  \item Prove that if the collection $\{A_\alpha\}$ is finite and each set $A_\alpha$ is
+        closed, then $f$ is continuous.
+  \item Find an example where the collection $\{A_\alpha\}$ is countable and each set
+        $A_\alpha$ is closed, but $f$ is not continuous.
+  \item An indexed family of sets $\{A_\alpha\}$ is said to be \emph{locally finite} if each
+        point $x$ has a neighborhood that intersects $A_\alpha$ for only finitely many values
+        of $\alpha$. Prove that if the family $\{A_\alpha\}$ is locally finite and each set
+        $A_\alpha$ is closed, then $f$ is continuous.
+\end{enumerate}}
+
+\problem{4}{4}{Let $f\colon X\to A$ and $g\colon Y\to B$ be two continuous maps. Define
+$f\times g\colon X\times Y\to A\times B$ by $(f\times g)(x,y)=(f(x),g(y))$. Prove that
+$f\times g$ is a continuous map.}
+
+\problem{4}{5}{Let $(X,d)$ be a metric space and let $S\subseteq X$ be a non-empty subset.
+For any $x\in X$, define the distance from $x$ to $S$ by $d(x,S)=\inf_{s\in S}d(x,s)$.
+\begin{enumerate}[label=(\arabic*)]
+  \item Show that for any $x,y\in X$, $|d(x,S)-d(y,S)|\le d(x,y)$.
+  \item Conclude that $f_S\colon X\to\R$ defined by $f_S(x)=d(x,S)$ is continuous on $X$.
+\end{enumerate}}
+
+\problem{4}{6}{Let $\{A_n\}_{n\in\N}$ be a sequence of connected subspaces of $X$ such that
+$A_n\cap A_{n+1}\neq\emptyset$ for all $n\in\N$. Prove that $\bigcup_{n=1}^\infty A_n$ is
+connected.}
+
+\problem{4}{7}{Determine whether or not $\R^\omega$ is connected under the uniform topology.}
+
+\problem{4}{8}{Determine whether or not the lower limit topology $\R_\ell$ on $\R$ is
+connected.}
+
+\problem{4}{9}{Let $C\subset X$ be a connected subspace of $X$ and $A\subset X$. Prove that
+if $C$ intersects both $A$ and $X\setminus A$, then $C$ intersects $\Bd A$.}
+
+\problem{4}{10}{Let $X$ and $Y$ be two connected subspaces and $A\subsetneq X$ and
+$B\subsetneq Y$. Prove that $(X\times Y)\setminus(A\times B)$ is connected.}
+
+\problem{4}{11}{Let $Y\subset X$; and let $X$ and $Y$ be connected. Prove that if $A$ and $B$
+form a separation of $X\setminus Y$, then both $Y\cup A$ and $Y\cup B$ are connected.}

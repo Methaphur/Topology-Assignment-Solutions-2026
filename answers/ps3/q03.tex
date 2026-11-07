@@ -1,0 +1,40 @@
+% Source: Solutions/Arunodaya-PS2-Q1-5.pdf, pp. 6-8 (handwritten)
+% REVIEW: the student uses index sets A and B (phi^{-1}: B -> A) although the problem has
+%         phi: Lambda -> Lambda; kept as written.
+\submittedby{Arunodaya}
+
+We define $f\colon X\to X_\phi$ by
+\[ f\bigl((x_\alpha)_{\alpha\in A}\bigr)=\bigl(x_{\phi(\alpha)}\bigr)_{\alpha\in A}. \]
+Since $\phi$ is a bijection, every coordinate in the second product corresponds to exactly one
+coordinate in the first product. Since $\phi$ is bijective, it has an inverse
+\[ \phi^{-1}\colon B\to A. \]
+Define $g\colon X_\phi\to X$ by
+\[ g\bigl((y_\beta)_{\beta\in B}\bigr)=\bigl(y_{\phi^{-1}(\beta)}\bigr)_{\beta\in B}. \]
+Then for every $x=(x_\alpha)\in X$, $g(f(x))=x$. Similarly for every $y\in X_\phi$,
+$f(g(y))=y$. Thus $g=f^{-1}$. Hence $f$ is bijective.
+
+The product topology has a subbasis consisting of sets of the form $\pi_\alpha^{-1}(U_\alpha)$,
+where $U_\alpha$ is open in $X_\alpha$ and $\pi_\alpha\colon X\to X_\alpha$ is the coordinate
+projection.
+
+Let $U_\alpha$ be open in $X_{\phi(\alpha)}$. Consider the subbasic open set in $X_\phi$
+\[ V=\{y\in X_\phi : y_\alpha\in U_\alpha\}. \]
+% REVIEW: f(x)_alpha = x_{phi(alpha)}, so the second equality below should give
+%         {x : x_{phi(alpha)} in U_alpha} = pi_{phi(alpha)}^{-1}(U_alpha); kept as written.
+\begin{align*}
+  f^{-1}(V) &= \{x\in X : f(x)_\alpha\in U_\alpha\}\\
+            &= \{x\in X : x_\alpha\in U_\alpha\}\\
+            &= \pi_\alpha^{-1}(U_\alpha).
+\end{align*}
+Since $U_\alpha$ is open and $\pi_\alpha$ is continuous, the set is open in $X$
+$\Rightarrow$ the inverse image of every subbasic open set is open. Consequently, $f$ is
+continuous.
+
+By the same argument, for every subbasic open set
+\[ W=\{x\in X : x_\alpha\in U_\alpha\} \]
+we have
+\[ (f^{-1})^{-1}(W)=\{y\in X_\phi : y_{\phi^{-1}(\alpha)}\in U_\alpha\}; \]
+this is a subbasic open set in $X_\phi$. Hence $f^{-1}$ is continuous.
+
+We proved that $f$ is bijective, continuous and has a continuous inverse; therefore
+$X\cong X_\phi$.

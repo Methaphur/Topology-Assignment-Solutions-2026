@@ -1,0 +1,31 @@
+% Source: Solutions/Arunodaya-PS2-Q1-5.pdf, pp. 1-2 (handwritten; filed under PS3 -- the
+% student's heading says "Problem Set 2", copying the misprinted PS3 header)
+\submittedby{Arunodaya}
+
+Consider the set $X=\R$ equipped with the cofinite topology
+\[ \tau=\{\emptyset\}\cup\{U\subseteq\R : \R\setminus U \text{ is finite}\}, \]
+that is, the open sets are the empty set or subsets of $\R$ whose complements are finite.
+
+Now, we know that a topological space is $T_1$ if every singleton set is closed.
+Let $x\in\R$. Then $\R\setminus\{x\}$ is open because its complement $\{x\}$ is finite.
+Therefore, $\{x\}$ is closed. Since $x$ is arbitrary, every singleton subset of $\R$ is closed.
+Hence $(\R,\tau)$ is a $T_1$ space.
+
+Consider the sequence
+\[ x_n=n,\quad n\in\N. \]
+$x_n\to x$ if for every open neighbourhood $U$ of $x$, $\exists\,N\in\N$ such that
+$n\ge N\Rightarrow x_n\in U$.
+
+Let $x\in\R$ be arbitrary. Let $U$ be any open neighbourhood of $x$. By the definition of the
+cofinite topology, $\R\setminus U$ is finite. Since $x_n=n$, the sequence consists of distinct
+natural numbers. Consequently only finitely many terms of the sequence can belong to the finite
+set $\R\setminus U$. Therefore, $\exists\,N\in\N$ such that
+\[ n\ge N\Rightarrow n\notin\R\setminus U. \]
+Thus, $n\ge N\Rightarrow x_n=n\in U$. So, by the definition of convergence,
+\[ x_n\to x\quad\forall\,x\in\R. \]
+Now, the sequence $x_n=n$ converges to every real number
+\begin{itemize}
+  \item[$\Rightarrow$] its limit is not unique
+  \item[$\Rightarrow$] the space cannot be Hausdorff.
+\end{itemize}
+Thus $(\R,\tau)$ is $T_1$ but not $T_2$, i.e.\ $T_1\not\Rightarrow T_2$.

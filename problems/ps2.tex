@@ -1,0 +1,101 @@
+% Problem Set 2 -- 15 problems. Do not edit except to fix statement typos.
+\problemset{2}{}
+
+\problem{2}{1}{Whether each of the following subsets of $\R^2$ can be written as a
+Cartesian product $A\times B$, where $A,B\subset\R$?
+\begin{enumerate}[label=(\roman*)]
+  \item $\{(x,y)\mid x \text{ is an integer}\}$.
+  \item $\{(x,y)\mid 0\le x<1\}$.
+  \item $\{(x,y)\mid x<y\}$.
+  \item $\{(x,y)\mid x \text{ is an integer, and } y \text{ is not a rational number}\}$.
+  \item $\{(x,y)\mid x^2+y^2\le 2026\}$.
+\end{enumerate}}
+
+\problem{2}{2}{Let $f\colon A\to B$ be a function, with $A_0\subseteq A$ and $B_0\subseteq B$.
+\begin{enumerate}[label=(\roman*)]
+  \item Show that $A_0\subseteq f^{-1}(f(A_0))$, and that equality holds for every subset
+        $A_0\subseteq A$ if and only if $f$ is injective.
+  \item Show that $f(f^{-1}(B_0))\subseteq B_0$, and that equality holds for every subset
+        $B_0\subseteq B$ if and only if $f$ is surjective.
+\end{enumerate}}
+
+\problem{2}{3}{Let $f\colon A\to B$ be a function, and $B_0,B_1\subseteq B$. Show that
+preimages preserve inclusions, unions, intersections, and set differences by proving the
+following:
+\begin{enumerate}[label=(\roman*)]
+  \item If $B_0\subseteq B_1$, then $f^{-1}(B_0)\subseteq f^{-1}(B_1)$.
+  \item $f^{-1}(B_0\cup B_1)=f^{-1}(B_0)\cup f^{-1}(B_1)$.
+  \item $f^{-1}(B_0\cap B_1)=f^{-1}(B_0)\cap f^{-1}(B_1)$.
+  \item $f^{-1}(B_0\setminus B_1)=f^{-1}(B_0)\setminus f^{-1}(B_1)$.
+\end{enumerate}}
+
+\problem{2}{4}{Let $f\colon A\to B$ be a function, and let $A_0,A_1\subseteq A$.
+\begin{enumerate}[label=(\roman*)]
+  \item Show that images preserve inclusions and unions:
+    \begin{enumerate}[label=(\alph*)]
+      \item If $A_0\subseteq A_1$, then $f(A_0)\subseteq f(A_1)$.
+      \item $f(A_0\cup A_1)=f(A_0)\cup f(A_1)$.
+    \end{enumerate}
+  \item Show that images satisfy only one-way inclusions for intersections and set
+        differences in general:
+    \begin{enumerate}[label=(\alph*)]
+      \item $f(A_0\cap A_1)\subseteq f(A_0)\cap f(A_1)$.
+      \item $f(A_0)\setminus f(A_1)\subseteq f(A_0\setminus A_1)$.
+    \end{enumerate}
+  \item Prove that equality holds in both (ii)(a) and (ii)(b) for all subsets
+        $A_0,A_1\subseteq A$ if and only if $f$ is injective.
+\end{enumerate}}
+
+\problem{2}{5}{Let $\sim$ be a relation defined on the Euclidean plane $\R^2$ as follows:
+two points are related if and only if their distances from the origin are equal.
+\begin{enumerate}[label=(\roman*)]
+  \item Show that $\sim$ is an equivalence relation (i.e., reflexivity, symmetry, and
+        transitivity).
+  \item Describe the equivalence class $[P]$ for any point $P\in\R^2$.
+  \item What is the geometric interpretation of the partition of $\R^2$ induced by this
+        relation?
+\end{enumerate}}
+
+\problem{2}{6}{Let $X$ be a non-empty set. Suppose that $S$ is the collection of the
+following two types of open rays: $(a,\infty)=\{x\in X\mid a<x\}$, and
+$(-\infty,b)=\{x\in X\mid x<b\}$. Prove that $S$ is a subbasis, and it generates the order
+topology on $X$.}
+
+\problem{2}{7}{Let $\{A_n\}_{n=1}^\infty$ be a sequence of non-empty countable sets.
+\begin{enumerate}[label=(\arabic*)]
+  \item Prove that the finite Cartesian product
+        $\prod_{i=1}^k A_i=A_1\times A_2\times\dots\times A_k$ is countable for any $k\in\N$.
+  \item Determine whether the infinite Cartesian product $\prod_{n=1}^\infty A_n$ is
+        necessarily countable. Justify your answer.
+\end{enumerate}}
+
+\problem{2}{8}{Let $X$ be a linearly ordered set. Prove that a singleton set $\{x\}$ is open
+in the order topology on $X$ if and only if $x$ has an immediate predecessor and an immediate
+successor, or if $x$ is the minimum/maximum and has an immediate successor/predecessor
+respectively.}
+
+\problem{2}{9}{Prove that if $V$ is closed in $Y$ and $Y$ is closed in $X$, then $V$ is
+closed in $X$.}
+
+\problem{2}{10}{Let $Y$ be a subspace of $X$ and let $A$ be a subset of $Y$. Prove that the
+topology $A$ inherits as a subspace of $Y$ is identical to the topology it inherits directly
+as a subspace of $X$.}
+
+\problem{2}{11}{Let $A$ be a subset of a topological space $X$ and $x\in X$ be an element.
+Then prove that the following statements are equivalent:
+\begin{enumerate}[label=(\roman*).]
+  \item The point $x\in\cl{A}$.
+  \item Every neighborhood of $x$ intersects $A$.
+  \item Every basis element containing $x$ intersects $A$.
+\end{enumerate}}
+
+\problem{2}{12}{Prove that $\cl{A}=A\cup A'$. Deduce that $A$ is closed in $X$ if and only
+if $A'\subseteq A$.}
+
+\problem{2}{13}{Prove that $\Int A\cap\Bd A=\emptyset$, and $\cl{A}=\Int A\cup\Bd A$.}
+
+\problem{2}{14}{Prove that every order topology is Hausdorff.}
+
+\problem{2}{15}{Let $X$ be a $T_1$ space. Then prove that for each pair $x_1,x_2$ of distinct
+points, there exist open sets $U_1$ and $U_2$ containing $x_1$ and $x_2$ respectively such
+that $x_1\notin U_2$ and $x_2\notin U_1$.}

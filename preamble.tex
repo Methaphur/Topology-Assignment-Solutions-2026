@@ -1,0 +1,187 @@
+% =====================================================================
+%  preamble.tex -- packages and ALL custom macros for the B23 solutions
+%  (keep every macro here; answer files should only use these)
+% =====================================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.3cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,cd}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+\usepackage{array,booktabs,longtable}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{pgffor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{bookmark}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setlist{itemsep=2pt,topsep=3pt}
+
+% ---------------------------------------------------------------------
+%  Common math notation (students' answers may use these)
+% ---------------------------------------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\Pow}{\mathcal{P}}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Bd}{Bd}
+\DeclareMathOperator{\id}{id}
+\newcommand{\cl}[1]{\overline{#1}}
+\newcommand{\onto}{\twoheadrightarrow}
+
+% theorem-like environments for use inside solutions
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{claim}{Claim}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% ---------------------------------------------------------------------
+%  Page headers: left = problem set, right = problem (+ solver name)
+% ---------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\leftmark}
+\fancyhead[R]{\small\tasrighthead}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\scriptsize Topology Assignment Solutions -- B23}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\sectionmark}[1]{}
+\renewcommand{\subsectionmark}[1]{}
+% Right header = the problem (and solver) running at the TOP of the page, so the later pages
+% of a long solution keep showing its solver. On the first page of a problem set (where
+% \problemset sets an empty mark) the right header is left blank.
+\ExplSyntaxOn
+\cs_new:Npn \tasrighthead
+  {
+    \IfMarksEqualTF{2e-right}{top}{first}
+      { \TopMark{2e-right} }
+      {
+        \tl_if_blank:eTF { \FirstMark{2e-right} }
+          { }
+          {
+            \tl_if_blank:eTF { \TopMark{2e-right} }
+              { \FirstMark{2e-right} }
+              { \TopMark{2e-right} }
+          }
+      }
+  }
+\ExplSyntaxOff
+
+% ---------------------------------------------------------------------
+%  Boxes
+% ---------------------------------------------------------------------
+\definecolor{stmtbg}{RGB}{240,244,250}
+\definecolor{stmtframe}{RGB}{70,100,150}
+\definecolor{pendingbg}{RGB}{255,243,224}
+\definecolor{pendingframe}{RGB}{230,130,20}
+\definecolor{solvedgreen}{RGB}{20,130,60}
+
+\newtcolorbox{statementbox}{enhanced,breakable,colback=stmtbg,
+  colframe=stmtframe,boxrule=0.5pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt}
+
+\newcommand{\pendingbox}{%
+  \begin{tcolorbox}[colback=pendingbg,colframe=pendingframe,boxrule=0.6pt,arc=2pt]
+    \centering\bfseries\color{pendingframe!80!black} Solution pending
+  \end{tcolorbox}}
+
+% handwriting that could not be read with certainty
+\newcommand{\illegible}[1]{\colorbox{yellow!45}{\textup{[illegible: #1?]}}}
+
+% ---------------------------------------------------------------------
+%  Structure macros
+% ---------------------------------------------------------------------
+\makeatletter
+\newcommand{\tas@twodigit}[1]{\ifnum#1<10 0\fi\number#1}
+\def\tas@currentproblem{}
+
+% solver names collected from the previous run (via .aux) for the TOC
+\newcommand{\tas@addsolver}[2]{%
+  \@ifundefined{tas@solvers@#1}%
+    {\expandafter\gdef\csname tas@solvers@#1\endcsname{#2}}%
+    {\expandafter\g@addto@macro\csname tas@solvers@#1\endcsname{, #2}}}
+\AtBeginDocument{\immediate\write\@auxout{\string\providecommand\string\tas@addsolver[2]{}}}
+
+% \problemset{<n>}{<optional subtitle>}
+\newcommand{\problemset}[2]{%
+  \clearpage
+  \phantomsection
+  \section*{Problem Set #1\ifx\relax#2\relax\else\ \normalfont\large(#2)\fi}%
+  \addcontentsline{toc}{section}{Problem Set #1\ifx\relax#2\relax\else\ (#2)\fi}%
+  \markboth{Problem Set #1}{}}
+
+% \problem{<set>}{<question>}{<statement>}
+%   prints the statement, then inputs answers/ps<set>/q<NN>.tex if it exists,
+%   otherwise a "Solution pending" box.
+\newcommand{\problem}[3]{%
+  \def\tas@currentproblem{#1.#2}%
+  \bigskip
+  \phantomsection
+  \subsection*{Problem #1.#2}%
+  \addcontentsline{toc}{subsection}{Problem #1.#2%
+    \@ifundefined{tas@solvers@#1.#2}{}%
+      {\enspace{\protect\small\protect\itshape -- \csname tas@solvers@#1.#2\endcsname}}}%
+  \markright{Problem #1.#2}%
+  \begin{statementbox}#3\end{statementbox}%
+  \IfFileExists{answers/ps#1/q\tas@twodigit{#2}.tex}%
+    {\input{answers/ps#1/q\tas@twodigit{#2}.tex}}%
+    {\pendingbox}%
+  \par}
+
+% \submittedby{<Full Name>} -- first line of every answer file
+\newcommand{\submittedby}[1]{%
+  \par\medskip
+  \noindent{\large\bfseries Solution}\hfill
+  {\itshape submitted by}\ \textbf{#1}\par
+  \vspace{-0.4em}\noindent\rule{\linewidth}{0.3pt}\par
+  \markright{Problem \tas@currentproblem\ -- #1}%
+  \immediate\write\@auxout{\string\tas@addsolver{\tas@currentproblem}{#1}}}
+
+% \contributor{<Full Name>}{<questions solved>} -- rows of the contributors table
+% (rows are collected first, then printed by \contributorrows inside the table)
+\newcommand{\tas@rows}{}
+\newcommand{\contributor}[2]{\g@addto@macro\tas@rows{#1 & #2 \\}}
+\newcommand{\contributorrows}{%
+  \ifx\tas@rows\@empty
+    \multicolumn{2}{@{}l}{\itshape No submissions yet.} \\
+  \else\tas@rows\fi}
+
+% ---------------------------------------------------------------------
+%  Coverage table: \coveragerow{<set>}{<number of questions>}
+% ---------------------------------------------------------------------
+\newcounter{tas@solved}
+\newcounter{tas@total}
+\newcounter{tas@solvedall}
+\newcommand{\tas@mark}[2]{%
+  \IfFileExists{answers/ps#1/q\tas@twodigit{#2}.tex}%
+    {\stepcounter{tas@solved}\stepcounter{tas@solvedall}%
+     \textcolor{solvedgreen}{\textbf{#2}}}%
+    {\textcolor{black!35}{#2}}}
+\newcommand{\coveragerow}[2]{%
+  \setcounter{tas@solved}{0}\addtocounter{tas@total}{#2}%
+  PS#1 &
+  \foreach \q in {1,...,#2}{\tas@mark{#1}{\q}\ }%
+  & \arabic{tas@solved}/#2 \\}
+\newcommand{\coveragetotal}{%
+  \midrule
+  \multicolumn{2}{r}{\textbf{Total solved}} &
+  \textbf{\arabic{tas@solvedall}/\arabic{tas@total}} \\}
+\makeatother

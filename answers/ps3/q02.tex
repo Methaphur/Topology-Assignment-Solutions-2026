@@ -1,0 +1,41 @@
+% Source: Solutions/Arunodaya-PS2-Q1-5.pdf, pp. 3-6 (handwritten)
+\submittedby{Arunodaya}
+
+Let $U=U_1\times U_2\times\dots\times U_n$ be a basic open set in the product topology.
+Take an arbitrary point $x=(x_1,x_2,x_3,x_4,\dots,x_n)\in U$. Since each $U_i$ is open in $\R$,
+$\exists\,\varepsilon_i>0$ such that
+\[ (x_i-\varepsilon_i,\,x_i+\varepsilon_i)\subseteq U_i. \]
+Choose $\varepsilon=\min\{\varepsilon_1,\varepsilon_2,\dots,\varepsilon_n\}$. Since there are
+finitely many positive numbers, $\varepsilon>0$.
+
+Now, consider any point $y=(y_1,y_2,\dots,y_n)\in B(x,\varepsilon)$. Then
+$d(x,y)<\varepsilon$. Thus,
+\[ \sqrt{\sum_{i=1}^n(x_i-y_i)^2}<\varepsilon
+   \;\Rightarrow\; \sum_{i=1}^n(x_i-y_i)^2<\varepsilon^2. \]
+Since every term in the sum is non-negative, $(x_i-y_i)^2<\varepsilon^2$ for every
+$i=1,2,\dots,n$. Consequently $|x_i-y_i|<\varepsilon\le\varepsilon_i$; thus
+$y_i\in(x_i-\varepsilon_i,\,x_i+\varepsilon_i)\subseteq U_i$. This holds for every $i$. Hence
+\[ y\in U_1\times U_2\times\dots\times U_n \;\Rightarrow\; B(x,\varepsilon)\subseteq U. \]
+Since $x\in U$ was arbitrary, every point of $U$ has a Euclidean open ball contained in $U$.
+Hence $U$ is Euclidean open.
+\[ \underline{\T_{\mathrm{prod}}\subseteq\T_{\mathrm{Euc}}} \]
+
+Let $V$ be an arbitrary Euclidean open subset of $\R^n$. Take any point
+$x=(x_1,x_2,\dots,x_n)\in V$. Since $V$ is Euclidean open, $\exists\,\delta>0$ such that
+$B(x,\delta)\subseteq V$. Now consider the product of open intervals
+\[ W=\prod_{i=1}^n\Bigl(x_i-\frac{\delta}{\sqrt n},\;x_i+\frac{\delta}{\sqrt n}\Bigr). \]
+We will show that $W\subseteq B(x,\delta)$.
+% (the student writes B(x, r) in this line and two below; delta is meant -- normalised to delta)
+Take any $y=(y_1,y_2,y_3,y_4,\dots,y_n)\in W$. By definition of $W$,
+\[ |x_i-y_i|<\delta/\sqrt n\quad\forall\,i=1,2,3,4,\dots,n. \]
+Therefore
+\[ d(x,y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}<\sqrt{\sum_{i=1}^n\frac{\delta^2}{n}}
+   =\sqrt{\frac{n\delta^2}{n}}=\delta. \]
+Thus $y\in B(x,\delta)$. Consequently $W\subseteq B(x,\delta)\subseteq V$.
+
+Notice that $W$ is a basic open set in the product topology because it is a product of open
+intervals in $\R$. Hence, every point $x\in V$ has a basic product open neighbourhood contained
+in $V$. Therefore, $V$ is open in the product topology. So,
+$\underline{\T_{\mathrm{Euc}}\subseteq\T_{\mathrm{prod}}}$.
+
+So $\T_{\mathrm{prod}}=\T_{\mathrm{Euc}}$.

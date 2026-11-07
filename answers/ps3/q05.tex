@@ -1,0 +1,56 @@
+% Source: Solutions/Arunodaya-PS2-Q1-5.pdf, pp. 10-14 (handwritten)
+% REVIEW: the open set U and the family {B_lambda} (U as a union of basic open sets) are used
+%         without being introduced, and lambda in Lambda clashes with the product's index
+%         set; kept as written.
+\submittedby{Arunodaya}
+
+\paragraph{Part (i).}
+By the definition of the product topology, every basic open set has the form
+\[ B=\bigcap_{\alpha\in F}\pi_\alpha^{-1}(U_\alpha), \]
+where
+\begin{itemize}
+  \item $F\subseteq A$ is finite,
+  \item each $U_\alpha$ is open in $X_\alpha$.
+\end{itemize}
+
+\textbf{Case 1:} $\beta\in F$. Then $B=\bigcap_{\alpha\in F}\pi_\alpha^{-1}(U_\alpha)$, and the
+image of $B$ under $p_\beta$ is
+\[ p_\beta(B)=U_\beta, \]
+provided the other coordinate restrictions are non-empty. Indeed, every element of $B$ has its
+$\beta$-coordinate in $U_\beta$. Conversely, any element of $U_\beta$ can be extended to a
+point of $B$ if all the other coordinate restrictions are non-empty. Since $U_\beta$ is open in
+$X_\beta$, the image is open. If another coordinate restriction is empty, then $B=\emptyset$,
+whose image is also open.
+
+\textbf{Case 2:} $\beta\notin F$. In this case, there is no restriction on the
+$\beta$-coordinate:
+\[ p_\beta(B)=X_\beta, \]
+provided $B\neq\emptyset$. Since $X_\beta$ is open in itself, the image is open. If
+$B=\emptyset$, its image is open again.
+
+Now, $U=\bigcup_{\lambda\in\Lambda}B_\lambda$. Using the fact that images preserve arbitrary
+unions, we get
+\[ p_\beta(U)=p_\beta\Bigl(\bigcup_{\lambda\in\Lambda}B_\lambda\Bigr)
+             =\bigcup_{\lambda\in\Lambda}p_\beta(B_\lambda). \]
+From the above step, $p_\beta(B_\lambda)$ is open in $X_\beta$. An arbitrary union of open sets
+is open; thus, $p_\beta(U)$ is open in $X_\beta$.
+
+\paragraph{Part (ii).} \textbf{No.}
+Take $X_1=\R$, $X_2=\R$ with their usual Euclidean topologies. Then $X=X_1\times X_2=\R^2$.
+Consider the coordinate projection $p_1\colon\R^2\to\R$ defined by $p_1(x,y)=x$. Consider
+\[ F=\{(x,y)\in\R^2 : xy=1\}. \]
+Define $h\colon\R^2\to\R$ by $h(x,y)=xy$. Since multiplication is continuous, $h$ is continuous.
+Also $F=h^{-1}(\{1\})$. Since $\{1\}$ is closed in $\R$ and the inverse image of a closed set
+under a continuous function is closed, we say $\underline{F \text{ is closed in } \R^2}$.
+
+We have
+\[ p_1(F)=\{x\in\R \mid \exists\,y\in\R \text{ such that } xy=1\}=\R\setminus\{0\}. \]
+Indeed, if $x\neq0$ we can choose $y=1/x$. But if $x=0$, no such $y$ exists. Therefore
+$p_1(F)=\R\setminus\{0\}$.
+
+The set $\R\setminus\{0\}=(-\infty,0)\cup(0,\infty)$ is not closed in $\R$ because its
+complement $\{0\}$ is not open in $\R$. Thus, we found a closed set $F\subseteq\R^2$ whose image
+under $p_1$ is not closed. Consequently, $\underline{p_1 \text{ is not closed}}$.
+
+So, every coordinate projection is an open map. A coordinate projection need not be a closed
+map.

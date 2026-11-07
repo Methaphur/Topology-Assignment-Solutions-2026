@@ -1,0 +1,40 @@
+% Source: Solutions/Arunodaya-PS2-Q1-5.pdf, pp. 8-10 (handwritten)
+% REVIEW: q_alpha (presumably the projection Y -> Y_alpha) and the finite set F are used
+%         without being introduced; kept as written.
+\submittedby{Arunodaya}
+
+Let
+\begin{itemize}
+  \item $\tau_1$ denote the product topology on $Y$,
+  \item $\tau_2$ denote the subspace topology on $Y$ inherited from $X$.
+\end{itemize}
+We shall prove $\tau_1=\tau_2$.
+
+Let $B$ be a basic open set in $X$. Then
+\[ B=\bigcap_{\alpha\in F}\pi_\alpha^{-1}(U_\alpha), \]
+where each $U_\alpha$ is open in $X_\alpha$. By the definition of the subspace topology, a
+basic open set in $Y$ is $B\cap Y$. Now,
+\begin{align*}
+  B\cap Y &= Y\cap\bigcap_{\alpha\in F}\pi_\alpha^{-1}(U_\alpha)\\
+          &= \bigcap_{\alpha\in F}\bigl(Y\cap\pi_\alpha^{-1}(U_\alpha)\bigr)\\
+          &= \bigcap_{\alpha\in F}q_\alpha^{-1}(U_\alpha\cap Y_\alpha).
+\end{align*}
+Since $U_\alpha$ is open in $X_\alpha$, the set $U_\alpha\cap Y_\alpha$ is open in $Y_\alpha$ by
+the subspace topology. Therefore, $B\cap Y$ is open in the product topology on $Y$. Hence
+$\underline{\tau_2\subseteq\tau_1}$.
+
+Let $C$ be a basic open set in the product topology on $Y$. Then
+\[ C=\bigcap_{\alpha\in F}q_\alpha^{-1}(V_\alpha), \]
+where $V_\alpha$ is open in $Y_\alpha$. Since $Y_\alpha$ has the subspace topology inherited
+from $X_\alpha$, $\exists$ an open set $U_\alpha$ in $X_\alpha$ such that
+$V_\alpha=U_\alpha\cap Y_\alpha$. Therefore,
+\begin{align*}
+  C &= \bigcap_{\alpha\in F}q_\alpha^{-1}(U_\alpha\cap Y_\alpha)\\
+    &= Y\cap\bigcap_{\alpha\in F}\pi_\alpha^{-1}(U_\alpha).
+\end{align*}
+But $\bigcap_{\alpha\in F}\pi_\alpha^{-1}(U_\alpha)$ is open in $X$ because it is a basic open
+set in the product topology on $X$. Thus, $C$ is the intersection of $Y$ with an open set in
+$X$. Hence $C$ is open in the subspace topology on $Y$. Therefore
+$\underline{\tau_1\subseteq\tau_2}$.
+
+So, $\underline{\tau_1=\tau_2}$.

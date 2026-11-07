@@ -1,0 +1,14 @@
+# LaTeX build output (latexmk -outdir=build)
+build/
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.synctex.gz
+
+# editor / OS clutter
+.vscode/
+*~
+.DS_Store

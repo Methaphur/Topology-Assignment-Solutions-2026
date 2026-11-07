@@ -1,0 +1,83 @@
+% =====================================================================
+%  Topology Assignment Solutions -- submitted by B23
+%  Build:  make      (-> Topology_Assignment_Solutions_B23.pdf)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+\input{preamble}
+
+\hypersetup{
+  pdftitle={Topology Assignment Solutions},
+  pdfauthor={Batch 23 (B23)},
+  pdfsubject={Topology MAT307/M405/MAT803 -- Problem Sets 1--8}
+}
+
+\begin{document}
+
+% ------------------------------- title page --------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\Huge\bfseries Topology Assignment Solutions\par}
+  \vspace{0.8cm}
+  {\Large Topology: MAT307/M405/MAT803\par}
+  \vspace{0.3cm}
+  {\large Problem Sets 1--8\par}
+  \vspace{1.2cm}
+  {\Large Submitted by \textbf{B23}\par}
+  \vfill
+  {\large \today\par}
+\end{titlepage}
+
+% ------------------------------- contributors ------------------------
+\pagestyle{plain}
+\section*{Contributors}
+\addcontentsline{toc}{section}{Contributors}
+\input{contributors}
+\begin{longtable}{@{}p{0.38\linewidth}p{0.56\linewidth}@{}}
+  \toprule
+  \textbf{Student} & \textbf{Questions solved} \\
+  \midrule
+  \endhead
+  \contributorrows
+  \bottomrule
+\end{longtable}
+
+% ------------------------------- coverage ----------------------------
+\section*{Coverage}
+\addcontentsline{toc}{section}{Coverage}
+Solved problems are shown in \textcolor{solvedgreen}{\textbf{green}};
+pending ones in \textcolor{black!35}{grey}.
+
+\medskip
+\begin{tabular}{@{}l p{0.68\linewidth} r@{}}
+  \toprule
+  \textbf{Set} & \textbf{Problems} & \textbf{Solved} \\
+  \midrule
+  \coveragerow{1}{17}
+  \coveragerow{2}{15}
+  \coveragerow{3}{10}
+  \coveragerow{4}{11}
+  \coveragerow{5}{10}
+  \coveragerow{6}{9}
+  \coveragerow{7}{6}
+  \coveragerow{8}{10}
+  \coveragetotal
+  \bottomrule
+\end{tabular}
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagestyle{fancy}
+
+% ------------------------------- problems ----------------------------
+\input{problems/ps1}
+\input{problems/ps2}
+\input{problems/ps3}
+\input{problems/ps4}
+\input{problems/ps5}
+\input{problems/ps6}
+\input{problems/ps7}
+\input{problems/ps8}
+
+\end{document}
