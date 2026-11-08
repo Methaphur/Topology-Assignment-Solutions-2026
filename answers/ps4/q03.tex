@@ -1,0 +1,136 @@
+% Source: Solutions/Dhrubojoti-PS4-Q1-4.pdf, pp. 4-9 (typed). Restated problem statement omitted.
+\submittedby{Dhrubojoti}
+
+\textbf{Recall.}
+A map $f\colon X\to Y$ is continuous if and only if the preimage of every closed subset of $Y$
+is closed in $X$. Also, if $A$ is a closed subset of $X$, then every relatively closed subset
+of $A$ is closed in $X$.
+
+\paragraph{(i) The collection $\{A_\alpha\}$ is finite and each $A_\alpha$ is closed.}
+\begin{proof}
+Suppose
+\[ X=A_1\cup A_2\cup\dots\cup A_n, \]
+where each $A_i$ is closed in $X$. We are given that the restriction
+\[ f|_{A_i}\colon A_i\to Y \]
+is continuous for every $i=1,2,\dots,n$. We need to prove that $f\colon X\to Y$ is continuous.
+
+Let $C$ be an arbitrary closed subset of $Y$. Consider
+\[ f^{-1}(C)=\{x\in X : f(x)\in C\}. \]
+Since $X=\bigcup_{i=1}^n A_i$, we can write
+\[ f^{-1}(C)=\bigcup_{i=1}^n\bigl(f^{-1}(C)\cap A_i\bigr). \]
+Now observe that
+\[ f^{-1}(C)\cap A_i=(f|_{A_i})^{-1}(C). \]
+Since $f|_{A_i}$ is continuous and $C$ is closed in $Y$, $(f|_{A_i})^{-1}(C)$ is closed in
+$A_i$. But $A_i$ itself is closed in $X$. Therefore, a relatively closed subset of $A_i$ is
+also closed in $X$. Thus, $f^{-1}(C)\cap A_i$ is closed in $X$ for every $i$. Consequently,
+\[ f^{-1}(C)=\bigcup_{i=1}^n\bigl(f^{-1}(C)\cap A_i\bigr) \]
+is a finite union of closed subsets of $X$. Hence, $f^{-1}(C)$ is closed in $X$. Since $C$ was
+an arbitrary closed subset of $Y$, we conclude that
+\[ \boxed{f\colon X\to Y\text{ is continuous.}} \qedhere \]
+\end{proof}
+
+\paragraph{(ii) Find a countable collection of closed sets covering $X$ for which $f$ is not continuous.}
+
+\textbf{Example.} Take
+\[ X=\R,\qquad Y=\R. \]
+Define
+\[ A_0=\{0\} \]
+and, for $n\in\N$,
+\[ A_n=\left[-n,-\frac1n\right]\cup\left[\frac1n,n\right]. \]
+
+\textbf{Step 1. Show that each $A_n$ is closed.}
+Clearly, $A_0=\{0\}$ is closed in $\R$. Also, each $A_n$ is a finite union of closed intervals.
+Hence, every $A_n$ is closed in $\R$.
+
+\textbf{Step 2. Show that the collection is countable and covers $\R$.}
+The collection
+\[ \{A_0,A_1,A_2,\dots\} \]
+is countable. Moreover, every nonzero real number belongs to some $A_n$. Indeed, given
+$x\neq0$, choose $n$ sufficiently large such that
+\[ n\ge|x|\quad\text{and}\quad\frac1n\le|x|. \]
+Then $x\in A_n$. Since $0\in A_0$, we obtain
+\[ \boxed{\R=\bigcup_{n=0}^\infty A_n.} \]
+
+\textbf{Step 3. Define the map $f$.}
+Define $f\colon\R\to\R$ by
+\[ f(x)=\begin{cases} 1, & x=0,\\ 0, & x\neq0.\end{cases} \]
+We now show that the restriction of $f$ to every $A_n$ is continuous.
+\begin{itemize}
+  \item On $A_0=\{0\}$, the restriction is the constant function $f(0)=1$, which is continuous.
+  \item On every $A_n$, $n\ge1$, we have $0\notin A_n$. Therefore, $f|_{A_n}$ is the constant
+        zero function, which is continuous.
+\end{itemize}
+Thus, every restriction $f|_{A_n}\colon A_n\to\R$ is continuous.
+
+\textbf{Step 4. Show that $f$ is not continuous.}
+Consider the open set
+\[ U=\left(\frac12,\frac32\right)\subseteq\R. \]
+We have
+\[ f^{-1}(U)=\{0\}. \]
+But $\{0\}$ is not open in $\R$. Therefore, $f$ is not continuous.
+
+Hence, we have constructed a countable closed cover of $\R$ such that every restriction is
+continuous, but the original map is not continuous. Thus,
+\[ \boxed{\text{The conclusion of (i) need not hold for a countable cover.}} \]
+\hfill$\square$
+
+\paragraph{(iii) Prove the result when $\{A_\alpha\}$ is locally finite and each $A_\alpha$ is closed.}
+\begin{proof}
+We are given that:
+\begin{enumerate}
+  \item $X=\bigcup_\alpha A_\alpha$.
+  \item Every $A_\alpha$ is closed in $X$.
+  \item The family $\{A_\alpha\}$ is locally finite.
+  \item Every restriction $f|_{A_\alpha}\colon A_\alpha\to Y$ is continuous.
+\end{enumerate}
+We need to prove that $f\colon X\to Y$ is continuous. We will use the following important
+result.
+
+\begin{lemma}
+The union of a locally finite family of closed subsets of a topological space is closed.
+\end{lemma}
+
+\emph{Proof of the lemma.}
+Let $\{F_\alpha\}$ be a locally finite family of closed subsets of $X$. We want to show that
+\[ F=\bigcup_\alpha F_\alpha \]
+is closed in $X$. Take an arbitrary point $x\in X\setminus F$. Since the family is locally
+finite, there exists an open neighbourhood $U$ of $x$ that intersects only finitely many members
+of the family. Suppose these members are
+\[ F_{\alpha_1},F_{\alpha_2},\dots,F_{\alpha_n}. \]
+Now, $x\notin F$, so in particular,
+\[ x\notin F_{\alpha_i},\qquad i=1,\dots,n. \]
+Since each $F_{\alpha_i}$ is closed, its complement is open. Thus, $X\setminus F_{\alpha_i}$ is
+an open neighbourhood of $x$. Consider
+\[ V=U\cap\bigcap_{i=1}^n(X\setminus F_{\alpha_i}). \]
+This is an open neighbourhood of $x$, being a finite intersection of open sets. We claim that
+\[ V\cap F=\emptyset. \]
+Indeed:
+\begin{itemize}
+  \item For the finitely many sets $F_{\alpha_1},\dots,F_{\alpha_n}$, the set $V$ does not
+        intersect any of them.
+  \item For every other index $\alpha$, $U$, and hence $V$, does not intersect $F_\alpha$, by
+        the choice of $U$.
+\end{itemize}
+Therefore, $V$ does not intersect their union $F$. So every point in $X\setminus F$ has an open
+neighbourhood contained in $X\setminus F$. Hence, $X\setminus F$ is open, which means
+\[ \bigcup_\alpha F_\alpha\text{ is closed in }X. \]
+This proves the lemma.
+
+Now we prove the required result. Let $C$ be an arbitrary closed subset of $Y$. Consider
+$f^{-1}(C)$. Since $X=\bigcup_\alpha A_\alpha$, we have
+\begin{align*}
+  f^{-1}(C) &= \bigcup_\alpha\bigl(f^{-1}(C)\cap A_\alpha\bigr)\\
+            &= \bigcup_\alpha(f|_{A_\alpha})^{-1}(C).
+\end{align*}
+Now, since every restriction $f|_{A_\alpha}$ is continuous and $C$ is closed in $Y$,
+$(f|_{A_\alpha})^{-1}(C)$ is closed in $A_\alpha$. Since $A_\alpha$ is closed in $X$, it follows
+that
+\[ F_\alpha:=(f|_{A_\alpha})^{-1}(C) \]
+is closed in $X$. Furthermore, since $F_\alpha\subseteq A_\alpha$ and the family $\{A_\alpha\}$
+is locally finite, the family $\{F_\alpha\}$ is also locally finite. Therefore, by our lemma,
+the union
+\[ f^{-1}(C)=\bigcup_\alpha F_\alpha \]
+is closed in $X$. Since $C$ was an arbitrary closed subset of $Y$, the preimage of every closed
+subset of $Y$ is closed in $X$. Consequently,
+\[ \boxed{f\colon X\to Y\text{ is continuous.}} \qedhere \]
+\end{proof}

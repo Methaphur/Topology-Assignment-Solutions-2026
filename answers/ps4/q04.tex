@@ -1,0 +1,37 @@
+% Source: Solutions/Dhrubojoti-PS4-Q1-4.pdf, pp. 9-11 (typed). Restated problem statement omitted.
+\submittedby{Dhrubojoti}
+
+\begin{proof}
+We are given that
+\[ f\colon X\to A\quad\text{and}\quad g\colon Y\to B \]
+are continuous maps. We need to prove that
+\[ f\times g\colon X\times Y\to A\times B \]
+is continuous. Recall that the product topology on $A\times B$ has a basis consisting of sets
+of the form $U\times V$, where $U$ is open in $A$ and $V$ is open in $B$. We will use the
+characterization of continuity in terms of the preimages of basic open sets.
+
+\textbf{Step 1. Consider an arbitrary basic open set in $A\times B$.}
+Let $U\times V$ be an arbitrary basic open set in $A\times B$, where $U\subseteq A$ and
+$V\subseteq B$ are open. We have
+\begin{align*}
+  (f\times g)^{-1}(U\times V)
+    &= \{(x,y)\in X\times Y : (f\times g)(x,y)\in U\times V\}\\
+    &= \{(x,y)\in X\times Y : (f(x),g(y))\in U\times V\}\\
+    &= \{(x,y)\in X\times Y : f(x)\in U,\ g(y)\in V\}\\
+    &= f^{-1}(U)\times g^{-1}(V).
+\end{align*}
+Therefore,
+\[ (f\times g)^{-1}(U\times V)=f^{-1}(U)\times g^{-1}(V). \]
+
+\textbf{Step 2. Show that the preimage is open in $X\times Y$.}
+Since $f\colon X\to A$ is continuous and $U$ is open in $A$, we know that $f^{-1}(U)$ is open
+in $X$. Similarly, since $g\colon Y\to B$ is continuous and $V$ is open in $B$, $g^{-1}(V)$ is
+open in $Y$. Hence, $f^{-1}(U)\times g^{-1}(V)$ is open in $X\times Y$, by the definition of the
+product topology. Consequently, $(f\times g)^{-1}(U\times V)$ is open in $X\times Y$.
+
+\textbf{Step 3. Conclude continuity.}
+We have shown that the preimage under $f\times g$ of every basic open set in $A\times B$ is open
+in $X\times Y$. Since every open subset of $A\times B$ is a union of basic open sets, the
+preimage of every open subset of $A\times B$ is open in $X\times Y$. Therefore,
+\[ \boxed{f\times g\colon X\times Y\to A\times B\text{ is continuous.}} \qedhere \]
+\end{proof}

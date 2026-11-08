@@ -1,0 +1,38 @@
+% Source: Solutions/Dhrubojoti-PS4-Q1-4.pdf, pp. 3-4 (typed). Restated problem statement omitted.
+\submittedby{Dhrubojoti}
+
+\textbf{Proof.}
+
+\paragraph{(i) The set $\{x\in X\mid f(x)\le g(x)\}$ is closed in $X$.}
+Let
+\[ A=\{x\in X\mid f(x)\le g(x)\}. \]
+We know that $f$ and $g$ are continuous. Since the subtraction map
+\[ \varphi\colon\R\times\R\to\R,\qquad\varphi(u,v)=u-v \]
+is continuous, the map
+\[ F\colon X\to\R,\qquad F(x)=f(x)-g(x) \]
+is continuous. Now observe that
+\begin{align*}
+  A &= \{x\in X\mid f(x)\le g(x)\}\\
+    &= \{x\in X\mid f(x)-g(x)\le0\}\\
+    &= F^{-1}\bigl((-\infty,0]\bigr).
+\end{align*}
+Since $(-\infty,0]$ is closed in $\R$ and $F$ is continuous, its inverse image is closed in $X$.
+Therefore,
+\[ \boxed{\{x\in X\mid f(x)\le g(x)\}\text{ is closed in }X.} \]
+
+\paragraph{(ii) The map $h\colon X\to\R$ given by $h(x)=\min\{f(x),g(x)\}$ is continuous.}
+We use the identity
+\[ \min\{a,b\}=\frac{a+b-|a-b|}{2},\qquad a,b\in\R. \]
+Therefore, for every $x\in X$,
+\[ h(x)=\frac{f(x)+g(x)-|f(x)-g(x)|}{2}. \]
+Since $f$ and $g$ are continuous, the maps
+\[ f+g\colon X\to\R\quad\text{and}\quad f-g\colon X\to\R \]
+are continuous. Also, the absolute value map
+\[ |\cdot|\colon\R\to\R,\qquad t\mapsto|t| \]
+is continuous. Hence the composition
+\[ x\mapsto|f(x)-g(x)| \]
+is continuous. Consequently,
+\[ h(x)=\frac{f(x)+g(x)-|f(x)-g(x)|}{2} \]
+is continuous, since sums, differences and scalar multiples of continuous real-valued functions
+are continuous. Thus,
+\[ \boxed{h\colon X\to\R\text{ is continuous.}} \]

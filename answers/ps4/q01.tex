@@ -1,0 +1,73 @@
+% Source: Solutions/Dhrubojoti-PS4-Q1-4.pdf, pp. 1-3 (typed). Restated problem statement omitted.
+\submittedby{Dhrubojoti}
+
+\textbf{Proof.}
+Recall that a map $h\colon Z\to W$ is an embedding if it is a homeomorphism from $Z$ onto
+$h(Z)$, equipped with the subspace topology.
+
+\paragraph{1. The map $f\colon X\to X\times Y$, $f(x)=(x,b)$.}
+
+\emph{Step 1: $f$ is continuous.}
+Let $U\times V$ be an arbitrary basic open set in $X\times Y$, where $U\subseteq X$ and
+$V\subseteq Y$ are open. Then
+\begin{align*}
+  f^{-1}(U\times V) &= \{x\in X : f(x)\in U\times V\}\\
+                    &= \{x\in X : (x,b)\in U\times V\}\\
+                    &= \begin{cases} U, & b\in V,\\ \emptyset, & b\notin V.\end{cases}
+\end{align*}
+In either case, $f^{-1}(U\times V)$ is open in $X$. Hence $f$ is continuous.
+
+\emph{Step 2: $f$ is injective.}
+Suppose that $f(x_1)=f(x_2)$. Then
+\[ (x_1,b)=(x_2,b). \]
+Therefore, $x_1=x_2$, so $f$ is injective.
+
+\emph{Step 3: The inverse map $f^{-1}\colon f(X)\to X$ is continuous.}
+Observe that
+\[ f(X)=X\times\{b\}. \]
+Consider the first projection map
+\[ \pi_X\colon X\times Y\to X,\qquad \pi_X(x,y)=x. \]
+Since projection maps are continuous, its restriction
+\[ \pi_X|_{f(X)}\colon f(X)\to X \]
+is continuous. But
+\[ \pi_X(f(x))=\pi_X(x,b)=x. \]
+Thus
+\[ f^{-1}=\pi_X|_{f(X)}. \]
+Hence $f^{-1}$ is continuous.
+
+Therefore, $f$ is a homeomorphism from $X$ onto $f(X)$, and consequently $f$ is an embedding.
+
+\paragraph{2. The map $g\colon Y\to X\times Y$, $g(y)=(a,y)$.}
+
+\emph{Step 1: $g$ is continuous.}
+Let $U\times V$ be an arbitrary basic open set in $X\times Y$. Then
+\begin{align*}
+  g^{-1}(U\times V) &= \{y\in Y : g(y)\in U\times V\}\\
+                    &= \{y\in Y : (a,y)\in U\times V\}\\
+                    &= \begin{cases} V, & a\in U,\\ \emptyset, & a\notin U.\end{cases}
+\end{align*}
+In either case, $g^{-1}(U\times V)$ is open in $Y$. Hence $g$ is continuous.
+
+\emph{Step 2: $g$ is injective.}
+Suppose that $g(y_1)=g(y_2)$. Then
+\[ (a,y_1)=(a,y_2). \]
+Therefore, $y_1=y_2$, so $g$ is injective.
+
+\emph{Step 3: The inverse map $g^{-1}\colon g(Y)\to Y$ is continuous.}
+Observe that
+\[ g(Y)=\{a\}\times Y. \]
+Consider the second projection map
+\[ \pi_Y\colon X\times Y\to Y,\qquad \pi_Y(x,y)=y. \]
+Since projection maps are continuous, its restriction
+\[ \pi_Y|_{g(Y)}\colon g(Y)\to Y \]
+is continuous. But
+\[ \pi_Y(g(y))=\pi_Y(a,y)=y. \]
+Thus
+\[ g^{-1}=\pi_Y|_{g(Y)}. \]
+Hence $g^{-1}$ is continuous.
+
+Therefore, $g$ is a homeomorphism from $Y$ onto $g(Y)$, and consequently $g$ is an embedding.
+
+\begin{center}
+  \fbox{Hence both $f$ and $g$ are embeddings.}
+\end{center}
