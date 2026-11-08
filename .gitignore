@@ -12,3 +12,6 @@ build/
 .vscode/
 *~
 .DS_Store
+
+# local instructions for Claude sessions (kept on disk, not versioned)
+CLAUDE.md
