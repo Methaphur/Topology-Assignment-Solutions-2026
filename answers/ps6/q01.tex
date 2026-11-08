@@ -1,0 +1,33 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, p. 1 (typed, joint submission; Q1-3 credited to Yashpal Prasad).
+\submittedby{Yashpal Prasad}
+
+\begin{proof}
+Let $\mathcal U=\{U_\alpha\}_{\alpha\in A}$ be an arbitrary open covering of the space $X$. We
+wish to extract a finite subcovering of $X$ from $\mathcal U$ to establish that $X$ is compact.
+For each point $y\in Y$, the fiber $p^{-1}(y)\subseteq X$ is a compact subspace by hypothesis.
+Since $\mathcal U$ covers $X$, it covers $p^{-1}(y)$ in particular; hence, we can extract a
+finite subcollection of open sets from $\mathcal U$, say
+$U_{\alpha_{1,y}},U_{\alpha_{2,y}},\dots,U_{\alpha_{k_y,y}}$, which covers $p^{-1}(y)$.
+
+Define the union of these selected open sets as $S_y=\bigcup_{i=1}^{k_y}U_{\alpha_{i,y}}$, so
+that $p^{-1}(y)\subseteq S_y$. The complement $V_y=X\setminus S_y$ is a closed subset of $X$
+because $S_y$ is a finite union of open sets. Because $p\colon X\to Y$ is a closed map, the
+image $p(V_y)$ is a closed subset of $Y$, which implies that its complement
+$W_y=Y\setminus p(V_y)$ is an open subset of $Y$.
+
+We claim that $y\in W_y$. Suppose to the contrary that $y\notin W_y$. Then $y\in p(V_y)$,
+meaning there exists some $x\in V_y$ such that $p(x)=y$, or $x\in p^{-1}(y)$. But
+$V_y=X\setminus S_y$ is disjoint from $S_y$, whereas $p^{-1}(y)\subseteq S_y$, yielding a
+contradiction. Thus, $y\in W_y$ for every $y\in Y$.
+
+The collection of open sets $\{W_y\}_{y\in Y}$ forms an open covering of $Y$. Since $Y$ is
+compact, this covering contains a finite subcovering, say $W_{y_1},W_{y_2},\dots,W_{y_m}$. For
+each $j$, we have
+$p^{-1}(W_{y_j})\subseteq X\setminus V_{y_j}=S_{y_j}=\bigcup_{i=1}^{k_{y_j}}U_{\alpha_{i,y_j}}$.
+Taking the inverse images over the finite subcovering yields:
+\[ X=p^{-1}(Y)=\bigcup_{j=1}^m p^{-1}(W_{y_j})
+   \subseteq\bigcup_{j=1}^m\left(\bigcup_{i=1}^{k_{y_j}}U_{\alpha_{i,y_j}}\right). \]
+
+\textbf{Conclusion:} We have expressed $X$ as a finite union of sets belonging to $\mathcal U$.
+Therefore, $X$ is compact.
+\end{proof}

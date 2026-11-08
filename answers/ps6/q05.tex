@@ -1,0 +1,19 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, p. 3 (typed, joint submission; Q4-6 credited to Indrajeet Kumhawat).
+\submittedby{Indrajeet Kumhawat}
+
+\begin{proof}
+Let $f\colon X\to Y$ be a quotient map that is also bijective. Because $f$ is a quotient map,
+it is continuous and surjective. Because $f$ is bijective, it possesses an inverse function
+$f^{-1}\colon Y\to X$. To prove that $f$ is a homeomorphism, we must show that $f^{-1}$ is
+continuous (since $f$ is already continuous).
+
+Showing $f^{-1}$ is continuous is equivalent to showing that for any open set $U\subseteq X$,
+its inverse image under $f^{-1}$, which is $(f^{-1})^{-1}(U)=f(U)$, is open in $Y$. Let $U$ be an
+arbitrary open subset of $X$. Because $f$ is injective, $f^{-1}(f(U))=U$. By definition, $f$ is
+a quotient map, meaning a subset $V\subseteq Y$ is open in $Y$ if and only if $f^{-1}(V)$ is
+open in $X$. Choosing $V=f(U)$, we have $f^{-1}(V)=U$, which is given to be open in $X$.
+Therefore, $V=f(U)$ is open in $Y$.
+
+\textbf{Conclusion:} Since $f(U)$ is open in $Y$ for every open set $U\subseteq X$, the inverse
+map $f^{-1}$ is continuous. Thus, $f$ is a homeomorphism.
+\end{proof}

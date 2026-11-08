@@ -1,0 +1,23 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, p. 2 (typed, joint submission; Q1-3 credited to Yashpal Prasad).
+\submittedby{Yashpal Prasad}
+
+\begin{proof}
+Let $p\colon X\to Y$ and $q\colon Y\to Z$ be quotient maps. By definition, both $p$ and $q$ are
+continuous and surjective maps. Consider the composite map $qp\colon X\to Z$ defined by
+$(qp)(x)=q(p(x))$. The composition of continuous functions is continuous, and the composition of
+surjective functions is surjective; hence $qp$ is continuous and surjective.
+
+To prove that $qp$ is a quotient map, we must show that a subset $U\subseteq Z$ is open in $Z$
+if and only if its inverse image $(qp)^{-1}(U)$ is open in $X$. By set-theoretic properties of
+inverse images under compositions, $(qp)^{-1}(U)=p^{-1}(q^{-1}(U))$.
+
+Suppose $U\subseteq Z$ is such that $(qp)^{-1}(U)$ is open in $X$. Since $p$ is a quotient map,
+a subset $V\subseteq Y$ is open in $Y$ if and only if $p^{-1}(V)$ is open in $X$. Setting
+$V=q^{-1}(U)$, we have $p^{-1}(V)=(qp)^{-1}(U)$ open in $X$, which implies $q^{-1}(U)$ is open in
+$Y$. Now, since $q$ is a quotient map and $q^{-1}(U)$ is open in $Y$, it follows that $U$ is
+open in $Z$. Conversely, if $U$ is open in $Z$, then $q^{-1}(U)$ is open in $Y$ by continuity
+of $q$, and $p^{-1}(q^{-1}(U))$ is open in $X$ by continuity of $p$.
+
+\textbf{Conclusion:} $U$ is open in $Z$ if and only if $(qp)^{-1}(U)$ is open in $X$. Thus,
+$qp$ is a quotient map.
+\end{proof}

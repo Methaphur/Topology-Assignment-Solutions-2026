@@ -1,0 +1,21 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, pp. 2-3 (typed, joint submission; Q4-6 credited to Indrajeet Kumhawat).
+\submittedby{Indrajeet Kumhawat}
+
+\begin{proof}
+A surjective continuous map $f\colon X\to Y$ is a quotient map if for any subset
+$U\subseteq Y$, $U$ is open in $Y$ if and only if $f^{-1}(U)$ is open in $X$ (equivalently with
+closed sets). We analyze the two cases separately:
+
+\textbf{Case 1 ($f$ is an open map):} Let $U\subseteq Y$ be any subset. If $U$ is open in $Y$,
+then $f^{-1}(U)$ is open in $X$ by continuity. Conversely, suppose $f^{-1}(U)$ is open in $X$.
+Since $f$ is an open map, the image $f(f^{-1}(U))$ is open in $Y$. Because $f$ is surjective,
+$f(f^{-1}(U))=U$, so $U$ is open in $Y$.
+
+\textbf{Case 2 ($f$ is a closed map):} Let $C\subseteq Y$ be any subset. If $C$ is closed in
+$Y$, then $f^{-1}(C)$ is closed in $X$ by continuity. Conversely, suppose $f^{-1}(C)$ is closed
+in $X$. Since $f$ is a closed map, $f(f^{-1}(C))$ is closed in $Y$. Since $f$ is surjective,
+$f(f^{-1}(C))=C$, so $C$ is closed in $Y$.
+
+\textbf{Conclusion:} In both cases, the quotient map condition holds. Therefore, $f$ is a
+quotient map.
+\end{proof}

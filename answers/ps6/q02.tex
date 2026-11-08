@@ -1,0 +1,42 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, pp. 1-2 (typed, joint submission; Q1-3 credited to Yashpal Prasad).
+\submittedby{Yashpal Prasad}
+
+\begin{proof}
+Let $f\colon X\to X$ satisfy $d(f(x),f(y))=d(x,y)$ for all $x,y\in X$. A homeomorphism is a
+continuous bijection with continuous inverse. We check each part in turn.
+
+\textbf{Step 1: $f$ is continuous.} Given $\epsilon>0$, take $\delta=\epsilon$. If
+$d(x,y)<\delta$, then $d(f(x),f(y))=d(x,y)<\epsilon$. So $f$ is (uniformly) continuous.
+
+\textbf{Step 2: $f$ is injective.} If $f(x)=f(y)$, then $d(x,y)=d(f(x),f(y))=0$. Hence $x=y$.
+
+\textbf{Step 3: $f$ is surjective (this is where compactness is used).} Suppose, for
+contradiction, that $f(X)\neq X$, and pick $y\in X\setminus f(X)$.
+\begin{enumerate}[label=(\alph*)]
+  \item \emph{$f(X)$ is closed.} By Step 1, $f$ is continuous, and $X$ is compact. The
+        continuous image of a compact set is compact (standard theorem), so $f(X)$ is compact.
+        A compact subset of a metric space is closed, so $f(X)$ is closed.
+  \item \emph{$y$ is at positive distance from $f(X)$.} Since $y\notin f(X)$ and $f(X)$ is
+        closed, some open ball $B(y,\epsilon)$ misses $f(X)$. That is, $d(y,z)\ge\epsilon$ for
+        every $z\in f(X)$.
+  \item \emph{Build a sequence with no convergent subsequence.} Define $x_n=f^n(y)$ for
+        $n\ge0$, where $f^0=\id$. Take $m>n\ge0$. Since $f$ is an isometry, so is $f^n$, and
+        therefore
+        \[ d(x_n,x_m)=d\bigl(f^n(y),f^n(f^{m-n}(y))\bigr)=d\bigl(y,f^{m-n}(y)\bigr). \]
+        Because $m-n\ge1$, the point $f^{m-n}(y)=f(f^{m-n-1}(y))$ lies in $f(X)$. By (b),
+        $d(x_n,x_m)\ge\epsilon$.
+  \item \emph{Contradiction.} Every pair of distinct terms of $(x_n)$ is at distance at least
+        $\epsilon$. So no subsequence is Cauchy, and hence none converges. But $X$ is a compact
+        metric space, so it is sequentially compact (standard theorem), and $(x_n)$ must have a
+        convergent subsequence. This is a contradiction.
+\end{enumerate}
+Therefore $f(X)=X$, so $f$ is surjective.
+
+\textbf{Step 4: $f^{-1}$ is continuous.} By Steps 2 and 3, $f$ is a bijection, so
+$f^{-1}\colon X\to X$ exists. For $a,b\in X$, write $a=f(x)$ and $b=f(y)$. Then
+\[ d\bigl(f^{-1}(a),f^{-1}(b)\bigr)=d(x,y)=d(f(x),f(y))=d(a,b). \]
+So $f^{-1}$ is also an isometry, and by the same argument as in Step 1 it is continuous.
+
+\textbf{Conclusion:} $f$ is a continuous bijection with continuous inverse, so $f$ is a
+homeomorphism.
+\end{proof}

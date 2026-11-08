@@ -1,0 +1,17 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, p. 4 (typed, joint submission; Q7-9 credited to Himanshu Sharma).
+\submittedby{Himanshu Sharma}
+
+\begin{proof}
+To show that $X$ is Hausdorff, we must demonstrate that for any two distinct points
+$x_1,x_2\in X$ with $x_1\neq x_2$, there exist disjoint open neighborhoods
+$U_1,U_2\subseteq X$ containing $x_1$ and $x_2$ respectively. Since $f\colon X\to Y$ is
+injective, $f(x_1)\neq f(x_2)$. Because $Y$ is a Hausdorff space, there exist disjoint open sets
+$V_1,V_2\subseteq Y$ such that $f(x_1)\in V_1$, $f(x_2)\in V_2$, and $V_1\cap V_2=\emptyset$.
+
+Since $f$ is continuous, the inverse images $U_1=f^{-1}(V_1)$ and $U_2=f^{-1}(V_2)$ are open
+subsets of $X$ containing $x_1$ and $x_2$ respectively. Furthermore, their intersection is:
+\[ U_1\cap U_2=f^{-1}(V_1)\cap f^{-1}(V_2)=f^{-1}(V_1\cap V_2)=f^{-1}(\emptyset)=\emptyset. \]
+
+\textbf{Conclusion:} We have found disjoint open neighborhoods separating $x_1$ and $x_2$.
+Therefore, $X$ is Hausdorff.
+\end{proof}

@@ -1,0 +1,54 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, pp. 3-4 (typed, joint submission; Q4-6 credited to Indrajeet Kumhawat).
+\submittedby{Indrajeet Kumhawat}
+
+\paragraph{(a)}
+A sub-basis for the product topology on $Y_1\times Y_2$ consists of sets of the form
+$U_1\times U_2$, where $U_1\subseteq Y_1$ and $U_2\subseteq Y_2$ are open. To prove
+$f_1\times f_2$ is continuous, we show that the inverse image of any basic open set
+$U_1\times U_2$ is open in $X_1\times X_2$. Let
+$(x_1,x_2)\in(f_1\times f_2)^{-1}(U_1\times U_2)$. Then
+$(f_1(x_1),f_2(x_2))\in U_1\times U_2$, which implies $f_1(x_1)\in U_1$ and $f_2(x_2)\in U_2$,
+or equivalently $x_1\in f_1^{-1}(U_1)$ and $x_2\in f_2^{-1}(U_2)$. Thus,
+$(f_1\times f_2)^{-1}(U_1\times U_2)=f_1^{-1}(U_1)\times f_2^{-1}(U_2)$. Since $f_1$ and $f_2$
+are continuous, $f_1^{-1}(U_1)$ and $f_2^{-1}(U_2)$ are open in $X_1$ and $X_2$ respectively,
+making their Cartesian product open in $X_1\times X_2$.
+
+\textbf{Conclusion (a):} $f_1\times f_2$ is continuous.\hfill$\square$
+
+\paragraph{(b)}
+Consider the quotient map $p_1=\pi\colon\R\to\R/\N$ obtained by collapsing the closed set of
+integers $\N=\{1,2,3,\dots\}$ to a single point $*$, and let $p_2=\id_\Q\colon\Q\to\Q$ be the
+identity map on the rational numbers, which is a homeomorphism and hence a quotient map. We
+examine their product map $F=\pi\times\id_\Q\colon\R\times\Q\to(\R/\N)\times\Q$. By part (a),
+$F$ is continuous, and it is clearly surjective. However, we claim that $F$ is not a quotient
+map.
+
+To see why, note that the fibers of $F$ over points in the codomain are either single points or
+sets of the form $\N\times\{s\}$ for $s\in\Q$. A subset $U\subseteq\R\times\Q$ is saturated with
+respect to $F$ if for each rational $s$, either the entire vertical slice $\N\times\{s\}$ is
+contained in $U$ or none of it is. We can construct a saturated open set $U$ by taking an
+enumeration of irrational numbers $r_n=\sqrt2/n$ for $n\ge1$ and defining continuous functions
+$h_n(s)=\min\{1/4,\,|s-r_n|\}$ for $s\in\Q$. Because each $r_n$ is irrational, $h_n(s)>0$
+everywhere on $\Q$. We define the open set
+\[ U=\bigcup_{n=1}^\infty\{(x,s)\in\R\times\Q : |x-n|<h_n(s)\}. \]
+Since $(n,s)\in U$ for every integer $n$ and rational $s$, the set contains $\N\times\Q$,
+ensuring it is saturated.
+
+Let $W=F(U)$ be the image of $U$. Because $U$ is saturated, the inverse image $F^{-1}(W)=U$ is
+open in $\R\times\Q$. If $F$ were a quotient map, its image $W$ would necessarily be open in
+$(\R/\N)\times\Q$. Notice that the point $(*,0)$ belongs to $W$. If $W$ were open, there would
+exist an open neighborhood $V$ of $*$ in $\R/\N$ and a positive number $\delta>0$ such that
+$V\times\bigl((-\delta,\delta)\cap\Q\bigr)\subseteq W$. The inverse image $\pi^{-1}(V)$ is an
+open neighborhood in $\R$ containing all integers $n\ge1$, meaning for each $n$ there exists
+some $0<\eta_n<1/4$ such that $(n-\eta_n,n+\eta_n)\subseteq\pi^{-1}(V)$. By choosing $n$
+sufficiently large such that $|r_n|<\delta/2$ and picking a rational $s$ close to $r_n$ via the
+density of $\Q$, we can construct a point $x=n+(|s-r_n|+\eta_n)/2$ that satisfies
+$|s-r_n|<|x-n|<\eta_n$ while simultaneously contradicting the bound established by $h_n(s)$.
+% REVIEW: the contradiction only checks the n-th piece |x-n| < h_n(s) of U; it does not say why
+% (x,s) also misses the pieces m != n (true, since |x-n| < 1/4 forces |x-m| > 3/4 > h_m(s)).
+% It also leaves implicit that s must satisfy |s-r_n| < eta_n and |s| < delta. ("Enumeration of
+% irrational numbers" is just a sequence of irrationals.)
+This contradiction shows that the image $W$ cannot be open in the product topology.
+
+\textbf{Conclusion (b):} The product of quotient maps $p_1\times p_2$ is not necessarily a
+quotient map.\hfill$\square$

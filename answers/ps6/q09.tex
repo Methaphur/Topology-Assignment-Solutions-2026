@@ -1,0 +1,21 @@
+% Source: Solutions/Yash-Indrajit-Himanshu-PS6.pdf, pp. 4-5 (typed, joint submission; Q7-9 credited to Himanshu Sharma).
+\submittedby{Himanshu Sharma}
+
+\begin{proof}
+\textbf{Proof of ($\Rightarrow$):} Suppose $p$ is a closed map. Let $S\subseteq Y$ and let
+$U\subseteq X$ be an open set containing $p^{-1}(S)$. Consider the closed set $C=X\setminus U$.
+Since $p$ is a closed map, $p(C)$ is closed in $Y$, so $V=Y\setminus p(C)$ is open in $Y$. For
+any $s\in S$, $p^{-1}(\{s\})\subseteq p^{-1}(S)\subseteq U$, meaning no point in the fiber
+belongs to $C$. Thus $s\notin p(C)$, so $s\in V$, implying $S\subseteq V$. Furthermore,
+$p^{-1}(V)=X\setminus p^{-1}(p(C))\subseteq X\setminus C=U$.
+
+\textbf{Proof of ($\Leftarrow$):} Conversely, suppose the condition holds. Let $C\subseteq X$ be
+closed. We must show $p(C)$ is closed in $Y$, or $Y\setminus p(C)$ is open. Let
+$y\in Y\setminus p(C)$ and set $S=\{y\}$. The fiber $p^{-1}(\{y\})$ is disjoint from $C$, so
+$p^{-1}(\{y\})\subseteq X\setminus C$. Let $U=X\setminus C$, which is open. By hypothesis, there
+exists an open set $V_y\subseteq Y$ containing $y$ such that
+$p^{-1}(V_y)\subseteq U=X\setminus C$. This implies $V_y\cap p(C)=\emptyset$, so
+$V_y\subseteq Y\setminus p(C)$. Thus, $Y\setminus p(C)$ is open.
+
+\textbf{Conclusion:} $p$ is a closed map if and only if the stated condition holds.
+\end{proof}
