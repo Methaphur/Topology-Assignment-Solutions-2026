@@ -1,0 +1,46 @@
+% Source: Solutions/Pula Karan-PS3-Q6-10.tex (typed LaTeX), Problem 8
+\submittedby{Pula Karan}
+
+\paragraph{Part (i).}
+\begin{proof}
+$(\implies)$ Suppose $X$ is Hausdorff. We show that $(X\times X)\setminus\Delta$ is open.
+Let $(x,y)\in(X\times X)\setminus\Delta$, which means $x\neq y$. Since $X$ is Hausdorff, there
+exist disjoint open sets $U,V\subseteq X$ such that $x\in U$, $y\in V$, and
+$U\cap V=\varnothing$. Then $U\times V$ is an open neighborhood of $(x,y)$ in $X\times X$. If
+there were some $(z,z)\in(U\times V)\cap\Delta$, then $z\in U\cap V=\varnothing$, a
+contradiction. Hence $(U\times V)\cap\Delta=\varnothing$, so
+$U\times V\subseteq(X\times X)\setminus\Delta$. Thus $(X\times X)\setminus\Delta$ is open, so
+$\Delta$ is closed.
+
+\smallskip
+$(\impliedby)$ Suppose $\Delta$ is closed in $X\times X$, so $(X\times X)\setminus\Delta$ is
+open. Let $x,y\in X$ with $x\neq y$. Then $(x,y)\in(X\times X)\setminus\Delta$. By definition of
+the product topology, there exists a basic open set $U\times V\subseteq X\times X$ such that
+$(x,y)\in U\times V\subseteq(X\times X)\setminus\Delta$. This implies $x\in U$ and $y\in V$. If
+there existed $z\in U\cap V$, then $(z,z)\in(U\times V)\cap\Delta$, contradicting
+$U\times V\subseteq(X\times X)\setminus\Delta$. Therefore $U\cap V=\varnothing$, so $X$ is
+Hausdorff.
+\end{proof}
+
+\paragraph{Part (ii).}
+\begin{proof}
+We check the three properties of a homeomorphism for $d\colon X\to\Delta$:
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Bijectivity:}
+    \begin{itemize}
+      \item \emph{Injective}: $d(x_1)=d(x_2)\implies(x_1,x_1)=(x_2,x_2)\implies x_1=x_2$.
+      \item \emph{Surjective}: Any element in $\Delta$ is of the form $(x,x)=d(x)$ for some
+            $x\in X$.
+    \end{itemize}
+  \item \textbf{Continuity of $d$:}
+    The component functions of $d$ are $d_1=\id_X$ and $d_2=\id_X$. Since the identity map
+    $\id_X\colon X\to X$ is continuous, $d\colon X\to X\times X$ is continuous by the
+    characteristic property of product spaces. Restricting the codomain to the subspace
+    $\Delta$ preserves continuity.
+  \item \textbf{Continuity of $d^{-1}$:}
+    The inverse map $d^{-1}\colon\Delta\to X$ is given by $d^{-1}(x,x)=x$. This is the
+    restriction of the first coordinate projection $p_1\colon X\times X\to X$ to $\Delta$.
+    Since projection maps are continuous, its restriction $d^{-1}=p_1|_\Delta$ is continuous.
+\end{enumerate}
+Thus, $d\colon X\to\Delta$ is a homeomorphism.
+\end{proof}

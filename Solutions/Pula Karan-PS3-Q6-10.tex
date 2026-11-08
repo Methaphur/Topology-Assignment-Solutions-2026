@@ -1,0 +1,251 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+
+\definecolor{headerblue}{RGB}{24, 76, 120}
+
+\begin{document}
+
+\setcounter{problem}{5}
+
+% --------------------------------------------------------
+% PROBLEM 6
+% --------------------------------------------------------
+\begin{problem}
+Let $L$ be a line in the plane $\mathbb{R}^2$, and $\mathbb{R}_l$ be the lower limit topology on $\mathbb{R}$. Discuss the topology $L$ inherits as a subspace of $\mathbb{R}_l \times \mathbb{R}$ and as a subspace of $\mathbb{R}_l \times \mathbb{R}_l$.
+\end{problem}
+
+\begin{solution}
+We analyze the subspace topology on $L$ under both product topologies.
+
+\subsection*{Part 1: Subspace Topology inherited from $\mathbb{R}_l \times \mathbb{R}$}
+A basis for $\mathbb{R}_l \times \mathbb{R}$ consists of rectangles of the form $[a, b) \times (c, d)$ with $a < b$ and $c < d$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{Vertical Line ($L: x = k$):}
+    For any $(k, y_0) \in L$, a basic open neighborhood in $\mathbb{R}_l \times \mathbb{R}$ is $U = [k, k+\epsilon) \times (y_0-\epsilon, y_0+\epsilon)$. Intersecting $U$ with $L$ yields:
+    \[
+    U \cap L = \{k\} \times (y_0-\epsilon, y_0+\epsilon)
+    \]
+    This traces open intervals along the $y$-axis. Thus, $L$ inherits the \textbf{standard Euclidean topology} ($\mathbb{R}$).
+
+    \item \textbf{Horizontal Line ($L: y = k$):}
+    For any $(x_0, k) \in L$, a basic open neighborhood in $\mathbb{R}_l \times \mathbb{R}$ is $U = [x_0, x_0+\epsilon) \times (k-\epsilon, k+\epsilon)$. Intersecting $U$ with $L$ yields:
+    \[
+    U \cap L = [x_0, x_0+\epsilon) \times \{k\}
+    \]
+    This traces right-half-open intervals along the $x$-axis. Thus, $L$ inherits the \textbf{lower limit topology} ($\mathbb{R}_l$).
+
+    \item \textbf{Non-Vertical Line ($L: y = mx + k$, $m \neq 0$):}
+    For any $(x_0, y_0) \in L$, consider basic open sets $U = [x_0, x_0+\epsilon) \times (y_0-\delta, y_0+\delta)$.
+    \begin{itemize}
+        \item If $m > 0$, as $x$ increases from $x_0$, $y$ increases from $y_0$. For sufficiently small $\delta > 0$, $U \cap L$ isolates points corresponding to $x \in [x_0, x_0 + \delta/m)$.
+        \item If $m < 0$, as $x$ increases from $x_0$, $y$ decreases from $y_0$. Intersecting $[x_0, x_0+\epsilon)$ with $(y_0-\delta, y_0+\delta)$ again isolates points corresponding to $x \in [x_0, x_0 + \delta/|m|)$.
+    \end{itemize}
+    In both cases, basic open sets induce half-open intervals $[x_0, x_0 + r)$ along $L$. Thus, $L$ inherits the \textbf{lower limit topology} ($\mathbb{R}_l$).
+\end{enumerate}
+
+\subsection*{Part 2: Subspace Topology inherited from $\mathbb{R}_l \times \mathbb{R}_l$ (Sorgenfrey Plane)}
+A basis for $\mathbb{R}_l \times \mathbb{R}_l$ consists of half-open rectangles of the form $[a, b) \times [c, d)$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{Vertical ($x = k$), Horizontal ($y = k$), and Positive Slope ($y = mx + k, m > 0$):}
+    For any $(x_0, y_0) \in L$, intersecting $[x_0, x_0+\epsilon) \times [y_0, y_0+\epsilon')$ with $L$ isolates points corresponding to $[x_0, x_0 + \delta)$ where $\delta = \min(\epsilon, \epsilon'/m)$ for $m>0$ (or $\epsilon$ if vertical/horizontal). Thus, $L$ inherits the \textbf{lower limit topology} ($\mathbb{R}_l$).
+
+    \item \textbf{Oblique Line with Negative Slope ($y = mx + k, m < 0$):}
+    Let $(x_0, y_0) \in L$ and consider $U = [x_0, x_0+\epsilon) \times [y_0, y_0+\epsilon)$.
+    For any $x > x_0$, $y = mx + k < m x_0 + k = y_0$, so $(x, y) \notin U$.
+    For $x < x_0$, $x \notin [x_0, x_0+\epsilon)$, so $(x, y) \notin U$.
+    Therefore, $U \cap L = \{(x_0, y_0)\}$. Since every singleton is open, $L$ inherits the \textbf{discrete topology}.
+\end{enumerate}
+\end{solution}
+
+\vspace{1em}
+
+% --------------------------------------------------------
+% PROBLEM 7
+% --------------------------------------------------------
+\begin{problem}
+Compare (i) the ordered square $I_o^2$, (ii) the topology $I^2$ inherits as a subspace of the product topology $\mathbb{R}^2$, and (iii) the product topology on $I \times I$.
+\end{problem}
+
+\begin{solution}
+Let $I = [0,1]$. We compare the three topologies on $I^2 = [0,1] \times [0,1]$:
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Topologies (ii) and (iii) are identical ($\mathcal{T}_{\text{sub}} = \mathcal{T}_{\text{prod}}$):}
+    \begin{itemize}
+        \item Topology (ii) is the subspace topology inherited from the Euclidean product topology on $\mathbb{R}^2$. Basis elements are of the form $(U \times V) \cap I^2$, where $U, V \subseteq \mathbb{R}$ are open intervals.
+        \item Topology (iii) is the product topology on $I \times I$, where each factor $I$ carries the subspace topology from $\mathbb{R}$. Basis elements are of the form $(U \cap I) \times (V \cap I) = (U \times V) \cap I^2$.
+    \end{itemize}
+    Since their bases coincide, Topologies (ii) and (iii) are identical.
+
+    \item \textbf{Topology (i) ($I_o^2$) is strictly finer than Topologies (ii) and (iii):}
+    The ordered square $I_o^2$ is equipped with the dictionary order topology $\le_{\text{dic}}$.
+    \begin{itemize}
+        \item \emph{Euclidean $\subseteq$ Dictionary Order}: Any standard Euclidean basic open set $U = (a,b) \times (c,d) \subset (0,1)^2$ can be written as:
+        \[
+        U = \bigcup_{x_0 \in (a, b)} \Big( \{x_0\} \times (c, d) \Big) = \bigcup_{x_0 \in (a, b)} \Big( (x_0, c), (x_0, d) \Big)_{\text{dic}}
+        \]
+        Since each vertical interval $\{x_0\} \times (c,d)$ is open in the dictionary order topology, $U$ is open in $I_o^2$.
+        \item \emph{Strict Containment}: Sets of the form $\{x_0\} \times (c,d)$ for $0 < c < d < 1$ are open in $I_o^2$. However, they contain no 2D Euclidean open ball, so they are not open in the standard topology on $I^2$.
+    \end{itemize}
+\end{enumerate}
+\textbf{Conclusion:} $\text{Topology (ii)} = \text{Topology (iii)} \subsetneq \text{Topology (i)}$.
+\end{solution}
+
+\vspace{1em}
+
+% --------------------------------------------------------
+% PROBLEM 8
+% --------------------------------------------------------
+\begin{problem}
+Let $X$ be a topological space, and $\Delta = \{(x,x) \in X \times X \mid x \in X\}$ be the diagonal of $X \times X$, equipped with the subspace topology inherited from the product topology on $X \times X$.
+\begin{enumerate}[label=(\roman*)]
+    \item Prove that $X$ is Hausdorff if and only if the diagonal $\Delta$ is a closed subset of $X \times X$.
+    \item Prove that the diagonal map $d : X \longrightarrow \Delta$ defined by $d(x) = (x,x)$ is a homeomorphism.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\subsection*{Part (i)}
+\begin{proof}
+$(\implies)$ Suppose $X$ is Hausdorff. We show that $(X \times X) \setminus \Delta$ is open.
+Let $(x, y) \in (X \times X) \setminus \Delta$, which means $x \neq y$. Since $X$ is Hausdorff, there exist disjoint open sets $U, V \subseteq X$ such that $x \in U$, $y \in V$, and $U \cap V = \varnothing$.
+Then $U \times V$ is an open neighborhood of $(x, y)$ in $X \times X$. If there were some $(z, z) \in (U \times V) \cap \Delta$, then $z \in U \cap V = \varnothing$, a contradiction.
+Hence $(U \times V) \cap \Delta = \varnothing$, so $U \times V \subseteq (X \times X) \setminus \Delta$. Thus $(X \times X) \setminus \Delta$ is open, so $\Delta$ is closed.
+
+\smallskip
+$(\impliedby)$ Suppose $\Delta$ is closed in $X \times X$, so $(X \times X) \setminus \Delta$ is open.
+Let $x, y \in X$ with $x \neq y$. Then $(x, y) \in (X \times X) \setminus \Delta$.
+By definition of the product topology, there exists a basic open set $U \times V \subseteq X \times X$ such that $(x, y) \in U \times V \subseteq (X \times X) \setminus \Delta$.
+This implies $x \in U$ and $y \in V$. If there existed $z \in U \cap V$, then $(z, z) \in (U \times V) \cap \Delta$, contradicting $U \times V \subseteq (X \times X) \setminus \Delta$.
+Therefore $U \cap V = \varnothing$, so $X$ is Hausdorff.
+\end{proof}
+
+\subsection*{Part (ii)}
+\begin{proof}
+We check the three properties of a homeomorphism for $d : X \to \Delta$:
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Bijectivity:}
+    \begin{itemize}
+        \item \emph{Injective}: $d(x_1) = d(x_2) \implies (x_1, x_1) = (x_2, x_2) \implies x_1 = x_2$.
+        \item \emph{Surjective}: Any element in $\Delta$ is of the form $(x, x) = d(x)$ for some $x \in X$.
+    \end{itemize}
+
+    \item \textbf{Continuity of $d$:}
+    The component functions of $d$ are $d_1 = \text{id}_X$ and $d_2 = \text{id}_X$. Since the identity map $\text{id}_X : X \to X$ is continuous, $d : X \to X \times X$ is continuous by the characteristic property of product spaces. Restricting the codomain to the subspace $\Delta$ preserves continuity.
+
+    \item \textbf{Continuity of $d^{-1}$:}
+    The inverse map $d^{-1} : \Delta \to X$ is given by $d^{-1}(x,x) = x$. This is the restriction of the first coordinate projection $p_1 : X \times X \to X$ to $\Delta$. Since projection maps are continuous, its restriction $d^{-1} = p_1|_\Delta$ is continuous.
+\end{enumerate}
+Thus, $d : X \to \Delta$ is a homeomorphism.
+\end{proof}
+\end{solution}
+
+\vspace{1em}
+
+% --------------------------------------------------------
+% PROBLEM 9
+% --------------------------------------------------------
+\begin{problem}
+Let $X$ and $Y$ be topological spaces, and let $f, g : X \to Y$ be continuous maps. Assume that $Y$ is a Hausdorff space. Prove the following statements:
+\begin{enumerate}[label=(\roman*)]
+    \item The coincidence set $E = \{x \in X \mid f(x) = g(x)\}$ is closed in $X$.
+    \item If $D$ is a dense subset of $X$ and $f|_D = g|_D$, then $f = g$ on all of $X$.
+    \item The graph of $f$, defined as $\Gamma_f = \{(x, f(x)) \in X \times Y \mid x \in X\}$, is closed in the product space $X \times Y$.
+    \item Assume that $f : X \to Y$ is a continuous, open, and surjective map. Then the fiber relation set $R = \{(x_1, x_2) \in X \times X \mid f(x_1) = f(x_2)\}$ is closed in $X \times X$ if and only if $Y$ is Hausdorff.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\subsection*{Part (i)}
+\begin{proof}
+Define $h : X \to Y \times Y$ by $h(x) = (f(x), g(x))$. Since $f$ and $g$ are continuous, $h$ is continuous.
+Because $Y$ is Hausdorff, the diagonal $\Delta_Y = \{(y,y) \in Y \times Y\}$ is closed in $Y \times Y$ by Problem 8(i).
+Notice that:
+\[
+x \in E \iff f(x) = g(x) \iff (f(x), g(x)) \in \Delta_Y \iff x \in h^{-1}(\Delta_Y)
+\]
+Thus $E = h^{-1}(\Delta_Y)$. Since $\Delta_Y$ is closed and $h$ is continuous, $E$ is closed in $X$.
+\end{proof}
+
+\subsection*{Part (ii)}
+\begin{proof}
+Consider the coincidence set $E = \{x \in X \mid f(x) = g(x)\}$. By part (i), $E$ is closed in $X$.
+Since $f|_D = g|_D$, we have $D \subseteq E$.
+Taking closures gives $\overline{D} \subseteq \overline{E} = E$.
+Since $D$ is dense in $X$, $\overline{D} = X$. Therefore $X \subseteq E$, which means $E = X$, so $f(x) = g(x)$ for all $x \in X$.
+\end{proof}
+
+\subsection*{Part (iii)}
+\begin{proof}
+Define $F : X \times Y \to Y \times Y$ by $F(x, y) = (f(x), y)$.
+$F$ is continuous because its component maps $f \circ p_1$ and $p_2$ are continuous.
+Since $Y$ is Hausdorff, $\Delta_Y$ is closed in $Y \times Y$.
+Notice that:
+\[
+(x, y) \in \Gamma_f \iff y = f(x) \iff (f(x), y) \in \Delta_Y \iff F(x, y) \in \Delta_Y
+\]
+Thus $\Gamma_f = F^{-1}(\Delta_Y)$. Since $F$ is continuous and $\Delta_Y$ is closed, $\Gamma_f$ is closed in $X \times Y$.
+\end{proof}
+
+\subsection*{Part (iv)}
+\begin{proof}
+Consider the product map $f \times f : X \times X \to Y \times Y$ defined by $(f \times f)(x_1, x_2) = (f(x_1), f(x_2))$.
+Since $f$ is continuous, open, and surjective, $f \times f$ is also continuous, open, and surjective.
+Notice that $R = (f \times f)^{-1}(\Delta_Y)$.
+
+\smallskip
+$(\impliedby)$ If $Y$ is Hausdorff, $\Delta_Y$ is closed in $Y \times Y$. By continuity of $f \times f$, $R = (f \times f)^{-1}(\Delta_Y)$ is closed in $X \times X$.
+
+\smallskip
+$(\implies)$ Suppose $R$ is closed in $X \times X$.
+Since $f \times f$ is surjective, $(f \times f)(R) = \Delta_Y$. Taking complements yields:
+\[
+(Y \times Y) \setminus \Delta_Y = (f \times f)\big( (X \times X) \setminus R \big)
+\]
+Since $R$ is closed, $(X \times X) \setminus R$ is open. Because $f \times f$ is an open map, $(Y \times Y) \setminus \Delta_Y$ is open in $Y \times Y$, which means $\Delta_Y$ is closed in $Y \times Y$. By Problem 8(i), $Y$ is Hausdorff.
+\end{proof}
+\end{solution}
+
+\vspace{1em}
+
+% --------------------------------------------------------
+% PROBLEM 10
+% --------------------------------------------------------
+\begin{problem}
+Let $X$ be a topological space and $A \subset X$ be dense in $X$. Let $Y$ be a Hausdorff space and $f : A \to Y$ be a continuous map. Show that if $f$ may be extended to a continuous map $g : X \to Y$, then $g$ is uniquely determined by $f$.
+\end{problem}
+
+\begin{solution}
+\begin{proof}
+Suppose $g_1, g_2 : X \to Y$ are two continuous extensions of $f : A \to Y$, so $g_1|_A = f$ and $g_2|_A = f$.
+
+\begin{enumerate}[label=\arabic*.]
+    \item Since $g_1|_A = g_2|_A = f$, the maps $g_1$ and $g_2$ agree on the subset $A \subseteq X$.
+    \item $A$ is dense in $X$, and $Y$ is a Hausdorff space.
+    \item By \textbf{Problem 9(ii)}, if two continuous functions from $X$ into a Hausdorff space $Y$ agree on a dense subset $A \subseteq X$, they must agree on all of $X$.
+\end{enumerate}
+Therefore, $g_1(x) = g_2(x)$ for all $x \in X$, proving that the continuous extension $g$ is uniquely determined by $f$.
+\end{proof}
+\end{solution}
+
+\end{document}

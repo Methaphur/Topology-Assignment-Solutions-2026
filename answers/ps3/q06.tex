@@ -1,0 +1,58 @@
+% Source: Solutions/Pula Karan-PS3-Q6-10.tex (typed LaTeX), Problem 6
+% Student's \subsection* headings -> \paragraph.
+\submittedby{Pula Karan}
+
+We analyze the subspace topology on $L$ under both product topologies.
+
+\paragraph{Part 1: Subspace Topology inherited from $\mathbb{R}_l\times\mathbb{R}$.}
+A basis for $\mathbb{R}_l\times\mathbb{R}$ consists of rectangles of the form
+$[a,b)\times(c,d)$ with $a<b$ and $c<d$.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Vertical Line ($L: x=k$):}
+    For any $(k,y_0)\in L$, a basic open neighborhood in $\mathbb{R}_l\times\mathbb{R}$ is
+    $U=[k,k+\epsilon)\times(y_0-\epsilon,y_0+\epsilon)$. Intersecting $U$ with $L$ yields:
+    \[ U\cap L=\{k\}\times(y_0-\epsilon,y_0+\epsilon) \]
+    This traces open intervals along the $y$-axis. Thus, $L$ inherits the
+    \textbf{standard Euclidean topology} ($\mathbb{R}$).
+
+  \item \textbf{Horizontal Line ($L: y=k$):}
+    For any $(x_0,k)\in L$, a basic open neighborhood in $\mathbb{R}_l\times\mathbb{R}$ is
+    $U=[x_0,x_0+\epsilon)\times(k-\epsilon,k+\epsilon)$. Intersecting $U$ with $L$ yields:
+    \[ U\cap L=[x_0,x_0+\epsilon)\times\{k\} \]
+    This traces right-half-open intervals along the $x$-axis. Thus, $L$ inherits the
+    \textbf{lower limit topology} ($\mathbb{R}_l$).
+
+  \item \textbf{Non-Vertical Line ($L: y=mx+k$, $m\neq0$):}
+    For any $(x_0,y_0)\in L$, consider basic open sets
+    $U=[x_0,x_0+\epsilon)\times(y_0-\delta,y_0+\delta)$.
+    \begin{itemize}
+      \item If $m>0$, as $x$ increases from $x_0$, $y$ increases from $y_0$. For sufficiently
+            small $\delta>0$, $U\cap L$ isolates points corresponding to
+            $x\in[x_0,x_0+\delta/m)$.
+      \item If $m<0$, as $x$ increases from $x_0$, $y$ decreases from $y_0$. Intersecting
+            $[x_0,x_0+\epsilon)$ with $(y_0-\delta,y_0+\delta)$ again isolates points
+            corresponding to $x\in[x_0,x_0+\delta/|m|)$.
+    \end{itemize}
+    In both cases, basic open sets induce half-open intervals $[x_0,x_0+r)$ along $L$. Thus,
+    $L$ inherits the \textbf{lower limit topology} ($\mathbb{R}_l$).
+\end{enumerate}
+
+\paragraph{Part 2: Subspace Topology inherited from $\mathbb{R}_l\times\mathbb{R}_l$ (Sorgenfrey Plane).}
+A basis for $\mathbb{R}_l\times\mathbb{R}_l$ consists of half-open rectangles of the form
+$[a,b)\times[c,d)$.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Vertical ($x=k$), Horizontal ($y=k$), and Positive Slope ($y=mx+k$, $m>0$):}
+    For any $(x_0,y_0)\in L$, intersecting $[x_0,x_0+\epsilon)\times[y_0,y_0+\epsilon')$ with
+    $L$ isolates points corresponding to $[x_0,x_0+\delta)$ where
+    $\delta=\min(\epsilon,\epsilon'/m)$ for $m>0$ (or $\epsilon$ if vertical/horizontal). Thus,
+    $L$ inherits the \textbf{lower limit topology} ($\mathbb{R}_l$).
+
+  \item \textbf{Oblique Line with Negative Slope ($y=mx+k$, $m<0$):}
+    Let $(x_0,y_0)\in L$ and consider $U=[x_0,x_0+\epsilon)\times[y_0,y_0+\epsilon)$.
+    For any $x>x_0$, $y=mx+k<mx_0+k=y_0$, so $(x,y)\notin U$.
+    For $x<x_0$, $x\notin[x_0,x_0+\epsilon)$, so $(x,y)\notin U$.
+    Therefore, $U\cap L=\{(x_0,y_0)\}$. Since every singleton is open, $L$ inherits the
+    \textbf{discrete topology}.
+\end{enumerate}

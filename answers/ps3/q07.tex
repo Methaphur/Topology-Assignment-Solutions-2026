@@ -1,0 +1,39 @@
+% Source: Solutions/Pula Karan-PS3-Q6-10.tex (typed LaTeX), Problem 7
+% REVIEW: the conclusion "(i) is strictly finer than (ii) = (iii)" looks wrong. The argument
+%         only handles basic sets (a,b)x(c,d) inside (0,1)^2. E.g. U = I x (1/2, 1] is open
+%         in (ii)/(iii), but every order-interval around (1/2, 1) contains points (x', 0)
+%         with x' > 1/2, so U is not open in I_o^2. Hence (i) and (ii)=(iii) appear to be
+%         incomparable. Kept as written.
+\submittedby{Pula Karan}
+
+Let $I=[0,1]$. We compare the three topologies on $I^2=[0,1]\times[0,1]$:
+
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Topologies (ii) and (iii) are identical
+        ($\T_{\text{sub}}=\T_{\text{prod}}$):}
+    \begin{itemize}
+      \item Topology (ii) is the subspace topology inherited from the Euclidean product
+            topology on $\mathbb{R}^2$. Basis elements are of the form $(U\times V)\cap I^2$,
+            where $U,V\subseteq\mathbb{R}$ are open intervals.
+      \item Topology (iii) is the product topology on $I\times I$, where each factor $I$
+            carries the subspace topology from $\mathbb{R}$. Basis elements are of the form
+            $(U\cap I)\times(V\cap I)=(U\times V)\cap I^2$.
+    \end{itemize}
+    Since their bases coincide, Topologies (ii) and (iii) are identical.
+
+  \item \textbf{Topology (i) ($I_o^2$) is strictly finer than Topologies (ii) and (iii):}
+    The ordered square $I_o^2$ is equipped with the dictionary order topology
+    $\le_{\text{dic}}$.
+    \begin{itemize}
+      \item \emph{Euclidean $\subseteq$ Dictionary Order}: Any standard Euclidean basic open
+            set $U=(a,b)\times(c,d)\subset(0,1)^2$ can be written as:
+            \[ U=\bigcup_{x_0\in(a,b)}\Big(\{x_0\}\times(c,d)\Big)
+                =\bigcup_{x_0\in(a,b)}\Big((x_0,c),(x_0,d)\Big)_{\text{dic}} \]
+            Since each vertical interval $\{x_0\}\times(c,d)$ is open in the dictionary order
+            topology, $U$ is open in $I_o^2$.
+      \item \emph{Strict Containment}: Sets of the form $\{x_0\}\times(c,d)$ for
+            $0<c<d<1$ are open in $I_o^2$. However, they contain no 2D Euclidean open ball,
+            so they are not open in the standard topology on $I^2$.
+    \end{itemize}
+\end{enumerate}
+\textbf{Conclusion:} $\text{Topology (ii)}=\text{Topology (iii)}\subsetneq\text{Topology (i)}$.

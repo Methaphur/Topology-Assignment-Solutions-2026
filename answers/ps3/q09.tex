@@ -1,0 +1,51 @@
+% Source: Solutions/Pula Karan-PS3-Q6-10.tex (typed LaTeX), Problem 9
+% (the student's cross-references "Problem 8(i)" are renumbered to "Problem 3.8(i)")
+\submittedby{Pula Karan}
+
+\paragraph{Part (i).}
+\begin{proof}
+Define $h\colon X\to Y\times Y$ by $h(x)=(f(x),g(x))$. Since $f$ and $g$ are continuous, $h$ is
+continuous. Because $Y$ is Hausdorff, the diagonal $\Delta_Y=\{(y,y)\in Y\times Y\}$ is closed
+in $Y\times Y$ by Problem 3.8(i). Notice that:
+\[ x\in E\iff f(x)=g(x)\iff(f(x),g(x))\in\Delta_Y\iff x\in h^{-1}(\Delta_Y) \]
+Thus $E=h^{-1}(\Delta_Y)$. Since $\Delta_Y$ is closed and $h$ is continuous, $E$ is closed in
+$X$.
+\end{proof}
+
+\paragraph{Part (ii).}
+\begin{proof}
+Consider the coincidence set $E=\{x\in X\mid f(x)=g(x)\}$. By part (i), $E$ is closed in $X$.
+Since $f|_D=g|_D$, we have $D\subseteq E$. Taking closures gives
+$\overline{D}\subseteq\overline{E}=E$. Since $D$ is dense in $X$, $\overline{D}=X$. Therefore
+$X\subseteq E$, which means $E=X$, so $f(x)=g(x)$ for all $x\in X$.
+\end{proof}
+
+\paragraph{Part (iii).}
+\begin{proof}
+Define $F\colon X\times Y\to Y\times Y$ by $F(x,y)=(f(x),y)$. $F$ is continuous because its
+component maps $f\circ p_1$ and $p_2$ are continuous. Since $Y$ is Hausdorff, $\Delta_Y$ is
+closed in $Y\times Y$. Notice that:
+\[ (x,y)\in\Gamma_f\iff y=f(x)\iff(f(x),y)\in\Delta_Y\iff F(x,y)\in\Delta_Y \]
+Thus $\Gamma_f=F^{-1}(\Delta_Y)$. Since $F$ is continuous and $\Delta_Y$ is closed, $\Gamma_f$
+is closed in $X\times Y$.
+\end{proof}
+
+\paragraph{Part (iv).}
+\begin{proof}
+Consider the product map $f\times f\colon X\times X\to Y\times Y$ defined by
+$(f\times f)(x_1,x_2)=(f(x_1),f(x_2))$. Since $f$ is continuous, open, and surjective,
+$f\times f$ is also continuous, open, and surjective. Notice that
+$R=(f\times f)^{-1}(\Delta_Y)$.
+
+\smallskip
+$(\impliedby)$ If $Y$ is Hausdorff, $\Delta_Y$ is closed in $Y\times Y$. By continuity of
+$f\times f$, $R=(f\times f)^{-1}(\Delta_Y)$ is closed in $X\times X$.
+
+\smallskip
+$(\implies)$ Suppose $R$ is closed in $X\times X$. Since $f\times f$ is surjective,
+$(f\times f)(R)=\Delta_Y$. Taking complements yields:
+\[ (Y\times Y)\setminus\Delta_Y=(f\times f)\big((X\times X)\setminus R\big) \]
+Since $R$ is closed, $(X\times X)\setminus R$ is open. Because $f\times f$ is an open map,
+$(Y\times Y)\setminus\Delta_Y$ is open in $Y\times Y$, which means $\Delta_Y$ is closed in
+$Y\times Y$. By Problem 3.8(i), $Y$ is Hausdorff.
+\end{proof}
