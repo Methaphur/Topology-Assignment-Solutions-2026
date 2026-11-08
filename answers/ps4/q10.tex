@@ -1,0 +1,40 @@
+\submittedby{Harisankar B}
+
+Let $Z=(X\times Y)\setminus(A\times B)$. We use two standard facts:
+\begin{enumerate}[label=(\alph*)]
+  \item For fixed $x\in X$ the map $y\mapsto(x,y)$ is an embedding of $Y$ onto $\{x\}\times Y$
+        (Problem 4.1); hence $\{x\}\times Y$ is connected. Likewise $X\times\{y\}$ is connected
+        for every $y\in Y$.
+  \item A union of connected subspaces having a point in common is connected; in particular, the
+        union of two connected subspaces that intersect is connected.
+\end{enumerate}
+
+\begin{proof}
+Since $A\subsetneq X$ and $B\subsetneq Y$, we can fix $x_0\in X\setminus A$ and
+$y_0\in Y\setminus B$. Note that a point $(x,y)$ lies in $A\times B$ only if $x\in A$
+\emph{and} $y\in B$; hence
+\[ Z=\{(x,y)\in X\times Y : x\notin A \text{ or } y\notin B\}. \]
+
+For $x\in X\setminus A$ and $y\in Y\setminus B$ define
+\[ T_x=(\{x\}\times Y)\cup(X\times\{y_0\}),\qquad S_y=(X\times\{y\})\cup(\{x_0\}\times Y). \]
+
+\emph{Each $T_x$ and $S_y$ lies in $Z$.} Points of $\{x\}\times Y$ have first coordinate
+$x\notin A$; points of $X\times\{y_0\}$ have second coordinate $y_0\notin B$. Similarly for
+$S_y$, using $y\notin B$ and $x_0\notin A$.
+
+\emph{Each $T_x$ and $S_y$ is connected.} $T_x$ is the union of the connected sets
+$\{x\}\times Y$ and $X\times\{y_0\}$ (fact (a)), which meet at $(x,y_0)$; so $T_x$ is connected
+by fact (b). Likewise $S_y$ is the union of the connected sets $X\times\{y\}$ and
+$\{x_0\}\times Y$, which meet at $(x_0,y)$.
+
+\emph{They share a common point.} Every $T_x$ contains $X\times\{y_0\}\ni(x_0,y_0)$, and every
+$S_y$ contains $\{x_0\}\times Y\ni(x_0,y_0)$.
+
+\emph{They cover $Z$.} If $(x,y)\in Z$ with $x\notin A$, then $(x,y)\in\{x\}\times Y\subseteq T_x$;
+if $y\notin B$, then $(x,y)\in X\times\{y\}\subseteq S_y$.
+
+Therefore
+\[ Z=\bigcup_{x\in X\setminus A}T_x\;\cup\bigcup_{y\in Y\setminus B}S_y \]
+is a union of connected subspaces all containing the point $(x_0,y_0)$, and hence $Z$ is
+connected by fact (b).
+\end{proof}

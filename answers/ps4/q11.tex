@@ -1,0 +1,39 @@
+\submittedby{Harisankar B}
+
+We use the following characterisation of separations (Munkres, Lemma~23.1):
+\emph{if $W$ is a subspace of $X$, then a separation of $W$ is a pair of disjoint non-empty
+sets whose union is $W$, neither of which contains a limit point (in $X$) of the other.}
+We also use that if $Y$ is connected and $W=C\cup D$ is a separation with $Y\subseteq W$, then
+$Y$ lies entirely in $C$ or entirely in $D$.
+
+\begin{proof}
+We show that $Y\cup A$ is connected; the argument for $Y\cup B$ is identical with $A$ and $B$
+interchanged.
+
+Suppose, for contradiction, that $C,D$ form a separation of $Y\cup A$. Since $Y$ is connected,
+$Y$ lies entirely in one of them; say $Y\subseteq C$. Then $D\subseteq(Y\cup A)\setminus Y
+\subseteq A$. We claim that
+\[ X=(C\cup B)\cup D \]
+is a separation of $X$.
+
+\emph{Union and disjointness.} $C\cup D=Y\cup A$ and $A\cup B=X\setminus Y$, so
+$(C\cup B)\cup D=Y\cup A\cup B=X$. Moreover $D\cap C=\emptyset$, and
+$D\cap B\subseteq A\cap B=\emptyset$.
+
+\emph{Non-emptiness.} $D\neq\emptyset$ and $C\neq\emptyset$, as $C,D$ is a separation; hence
+$C\cup B\neq\emptyset$.
+
+\emph{No limit points across.} By Lemma~23.1 applied to the separations $C,D$ of $Y\cup A$ and
+$A,B$ of $X\setminus Y$:
+\begin{itemize}
+  \item $D$ contains no limit point of $C$, and $C$ contains no limit point of $D$;
+  \item $A$ contains no limit point of $B$, and $B$ contains no limit point of $A$.
+\end{itemize}
+Since $D\subseteq A$, the set $D$ contains no limit point of $B$; so $D$ contains no limit point
+of $C\cup B$ (a limit point of a union is a limit point of one of the sets). Also every limit
+point of $D$ is a limit point of $A$, so $B$ contains no limit point of $D$; together with the
+first bullet, $C\cup B$ contains no limit point of $D$.
+
+By Lemma~23.1, $C\cup B$ and $D$ form a separation of $X$, contradicting the connectedness of
+$X$. Hence $Y\cup A$ is connected, and similarly $Y\cup B$ is connected.
+\end{proof}

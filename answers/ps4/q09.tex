@@ -1,0 +1,24 @@
+\submittedby{Harisankar B}
+
+Recall that $\Bd A=\cl{A}\cap\cl{X\setminus A}$, and that
+$X\setminus\cl{X\setminus A}=\Int A$ and $X\setminus\cl{A}=\Int(X\setminus A)$.
+
+\begin{proof}
+Suppose, for contradiction, that $C\cap\Bd A=\emptyset$. Consider the two sets
+\[ P=C\cap\Int A,\qquad Q=C\cap(X\setminus\cl{A}). \]
+Both $\Int A$ and $X\setminus\cl{A}$ are open in $X$, so $P$ and $Q$ are open in the subspace
+$C$. They are disjoint, since $\Int A\subseteq A\subseteq\cl{A}$.
+
+\emph{$P\cup Q=C$.} Let $c\in C$. If $c\in\cl{A}$, then $c\notin\Bd A$ forces
+$c\notin\cl{X\setminus A}$, i.e.\ $c\in\Int A$, so $c\in P$. Otherwise $c\in X\setminus\cl{A}$,
+so $c\in Q$.
+
+\emph{$P\neq\emptyset$.} Pick $a\in C\cap A$. Then $a\in\cl{A}$, and as above $a\notin\Bd A$
+gives $a\in\Int A$; hence $a\in P$.
+
+\emph{$Q\neq\emptyset$.} Pick $b\in C\cap(X\setminus A)$. Then $b\in\cl{X\setminus A}$, and
+$b\notin\Bd A$ forces $b\notin\cl{A}$; hence $b\in Q$.
+
+Thus $P,Q$ form a separation of $C$, contradicting the connectedness of $C$. Therefore
+$C\cap\Bd A\neq\emptyset$.
+\end{proof}
