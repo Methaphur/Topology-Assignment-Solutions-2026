@@ -1,0 +1,28 @@
+% Source: Solutions/Aaditya-PS4-Q5-8.tex (typed LaTeX), Problem 5
+\submittedby{Aaditya}
+
+\textbf{Proof.}
+
+(1) By the triangle inequality, for every $s\in S$,
+\[ d(x,s)\leq d(x,y)+d(y,s). \]
+Taking the infimum over $s\in S$, we get
+\[ d(x,S)\leq d(x,y)+d(y,S). \]
+Thus,
+\[ d(x,S)-d(y,S)\leq d(x,y). \]
+Interchanging $x$ and $y$ gives
+\[ d(y,S)-d(x,S)\leq d(x,y). \]
+Therefore,
+\[ \boxed{|d(x,S)-d(y,S)|\leq d(x,y).} \]
+
+(2) Let $x_0\in X$ and $\varepsilon>0$. Choose $\delta=\varepsilon$.
+
+If $d(x,x_0)<\delta$, then by (1),
+\[
+\begin{aligned}
+|f_S(x)-f_S(x_0)|
+&=|d(x,S)-d(x_0,S)|\\
+&\leq d(x,x_0)\\
+&<\varepsilon.
+\end{aligned}
+\]
+Hence, $f_S$ is continuous on $X$. \hfill $\square$

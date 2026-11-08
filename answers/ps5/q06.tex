@@ -1,0 +1,47 @@
+% Source: Solutions/Prabhu-PS5-Q5-6.pdf, p. 2 (typed)
+% REVIEW: "U is an open cover of A" in the first part -- K is meant (A is only introduced in
+%         the example); kept as written.
+\submittedby{Prabhu}
+
+\begin{proof}
+Let $(X,d)$ be a metric space and let $K\subseteq X$ be compact.
+
+We know that every metric space is Hausdorff and a compact subspace of a Hausdorff space is
+closed. Since $X$ is a metric space it is Hausdorff. And $K$ is a compact subspace of $X$, thus
+it is \emph{closed} in $X$.
+
+Let $a\in X$. Consider the collection
+\[ \mathcal{U}:=\{B(a,n):n\in\N\}, \]
+where
+\[ B(a,n):=\{x\in X:d(x,a)<n\}. \]
+For all $x\in K$, $d(x,a)$ is finite; so, $\exists\,n\in\N$ such that $d(x,a)<n$; i.e.,
+$x\in B(a,n)$. Thus, $\mathcal{U}$ is an open cover of $A$.
+
+Since $K$ is compact, there exists a finite subcover $\{B(a,n_1),\dots,B(a,n_m)\}$. Therefore,
+\[ K\subseteq\bigcup_{i=1}^m B(a,n_i). \]
+Let $N:=\max\{n_1,n_2,\dots,n_m\}$. Since $B(a,n_i)\subseteq B(a,N)$ for every $i$, we get
+\[ K\subseteq\bigcup_{i=1}^m B(a,n_i)\subseteq B(a,N). \]
+Therefore, $K$ is \emph{bounded}. Hence,
+\[ \boxed{K \text{ is closed and bounded.}} \]
+\end{proof}
+
+\textbf{Example:}
+Consider the metric space $X:=(0,1)$ with the usual metric ($\because d(x,y):=|x-y|$), and let
+$A:=X$. Clearly, $A$ is closed ($\because$ it is the entire space) and bounded
+($\because \forall x\in A,\ 0<x<1$) in $X$.
+
+However, consider the collection
+\[ \mathcal{U}=\left\{\left(\frac1n,1\right):n\in\N,\ n\ge2\right\}. \]
+Each member of $\mathcal{U}$ is open in the subspace $(0,1)$. And,
+\[ (0,1)=\bigcup_{n=2}^\infty\left(\frac1n,1\right). \]
+Thus, $\mathcal{U}$ is an open cover of $A$.
+
+For every finite subcollection
+$\left\{\left(\frac1{n_1},1\right),\left(\frac1{n_2},1\right),\dots,\left(\frac1{n_k},1\right)\right\}$,
+let $N=\max\{n_1,n_2,\dots,n_k\}$. Since $n_i\le N$ for every $i=1,\dots,k$, we have
+\[ \left(\frac1{n_i},1\right)\subseteq\left(\frac1N,1\right). \]
+Therefore,
+\[ \bigcup_{i=1}^k\left(\frac1{n_i},1\right)\subseteq\left(\frac1N,1\right)\subsetneq(0,1). \]
+It cannot cover $(0,1)$, since points in $(0,1/N]$ remain uncovered. Hence, $\mathcal{U}$ has no
+finite subcover. Therefore,
+\[ \boxed{(0,1) \text{ is closed and bounded but not compact in } (0,1).} \]

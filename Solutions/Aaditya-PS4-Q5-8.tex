@@ -1,0 +1,271 @@
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Rw}{\mathbb{R}^{\omega}}
+\newcommand{\Rl}{\mathbb{R}_{\ell}}
+\newcommand{\Bdd}{\mathcal{B}}
+\newcommand{\Unb}{\mathcal{U}}
+
+\newtheorem*{problem}{Problem}
+
+\begin{document}
+
+\begin{center}
+    {\Large\textbf{Solutions to Problems 5--8}}
+\end{center}
+
+%---------------- PROBLEM 5 ----------------
+
+\begin{problem}
+Let $(X,d)$ be a metric space and let
+$S\subseteq X$ be non-empty. Define
+\[
+d(x,S)=\inf_{s\in S}d(x,s).
+\]
+\begin{enumerate}[label=(\arabic*)]
+    \item Show that
+    \[
+    |d(x,S)-d(y,S)|\leq d(x,y).
+    \]
+    \item Prove that $f_S:X\to\R$, defined by
+    $f_S(x)=d(x,S)$, is continuous.
+\end{enumerate}
+\end{problem}
+
+\textbf{Proof.}
+
+(1) By the triangle inequality, for every $s\in S$,
+\[
+d(x,s)\leq d(x,y)+d(y,s).
+\]
+Taking the infimum over $s\in S$, we get
+\[
+d(x,S)\leq d(x,y)+d(y,S).
+\]
+Thus,
+\[
+d(x,S)-d(y,S)\leq d(x,y).
+\]
+Interchanging $x$ and $y$ gives
+\[
+d(y,S)-d(x,S)\leq d(x,y).
+\]
+Therefore,
+\[
+\boxed{|d(x,S)-d(y,S)|\leq d(x,y).}
+\]
+
+(2) Let $x_0\in X$ and $\varepsilon>0$.
+Choose $\delta=\varepsilon$.
+
+If $d(x,x_0)<\delta$, then by (1),
+\[
+\begin{aligned}
+|f_S(x)-f_S(x_0)|
+&=|d(x,S)-d(x_0,S)|\\
+&\leq d(x,x_0)\\
+&<\varepsilon.
+\end{aligned}
+\]
+Hence, $f_S$ is continuous on $X$.
+\hfill $\square$
+
+\vspace{0.5cm}
+
+%---------------- PROBLEM 6 ----------------
+
+\begin{problem}
+Let $\{A_n\}_{n\in\N}$ be a sequence of connected
+subspaces of $X$ such that
+\[
+A_n\cap A_{n+1}\neq\emptyset
+\quad\text{for all }n\in\N.
+\]
+Prove that $\displaystyle\bigcup_{n=1}^{\infty}A_n$
+is connected.
+\end{problem}
+
+\textbf{Proof.}
+
+Let
+\[
+A=\bigcup_{n=1}^{\infty}A_n.
+\]
+Suppose, for contradiction, that $A$ is disconnected.
+Then
+\[
+A=U\cup V,
+\]
+where $U,V$ are non-empty, disjoint and open in $A$.
+
+Since each $A_n$ is connected and
+\[
+A_n=(A_n\cap U)\cup(A_n\cap V),
+\]
+we must have
+\[
+A_n\subseteq U
+\quad\text{or}\quad
+A_n\subseteq V.
+\]
+
+Without loss of generality, let $A_1\subseteq U$.
+
+Since $A_1\cap A_2\neq\emptyset$, there exists
+$p\in A_1\cap A_2$. Thus $p\in U$, so
+$A_2\not\subseteq V$. Consequently,
+$A_2\subseteq U$.
+
+Repeating this argument inductively, we obtain
+\[
+A_n\subseteq U
+\quad\text{for every }n\in\N.
+\]
+
+Therefore,
+\[
+A=\bigcup_{n=1}^{\infty}A_n\subseteq U,
+\]
+contradicting $V\neq\emptyset$.
+
+Hence,
+\[
+\boxed{\bigcup_{n=1}^{\infty}A_n
+\text{ is connected.}}
+\]
+\hfill $\square$
+
+\vspace{0.5cm}
+
+%---------------- PROBLEM 7 ----------------
+
+\begin{problem}
+Determine whether or not $\Rw$ is connected
+under the uniform topology.
+\end{problem}
+
+\textbf{Proof.}
+
+The uniform metric is
+\[
+\bar{\rho}(x,y)
+=\sup_n\min\{|x_n-y_n|,1\}.
+\]
+
+Define
+\[
+\Bdd=
+\left\{x\in\Rw:\sup_n|x_n|<\infty\right\}
+\]
+and
+\[
+\Unb=\Rw\setminus\Bdd.
+\]
+
+We show that both sets are open.
+
+First, observe that
+\[
+\bar{\rho}(x,y)<1
+\implies |x_n-y_n|<1
+\quad\forall n.
+\]
+
+\textbf{Claim 1: $\Bdd$ is open.}
+
+Let $x\in\Bdd$. Then $|x_n|\leq M$ for
+some $M>0$ and all $n$.
+
+If $\bar{\rho}(x,y)<1$, then
+\[
+|y_n|\leq |x_n|+|y_n-x_n|<M+1.
+\]
+Hence $y\in\Bdd$, proving that $\Bdd$ is open.
+
+\textbf{Claim 2: $\Unb$ is open.}
+
+Let $x\in\Unb$ and suppose
+$\bar{\rho}(x,y)<1$.
+
+If $y$ were bounded, say $|y_n|\leq M$,
+then
+\[
+|x_n|\leq |y_n|+|x_n-y_n|<M+1.
+\]
+This contradicts the fact that $x$ is unbounded.
+
+Thus $y\in\Unb$, proving that $\Unb$ is open.
+
+Finally, $\Bdd$ and $\Unb$ are disjoint,
+non-empty, and
+\[
+\Bdd\cup\Unb=\Rw.
+\]
+
+Therefore, they form a separation of $\Rw$.
+Hence,
+\[
+\boxed{\Rw\text{ is not connected.}}
+\]
+\hfill $\square$
+
+\vspace{0.5cm}
+
+%---------------- PROBLEM 8 ----------------
+
+\begin{problem}
+Determine whether or not the lower limit topology
+$\Rl$ on $\R$ is connected.
+\end{problem}
+
+\textbf{Proof.}
+
+The lower limit topology has the basis
+\[
+\mathcal{B}=\{[a,b):a<b\}.
+\]
+
+Consider
+\[
+U=(-\infty,0),\qquad V=[0,\infty).
+\]
+
+We show that both sets are open.
+
+If $x\in U$, then
+\[
+x\in[x,0)\subseteq U.
+\]
+Since $[x,0)$ is a basis element, $U$ is open.
+
+Similarly, if $x\in V$, then
+\[
+x\in[x,x+1)\subseteq V.
+\]
+Thus, $V$ is also open.
+
+Moreover,
+\[
+U\cap V=\emptyset,
+\qquad U\cup V=\R.
+\]
+
+Both sets are non-empty. Therefore, $(U,V)$
+forms a separation of $\Rl$.
+
+Hence,
+\[
+\boxed{\Rl\text{ is not connected.}}
+\]
+\hfill $\square$
+
+\end{document}

@@ -1,0 +1,25 @@
+% Source: Solutions/Prabhu-PS5-Q5-6.pdf, p. 1 (typed)
+\submittedby{Prabhu}
+
+\begin{proof}
+Suppose $\T_1$ and $\T_2$ are comparable. Without loss of generality, let
+\[ \T_1\subseteq\T_2. \]
+Consider the identity map
+\[ I\colon(X,\T_2)\to(X,\T_1),\qquad I(x):=x. \]
+Clearly, $I$ is \emph{bijective}.
+
+For all $U\in\T_1$, we have
+\[ I^{-1}(U)=U\in\T_2. \]
+Hence, $I$ is \emph{continuous}.
+
+Since $I$ is a bijective continuous map from a compact space to a Hausdorff space, $I$ is a
+\emph{homeomorphism}. So, $I^{-1}$ is also continuous.
+
+Thus, for all $U\in\T_2$, we have
+\[ (I^{-1})^{-1}(U)=I(U)=U\in\T_1. \]
+Hence,
+\[ \T_2\subseteq\T_1. \]
+Therefore,
+\[ \boxed{\T_1=\T_2.} \]
+Hence, either $\T_1=\T_2$ or they are not comparable.
+\end{proof}

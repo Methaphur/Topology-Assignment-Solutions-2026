@@ -1,0 +1,24 @@
+% Source: Solutions/Sahil-PS1-Q6-10.pdf, p. 3 (typed)
+\submittedby{Sahil}
+
+Let $X\neq\varnothing$ and fix $a\in X$. Define
+\[ \T_a^e=\{V\subseteq X : V=X \text{ or } a\notin V\}. \]
+Thus the open sets are $X$ itself and all subsets of $X$ that do not contain $a$. We verify the
+topology axioms.
+
+\textbf{(i) Empty set and whole space.} Since $a\notin\varnothing$, we have
+$\varnothing\in\T_a^e$. Also $X\in\T_a^e$ by definition.
+
+\textbf{(ii) Arbitrary unions.} Let $\{V_i\}_{i\in I}$ be any family in $\T_a^e$. If some
+$V_j=X$, then $\bigcup_{i\in I}V_i=X$. If no member equals $X$, then every $V_i$ omits $a$.
+Consequently, their union also omits $a$:
+\[ a\notin V_i \text{ for all } i\in I\quad\Longrightarrow\quad a\notin\bigcup_{i\in I}V_i. \]
+In either case the union belongs to $\T_a^e$.
+
+\textbf{(iii) Finite intersections.} Again it is enough to consider two sets. Let
+$U,V\in\T_a^e$. If both equal $X$, then $U\cap V=X$. Otherwise, at least one of them, say $U$,
+is not $X$. By the definition of the collection, $a\notin U$. Since $U\cap V\subseteq U$, the
+intersection also omits $a$. Hence $U\cap V\in\T_a^e$.
+
+All three topology axioms are satisfied. Therefore
+\[ \boxed{\T_a^e \text{ is a topology on } X.} \]

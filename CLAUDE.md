@@ -73,6 +73,9 @@ The PS3 PDF's header misprints "Problem Set 2", so students may label PS3 answer
 | File | Filed as | Notes |
 |---|---|---|
 | `Arunodaya-PS2-Q1-5.pdf` | PS3 Q1–5 | Filename and heading say PS2, but the content is PS3. The user confirmed PS3. Handwritten. |
+| `Aaditya-PS4-Q5-8.tex` | PS4 Q5–8 | A LaTeX source, not a PDF; .tex submissions are allowed. Student macros were expanded inline. |
+| `Prabhu-PS5-Q5-6.pdf` | PS5 Q5–6 | Typed.  |
+| `Sahil-PS1-Q6-10.pdf` | PS1 Q6–10 | Typed. His preface paragraph (the definition of a topology) opens `ps1/q06.tex`. |
 
 ## Version control (Git)
 - The project is a Git repository on branch `main`. `build/` is ignored. The compiled `Topology_Assignment_Solutions_B23.pdf` **is** tracked, so every commit carries the matching PDF.

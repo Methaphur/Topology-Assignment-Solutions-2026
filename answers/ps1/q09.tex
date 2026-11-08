@@ -1,0 +1,21 @@
+% Source: Solutions/Sahil-PS1-Q6-10.pdf, p. 3 (typed)
+\submittedby{Sahil}
+
+Let $X\neq\varnothing$ and fix $a\in X$. Define
+\[ \T_a=\{V\subseteq X : V=\varnothing \text{ or } a\in V\}. \]
+We check the topology axioms.
+
+\textbf{(i) Empty set and whole space.} By definition, $\varnothing\in\T_a$. Also $a\in X$, so
+$X\in\T_a$.
+
+\textbf{(ii) Arbitrary unions.} Let $\{V_i\}_{i\in I}$ be any family in $\T_a$. If every $V_i$
+is empty, then $\bigcup_{i\in I}V_i=\varnothing$. Otherwise, at least one member, say $V_j$, is
+nonempty. Since $V_j\in\T_a$, it contains $a$. Therefore $a\in\bigcup_{i\in I}V_i$, so the union
+belongs to $\T_a$.
+
+\textbf{(iii) Finite intersections.} It is enough to check intersections of two members, since
+repeated application gives the result for every finite intersection. Let $U,V\in\T_a$. If either
+set is empty, then $U\cap V=\varnothing\in\T_a$. If neither is empty, both contain $a$, and hence
+$a\in U\cap V$. Thus $U\cap V\in\T_a$.
+
+All three axioms hold. Therefore \fbox{$\T_a$ is a topology on $X$.}

@@ -17,6 +17,7 @@
 \usepackage[most]{tcolorbox}
 \usepackage{fancyhdr}
 \usepackage{pgffor}
+\usepackage{needspace}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
 \usepackage{bookmark}
 
@@ -67,22 +68,14 @@
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
 % Right header = the problem (and solver) running at the TOP of the page, so the later pages
-% of a long solution keep showing its solver. On the first page of a problem set (where
-% \problemset sets an empty mark) the right header is left blank.
+% of a long solution keep showing its solver. Every \problem ends with an empty mark, so if
+% the page starts with a fresh problem the top mark is blank and the first mark is shown.
 \ExplSyntaxOn
 \cs_new:Npn \tasrighthead
   {
-    \IfMarksEqualTF{2e-right}{top}{first}
+    \tl_if_blank:eTF { \TopMark{2e-right} }
+      { \FirstMark{2e-right} }
       { \TopMark{2e-right} }
-      {
-        \tl_if_blank:eTF { \FirstMark{2e-right} }
-          { }
-          {
-            \tl_if_blank:eTF { \TopMark{2e-right} }
-              { \FirstMark{2e-right} }
-              { \TopMark{2e-right} }
-          }
-      }
   }
 \ExplSyntaxOff
 
@@ -134,6 +127,7 @@
 \newcommand{\problem}[3]{%
   \def\tas@currentproblem{#1.#2}%
   \bigskip
+  \needspace{8\baselineskip}% keep heading with its statement
   \phantomsection
   \subsection*{Problem #1.#2}%
   \addcontentsline{toc}{subsection}{Problem #1.#2%
@@ -144,7 +138,8 @@
   \IfFileExists{answers/ps#1/q\tas@twodigit{#2}.tex}%
     {\input{answers/ps#1/q\tas@twodigit{#2}.tex}}%
     {\pendingbox}%
-  \par}
+  \par
+  \markright{}}% end-of-problem mark (see \tasrighthead)
 
 % \submittedby{<Full Name>} -- first line of every answer file
 \newcommand{\submittedby}[1]{%

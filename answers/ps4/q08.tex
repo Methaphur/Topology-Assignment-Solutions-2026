@@ -1,0 +1,30 @@
+% Source: Solutions/Aaditya-PS4-Q5-8.tex (typed LaTeX), Problem 8
+% (student macro expanded: \Rl = \R_\ell)
+\submittedby{Aaditya}
+
+\textbf{Proof.}
+
+The lower limit topology has the basis
+\[ \mathcal{B}=\{[a,b):a<b\}. \]
+
+Consider
+\[ U=(-\infty,0),\qquad V=[0,\infty). \]
+
+We show that both sets are open.
+
+If $x\in U$, then
+\[ x\in[x,0)\subseteq U. \]
+Since $[x,0)$ is a basis element, $U$ is open.
+
+Similarly, if $x\in V$, then
+\[ x\in[x,x+1)\subseteq V. \]
+Thus, $V$ is also open.
+
+Moreover,
+\[ U\cap V=\emptyset,\qquad U\cup V=\R. \]
+
+Both sets are non-empty. Therefore, $(U,V)$ forms a separation of $\R_{\ell}$.
+
+Hence,
+\[ \boxed{\R_{\ell}\text{ is not connected.}} \]
+\hfill $\square$

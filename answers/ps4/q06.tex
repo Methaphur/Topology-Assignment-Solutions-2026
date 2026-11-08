@@ -1,0 +1,31 @@
+% Source: Solutions/Aaditya-PS4-Q5-8.tex (typed LaTeX), Problem 6
+\submittedby{Aaditya}
+
+\textbf{Proof.}
+
+Let
+\[ A=\bigcup_{n=1}^{\infty}A_n. \]
+Suppose, for contradiction, that $A$ is disconnected. Then
+\[ A=U\cup V, \]
+where $U,V$ are non-empty, disjoint and open in $A$.
+
+Since each $A_n$ is connected and
+\[ A_n=(A_n\cap U)\cup(A_n\cap V), \]
+we must have
+\[ A_n\subseteq U\quad\text{or}\quad A_n\subseteq V. \]
+
+Without loss of generality, let $A_1\subseteq U$.
+
+Since $A_1\cap A_2\neq\emptyset$, there exists $p\in A_1\cap A_2$. Thus $p\in U$, so
+$A_2\not\subseteq V$. Consequently, $A_2\subseteq U$.
+
+Repeating this argument inductively, we obtain
+\[ A_n\subseteq U\quad\text{for every }n\in\N. \]
+
+Therefore,
+\[ A=\bigcup_{n=1}^{\infty}A_n\subseteq U, \]
+contradicting $V\neq\emptyset$.
+
+Hence,
+\[ \boxed{\bigcup_{n=1}^{\infty}A_n\text{ is connected.}} \]
+\hfill $\square$

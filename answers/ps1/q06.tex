@@ -1,0 +1,43 @@
+% Source: Solutions/Sahil-PS1-Q6-10.pdf, p. 1 (typed). The opening convention paragraph is
+% the preface of Sahil's whole submission (Q6-10).
+\submittedby{Sahil}
+
+Throughout, a topology on a set $X$ is a collection $\T\subseteq\Pow(X)$ such that
+(1) $\varnothing,X\in\T$, (2) arbitrary unions of members of $\T$ belong to $\T$, and
+(3) finite intersections of members of $\T$ belong to $\T$.
+
+Let
+\[ A_n=\{1,2,\dots,n\},\qquad B_n=\N\setminus A_n\quad(n\ge1). \]
+Then the two collections in the question can be written as
+\[ \T_1=\{\varnothing,\N\}\cup\{A_n:n\ge1\},\qquad \T_2=\{\varnothing,\N\}\cup\{B_n:n\ge1\}. \]
+We verify the topology axioms separately.
+
+\textbf{(a) The collection $\T_1$ is a topology.} Clearly, $\varnothing,\N\in\T_1$. For finite
+intersections, observe that
+\[ A_m\cap A_n=A_{\min\{m,n\}}. \]
+Intersections with $\varnothing$ or $\N$ also belong to $\T_1$. Thus $\T_1$ is closed under
+finite intersections.
+
+Now let $\{U_i\}_{i\in I}$ be any family of members of $\T_1$. If every $U_i$ is empty, then
+$\bigcup_{i\in I}U_i=\varnothing$. If at least one $U_i=\N$, the union is $\N$. In the remaining
+case, the nonempty sets in the family are of the form $A_n$. If their indices are unbounded in
+$\N$, then every positive integer belongs to some $A_n$, so their union is $\N$. If their
+indices are bounded, they have a largest value $m$ (a nonempty bounded subset of $\N$ has a
+maximum), and the union is $A_m$. In every case the union belongs to $\T_1$. Hence $\T_1$ is a
+topology on $\N$.
+
+\textbf{(b) The collection $\T_2$ is a topology.} Clearly, $\varnothing,\N\in\T_2$. For finite
+intersections, De Morgan's law gives
+\[ B_m\cap B_n=(\N\setminus A_m)\cap(\N\setminus A_n)=\N\setminus(A_m\cup A_n)=B_{\max\{m,n\}}. \]
+Intersections involving $\varnothing$ or $\N$ also remain in $\T_2$.
+
+Consider an arbitrary family $\{U_i\}_{i\in I}\subseteq\T_2$. If one member is $\N$, its union
+is $\N$. If every member is empty, its union is empty. Otherwise, discard the empty members and
+write the remaining members as $B_{n_i}$. The set of indices
+$\{n_i : i\in I,\ U_i\neq\varnothing\}$ is a nonempty subset of $\N$, so it has a least element,
+say $m$. Since the sets $B_n$ increase as $n$ decreases, we have
+\[ \bigcup_{i\in I}B_{n_i}=B_m. \]
+Indeed, $B_m$ is one of the sets in the union and contains every $B_{n_i}$ because $m\le n_i$.
+Thus the union belongs to $\T_2$. Therefore $\T_2$ is also a topology on $\N$.
+
+\textbf{Conclusion:} Both $\T_1$ and $\T_2$ define topologies on $\N$.

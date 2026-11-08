@@ -1,0 +1,43 @@
+% Source: Solutions/Aaditya-PS4-Q5-8.tex (typed LaTeX), Problem 7
+% (student macros expanded: \Rw = \R^\omega, \Bdd = \mathcal{B}, \Unb = \mathcal{U})
+\submittedby{Aaditya}
+
+\textbf{Proof.}
+
+The uniform metric is
+\[ \bar{\rho}(x,y)=\sup_n\min\{|x_n-y_n|,1\}. \]
+
+Define
+\[ \mathcal{B}=\left\{x\in\R^{\omega}:\sup_n|x_n|<\infty\right\} \]
+and
+\[ \mathcal{U}=\R^{\omega}\setminus\mathcal{B}. \]
+
+We show that both sets are open.
+
+First, observe that
+\[ \bar{\rho}(x,y)<1\implies |x_n-y_n|<1\quad\forall n. \]
+
+\textbf{Claim 1: $\mathcal{B}$ is open.}
+
+Let $x\in\mathcal{B}$. Then $|x_n|\leq M$ for some $M>0$ and all $n$.
+
+If $\bar{\rho}(x,y)<1$, then
+\[ |y_n|\leq |x_n|+|y_n-x_n|<M+1. \]
+Hence $y\in\mathcal{B}$, proving that $\mathcal{B}$ is open.
+
+\textbf{Claim 2: $\mathcal{U}$ is open.}
+
+Let $x\in\mathcal{U}$ and suppose $\bar{\rho}(x,y)<1$.
+
+If $y$ were bounded, say $|y_n|\leq M$, then
+\[ |x_n|\leq |y_n|+|x_n-y_n|<M+1. \]
+This contradicts the fact that $x$ is unbounded.
+
+Thus $y\in\mathcal{U}$, proving that $\mathcal{U}$ is open.
+
+Finally, $\mathcal{B}$ and $\mathcal{U}$ are disjoint, non-empty, and
+\[ \mathcal{B}\cup\mathcal{U}=\R^{\omega}. \]
+
+Therefore, they form a separation of $\R^{\omega}$. Hence,
+\[ \boxed{\R^{\omega}\text{ is not connected.}} \]
+\hfill $\square$
