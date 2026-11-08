@@ -1,0 +1,64 @@
+% Source: Solutions/Ansh-PS1-Q1-5.pdf, pp. 3-4 (typed). Restated problem statement omitted.
+\submittedby{Ansh}
+
+Recall that a collection $\T\subseteq\Pow(X)$ is a topology on $X$ if and only if:
+(T1) $\emptyset,X\in\T$; (T2) $\T$ is closed under arbitrary unions; and (T3) $\T$ is closed
+under finite intersections.
+
+\paragraph{Part (i): $\T_1=\{\emptyset,\{a\},\{b\},X\}$.}
+\begin{itemize}
+  \item \textbf{Axiom (T1):} Satisfied, since $\emptyset\in\T_1$ and $X\in\T_1$.
+  \item \textbf{Axiom (T2) (Arbitrary Unions): Violated.} Taking the union of $\{a\}\in\T_1$
+        and $\{b\}\in\T_1$ yields
+        \[ \{a\}\cup\{b\}=\{a,b\}\notin\T_1. \]
+  \item \textbf{Axiom (T3) (Finite Intersections):} Satisfied, since
+        $\{a\}\cap\{b\}=\emptyset\in\T_1$, and the intersection of any element of $\T_1$ with
+        $\emptyset$, $X$, or itself remains in $\T_1$.
+  \item \textbf{Conclusion:} $\T_1$ is \textbf{not a valid topology} on $X$ because it
+        violates the \textbf{closure under unions axiom (T2)}.
+\end{itemize}
+
+\paragraph{Part (ii): $\T_2=\{\emptyset,\{a\},\{a,b\},X\}$.}
+Observe that the sets in $\T_2$ form a strictly nested chain under set inclusion:
+\[ \emptyset\subsetneq\{a\}\subsetneq\{a,b\}\subsetneq\{a,b,c\}=X. \]
+\begin{itemize}
+  \item \textbf{Axiom (T1):} Satisfied, since $\emptyset\in\T_2$ and $X\in\T_2$.
+  \item \textbf{Axiom (T2) (Arbitrary Unions):} Satisfied. Because $\T_2$ is finite and
+        totally ordered by inclusion ($U\subseteq V$ or $V\subseteq U$ for all
+        $U,V\in\T_2$), the union of any non-empty subcollection of $\T_2$ equals the largest
+        element of that subcollection, which belongs to $\T_2$ (and the empty union is
+        $\emptyset\in\T_2$). Explicitly, the only non-trivial pairwise union is
+        $\{a\}\cup\{a,b\}=\{a,b\}\in\T_2$.
+  \item \textbf{Axiom (T3) (Finite Intersections):} Satisfied. For any non-empty finite
+        subcollection of $\T_2$, its intersection equals the smallest element in that
+        subcollection, which belongs to $\T_2$. Explicitly,
+        $\{a\}\cap\{a,b\}=\{a\}\in\T_2$.
+  \item \textbf{Conclusion:} $\T_2$ \textbf{is a valid topology} on $X$.
+\end{itemize}
+
+\paragraph{Part (iii): $\T_3=\{\emptyset,\{a,b\},\{b,c\},X\}$.}
+\begin{itemize}
+  \item \textbf{Axiom (T1):} Satisfied, since $\emptyset\in\T_3$ and $X\in\T_3$.
+  \item \textbf{Axiom (T2) (Arbitrary Unions):} Satisfied, because
+        $\{a,b\}\cup\{b,c\}=\{a,b,c\}=X\in\T_3$, and any union involving $\emptyset$, $X$,
+        or a single set remains in $\T_3$.
+  \item \textbf{Axiom (T3) (Finite Intersections): Violated.} Taking the intersection of
+        $\{a,b\}\in\T_3$ and $\{b,c\}\in\T_3$ yields
+        \[ \{a,b\}\cap\{b,c\}=\{b\}\notin\T_3. \]
+  \item \textbf{Conclusion:} $\T_3$ is \textbf{not a valid topology} on $X$ because it
+        violates the \textbf{closure under finite intersections axiom (T3)}.
+\end{itemize}
+
+\begin{center}
+\small
+\begin{tabular}{@{}lllll@{}}
+  \toprule
+  \textbf{Collection} & \textbf{(T1)} & \textbf{(T2) Unions} & \textbf{(T3) Intersections}
+    & \textbf{Topology?} \\
+  \midrule
+  (i) $\T_1$   & Holds & Fails ($\{a\}\cup\{b\}=\{a,b\}\notin\T_1$) & Holds & \textbf{No} \\
+  (ii) $\T_2$  & Holds & Holds & Holds & \textbf{Yes} \\
+  (iii) $\T_3$ & Holds & Holds & Fails ($\{a,b\}\cap\{b,c\}=\{b\}\notin\T_3$) & \textbf{No} \\
+  \bottomrule
+\end{tabular}
+\end{center}

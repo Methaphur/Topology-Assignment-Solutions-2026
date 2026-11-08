@@ -1,0 +1,58 @@
+% Source: Solutions/Ansh-PS1-Q1-5.pdf, pp. 2-3 (typed). Restated problem statement omitted.
+\submittedby{Ansh}
+
+\textbf{Answer.} No, $\tau_\infty$ is not a topology on $X$. It violates both the first axiom
+($X\in\tau_\infty$) and the second axiom (closure under arbitrary unions; in fact, it even fails
+closure under finite unions).
+
+\textbf{Justification.} For $\tau_\infty$ to be a topology on $X$, it must satisfy the three
+standard topological axioms:
+\begin{itemize}
+  \item[(T1)] $\emptyset\in\tau_\infty$ and $X\in\tau_\infty$;
+  \item[(T2)] $\tau_\infty$ is closed under arbitrary unions;
+  \item[(T3)] $\tau_\infty$ is closed under finite intersections.
+\end{itemize}
+We examine each axiom in turn:
+
+\textbf{1. Violation of Axiom (T1) ($X\notin\tau_\infty$).} By explicit definition,
+$\emptyset\in\tau_\infty$. However, consider the whole space $U=X$. Since $X$ is an infinite
+set, $X\neq\emptyset$. Furthermore, the complement of $X$ in $X$ is
+\[ X\setminus X=\emptyset, \]
+which has cardinality $0$ and is therefore a finite set, not an infinite set. Because $U=X$
+neither equals $\emptyset$ nor has an infinite complement in $X$, we have
+\[ X\notin\tau_\infty. \]
+Thus, Axiom (T1) is violated.
+
+\textbf{2. Violation of Axiom (T2) (Failure of closure under unions).} Even if one were to
+adjoin $X$ to the collection, $\tau_\infty$ fails to be closed under arbitrary unions---and
+even fails under the union of two sets:
+\begin{itemize}
+  \item \textbf{Counterexample via arbitrary unions of singletons:} For any element $x\in X$,
+        consider the singleton $U_x=\{x\}$. Since $X$ is infinite, removing a single element
+        leaves an infinite set, so $X\setminus\{x\}$ is infinite and $\{x\}\in\tau_\infty$
+        for every $x\in X$. Fix a point $x_0\in X$ and consider the union
+        \[ U:=\bigcup_{x\in X\setminus\{x_0\}}\{x\}=X\setminus\{x_0\}. \]
+        Since $X$ is infinite, $U=X\setminus\{x_0\}$ is non-empty (and $U\neq X$). Yet its
+        complement is $X\setminus U=\{x_0\}$, which is a finite set of cardinality $1$.
+        Therefore, $U\notin\tau_\infty$.
+  \item \textbf{Counterexample via a finite union of two sets:} Since $X$ is infinite, $X$
+        contains a countably infinite subset $C=\{x_1,x_2,x_3,\dots\}$ with $x_i\neq x_j$ for
+        $i\neq j$. Partition $C$ into the set of even-indexed elements
+        $E=\{x_2,x_4,x_6,\dots\}$ and odd-indexed elements $O=\{x_1,x_3,x_5,\dots\}$, both of
+        which are infinite. Define
+        \[ U_1:=X\setminus(E\cup\{x_1\})\quad\text{and}\quad U_2:=X\setminus O. \]
+        Then $X\setminus U_1=E\cup\{x_1\}$ is infinite, so $U_1\in\tau_\infty$; similarly,
+        $X\setminus U_2=O$ is infinite, so $U_2\in\tau_\infty$. However, by De Morgan's laws,
+        \[ U_1\cup U_2=X\setminus\big((E\cup\{x_1\})\cap O\big)=X\setminus\{x_1\}. \]
+        Since $U_1\cup U_2=X\setminus\{x_1\}\neq\emptyset$ and its complement
+        $X\setminus(U_1\cup U_2)=\{x_1\}$ is finite (of size $1$), we have
+        $U_1\cup U_2\notin\tau_\infty$. (Moreover, taking $V_1=X\setminus E\in\tau_\infty$ and
+        $V_2=X\setminus O\in\tau_\infty$ gives $V_1\cup V_2=X\notin\tau_\infty$.)
+\end{itemize}
+
+\textbf{3. Remark on Axiom (T3) (Closure under finite intersections holds).} For completeness,
+note that if $U_1,U_2\in\tau_\infty$, then either one of them is $\emptyset$ (so
+$U_1\cap U_2=\emptyset\in\tau_\infty$) or both $X\setminus U_1$ and $X\setminus U_2$ are
+infinite, in which case $X\setminus(U_1\cap U_2)=(X\setminus U_1)\cup(X\setminus U_2)$ contains
+$X\setminus U_1$ and is therefore infinite, so $U_1\cap U_2\in\tau_\infty$. Nevertheless,
+because Axioms (T1) and (T2) fail, $\tau_\infty$ is not a topology on $X$.

@@ -1,0 +1,48 @@
+% Source: Solutions/Ansh-PS1-Q1-5.pdf, pp. 5-6 (typed). Restated problem statement omitted.
+\submittedby{Ansh}
+
+\begin{proof}
+Let $(X,\tau)$ be a topological space, let $U\subseteq X$ be an open set in $X$, and let
+$V\subseteq X$ be a closed set in $X$.
+
+First, recall that for any two subsets $A,B\subseteq X$, the set difference $A\setminus B$ is
+given by the identity
+\[ A\setminus B=\{x\in X\mid x\in A\text{ and }x\notin B\}=A\cap(X\setminus B). \]
+Furthermore, by the definition of a closed set in a topological space, a subset $F\subseteq X$
+is closed in $X$ if and only if its complement $X\setminus F$ is open in $X$.
+
+\paragraph{Part I: Proof that $U\setminus V$ is open in $X$.}
+Applying the set-difference identity to $U\setminus V$, we have
+\[ U\setminus V=U\cap(X\setminus V). \]
+Since $V$ is closed in $X$, its complement $X\setminus V$ is open in $X$ by definition. By
+hypothesis, $U$ is also open in $X$. By the finite intersection axiom of a topology, the
+intersection of two open sets in $X$ is open in $X$. Therefore, $U\setminus V=U\cap(X\setminus V)$
+is open in $X$.
+
+\paragraph{Part II: Proof that $V\setminus U$ is closed in $X$.}
+We provide both a direct proof from the open-set axioms via De Morgan's laws and a dual proof
+via closed-set intersections:
+
+\textbf{Method 1 (Direct proof via De Morgan's Laws).} To show that $V\setminus U$ is closed in
+$X$, it suffices by definition to prove that its complement $X\setminus(V\setminus U)$ is open
+in $X$. Using $V\setminus U=V\cap(X\setminus U)$ and De Morgan's laws, we compute:
+\begin{align*}
+  X\setminus(V\setminus U) &= X\setminus\big(V\cap(X\setminus U)\big)\\
+                           &= (X\setminus V)\cup\big(X\setminus(X\setminus U)\big)\\
+                           &= (X\setminus V)\cup U.
+\end{align*}
+Since $V$ is closed in $X$, its complement $X\setminus V$ is open in $X$. By hypothesis, $U$ is
+also open in $X$. Because a topology is closed under unions, $(X\setminus V)\cup U$ is open in
+$X$. Consequently, $X\setminus(V\setminus U)$ is open in $X$, which by definition means that
+$V\setminus U$ is closed in $X$.
+
+\textbf{Method 2 (Via intersections of closed sets).} Using the set-difference identity, we
+write
+\[ V\setminus U=V\cap(X\setminus U). \]
+Since $U$ is open in $X$ and $X\setminus(X\setminus U)=U$, the set $X\setminus U$ is closed in
+$X$. We are also given that $V$ is closed in $X$. Since the intersection of any two closed sets
+in $X$ is closed in $X$, it follows immediately that $V\setminus U=V\cap(X\setminus U)$ is
+closed in $X$.
+
+This completes the proof of both statements.
+\end{proof}

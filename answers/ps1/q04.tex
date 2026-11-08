@@ -1,0 +1,33 @@
+% Source: Solutions/Ansh-PS1-Q1-5.pdf, p. 5 (typed). Restated problem statement omitted.
+\submittedby{Ansh}
+
+\begin{proof}
+Let $(X,\tau)$ be a topological space and let $A\subseteq X$. We prove both directions of the
+biconditional statement.
+
+\textbf{Forward Direction ($\Longrightarrow$).} Suppose that $A$ is open in $X$, so $A\in\tau$.
+Let $x\in A$ be arbitrary. Choose $U:=A$. Since $A$ is open in $X$, $U$ is an open set in $X$,
+and by reflexivity of set inclusion ($A\subseteq A$), we immediately have
+\[ x\in U\subseteq A. \]
+Thus, for each $x\in A$, there exists an open set $U$ in $X$ such that $x\in U\subseteq A$.
+
+\textbf{Reverse Direction ($\Longleftarrow$).} Conversely, suppose that for every $x\in A$,
+there exists an open set $U_x\in\tau$ such that $x\in U_x\subseteq A$. We claim that
+\[ A=\bigcup_{x\in A}U_x. \]
+We establish this set equality by proving mutual inclusion:
+\begin{enumerate}
+  \item \emph{Proof that $A\subseteq\bigcup_{x\in A}U_x$:} Let $y\in A$ be arbitrary. By
+        hypothesis, the corresponding open set $U_y$ satisfies $y\in U_y$. Since $U_y$ is one
+        of the sets in the indexed family $\{U_x\}_{x\in A}$, it follows from the definition
+        of the union that $y\in\bigcup_{x\in A}U_x$. Hence, $A\subseteq\bigcup_{x\in A}U_x$.
+        (Note that if $A=\emptyset$, the empty union is $\emptyset$, so the inclusion holds
+        vacuously.)
+  \item \emph{Proof that $\bigcup_{x\in A}U_x\subseteq A$:} Let $y\in\bigcup_{x\in A}U_x$ be
+        arbitrary. By definition of the union, there exists some index $x_0\in A$ such that
+        $y\in U_{x_0}$. By hypothesis, $U_{x_0}\subseteq A$, which implies $y\in A$. Hence,
+        $\bigcup_{x\in A}U_x\subseteq A$.
+\end{enumerate}
+Combining both inclusions yields $A=\bigcup_{x\in A}U_x$. Because each $U_x$ is an open set in
+$X$ and a topology $\tau$ is closed under arbitrary unions, we conclude that
+$A=\bigcup_{x\in A}U_x\in\tau$; that is, $A$ is open in $X$.
+\end{proof}

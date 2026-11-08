@@ -1,0 +1,68 @@
+% Source: Solutions/Ansh-PS1-Q1-5.pdf, pp. 1-2 (typed). Restated problem statement omitted.
+% REVIEW: the remark "including A = emptyset ... so no map g: emptyset -> P(emptyset) exists at
+%         all" is wrong -- there is exactly one map (the empty function); it is simply not
+%         surjective, since P(emptyset) = {emptyset} is non-empty. Kept as written.
+\submittedby{Ansh}
+
+\begin{proof}
+We establish both claims rigorously using Cantor's diagonalization argument, and we also show
+how the non-existence of an injection follows directly from the non-existence of a surjection.
+
+\paragraph{Part I: Non-existence of a surjective map $g\colon A\to\Pow(A)$.}
+Suppose, for the sake of contradiction, that there exists a surjective function
+$g\colon A\to\Pow(A)$. Define the diagonal subset $B\subseteq A$ by
+\[ B:=\{x\in A\mid x\notin g(x)\}. \]
+Note that this construction is well-defined for every set $A$ (including $A=\emptyset$, in
+which case $\Pow(\emptyset)=\{\emptyset\}\neq\emptyset$, so no map
+$g\colon\emptyset\to\Pow(\emptyset)$ exists at all).
+
+Since $B\subseteq A$, we have $B\in\Pow(A)$. Because $g$ is assumed to be surjective, there
+exists at least one element $x_0\in A$ such that
+\[ g(x_0)=B. \]
+By the law of excluded middle, either $x_0\in B$ or $x_0\notin B$. We examine both cases:
+\begin{enumerate}[label=(\alph*)]
+  \item \emph{Case 1 ($x_0\in B$):} By the defining property of $B$, an element $x\in A$
+        belongs to $B$ if and only if $x\notin g(x)$. Consequently,
+        $x_0\in B\implies x_0\notin g(x_0)$. However, since $g(x_0)=B$, this implies
+        $x_0\notin B$, contradicting our assumption that $x_0\in B$.
+  \item \emph{Case 2 ($x_0\notin B$):} Since $g(x_0)=B$, the assumption $x_0\notin B$ means
+        $x_0\notin g(x_0)$. By the definition of $B$, any element of $A$ satisfying
+        $x_0\notin g(x_0)$ must belong to $B$; hence $x_0\in B$, contradicting our assumption
+        that $x_0\notin B$.
+\end{enumerate}
+In both cases we arrive at the logical contradiction $x_0\in B\iff x_0\notin B$. Therefore,
+our initial assumption is false, and no surjective map $g\colon A\to\Pow(A)$ exists.
+
+\paragraph{Part II: Non-existence of an injective map $f\colon\Pow(A)\to A$.}
+We provide two independent proofs of this result.
+
+\textbf{Method 1 (Direct Diagonal Proof).} Suppose, for the sake of contradiction, that there
+exists an injective map $f\colon\Pow(A)\to A$. Consider the subset $C\subseteq A$ defined by
+\[ C:=\{f(S)\in A\mid S\in\Pow(A)\text{ and }f(S)\notin S\}. \]
+Since $C\subseteq A$, we have $C\in\Pow(A)$. Let $c:=f(C)\in A$. We ask whether $c\in C$ or
+$c\notin C$:
+\begin{enumerate}[label=(\alph*)]
+  \item \emph{Case 1 ($c\in C$):} By definition of $C$, there exists some subset
+        $S\in\Pow(A)$ such that $c=f(S)$ and $f(S)\notin S$. Since $f(C)=c=f(S)$ and $f$ is
+        injective, it follows that $C=S$. Substituting $S=C$ into $f(S)\notin S$ yields
+        $c=f(C)\notin C$, a contradiction.
+  \item \emph{Case 2 ($c\notin C$):} Since $c=f(C)$, the statement $c\notin C$ is equivalent to
+        $f(C)\notin C$. Taking $S=C\in\Pow(A)$ in the defining condition for $C$, we see that
+        $f(C)$ satisfies the membership criterion for $C$, which implies $c=f(C)\in C$, a
+        contradiction.
+\end{enumerate}
+Thus, in both cases we obtain a contradiction. Hence, no injective map $f\colon\Pow(A)\to A$
+can exist.
+
+\textbf{Method 2 (Reduction to Part I).} Suppose $f\colon\Pow(A)\to A$ is injective. Since
+$\Pow(A)$ is always non-empty (as $\emptyset\in\Pow(A)$), its image $f(\Pow(A))\subseteq A$ is
+non-empty, which implies $A\neq\emptyset$. Define a map $g\colon A\to\Pow(A)$ by
+\[ g(a):=\begin{cases}
+  S & \text{if } a=f(S) \text{ for some } S\in\Pow(A),\\
+  \emptyset & \text{if } a\notin f(\Pow(A)).
+\end{cases} \]
+Because $f$ is injective, for each $a\in f(\Pow(A))$ the preimage $S\in\Pow(A)$ with $f(S)=a$
+is unique; thus $g$ is a well-defined function. Moreover, for every $S\in\Pow(A)$, we have
+$g(f(S))=S$, showing that $g\colon A\to\Pow(A)$ is surjective. This directly contradicts
+Part I. Therefore, no injective map $f\colon\Pow(A)\to A$ exists.
+\end{proof}
