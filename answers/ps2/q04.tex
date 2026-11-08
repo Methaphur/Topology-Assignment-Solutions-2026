@@ -1,0 +1,41 @@
+\submittedby{Harisankar B}
+
+\paragraph{(i)(a)} Let $A_0\subseteq A_1$ and $y\in f(A_0)$. Then $y=f(a)$ with
+$a\in A_0\subseteq A_1$, so $y\in f(A_1)$.
+
+\paragraph{(i)(b)} We have
+\begin{align*}
+y\in f(A_0\cup A_1)
+&\iff y=f(a) \text{ for some } a\in A_0 \text{ or some } a\in A_1\\
+&\iff y\in f(A_0) \text{ or } y\in f(A_1)
+\iff y\in f(A_0)\cup f(A_1).
+\end{align*}
+
+\paragraph{(ii)(a)} Since $A_0\cap A_1\subseteq A_0$ and $A_0\cap A_1\subseteq A_1$, part (i)(a)
+gives $f(A_0\cap A_1)\subseteq f(A_0)$ and $f(A_0\cap A_1)\subseteq f(A_1)$, hence
+$f(A_0\cap A_1)\subseteq f(A_0)\cap f(A_1)$.
+
+\paragraph{(ii)(b)} Let $y\in f(A_0)\setminus f(A_1)$. Then $y=f(a)$ for some $a\in A_0$. If
+$a\in A_1$ we would have $y\in f(A_1)$, which is false; so $a\in A_0\setminus A_1$ and
+$y\in f(A_0\setminus A_1)$.
+
+\emph{The reverse inclusions fail in general.} Let $f\colon\{1,2\}\to\{0\}$ be the constant
+map, $A_0=\{1\}$, $A_1=\{2\}$. Then $f(A_0\cap A_1)=f(\emptyset)=\emptyset$, while
+$f(A_0)\cap f(A_1)=\{0\}$; and $f(A_0)\setminus f(A_1)=\emptyset$, while
+$f(A_0\setminus A_1)=f(\{1\})=\{0\}$.
+
+\paragraph{(iii)} Suppose $f$ is injective.
+\begin{itemize}
+  \item Let $y\in f(A_0)\cap f(A_1)$, say $y=f(a_0)=f(a_1)$ with $a_0\in A_0$, $a_1\in A_1$.
+        Injectivity gives $a_0=a_1\in A_0\cap A_1$, so $y\in f(A_0\cap A_1)$. With (ii)(a),
+        $f(A_0\cap A_1)=f(A_0)\cap f(A_1)$.
+  \item Let $y\in f(A_0\setminus A_1)$, say $y=f(a)$ with $a\in A_0$, $a\notin A_1$. If
+        $y\in f(A_1)$, then $y=f(a')$ for some $a'\in A_1$, and injectivity gives
+        $a=a'\in A_1$, a contradiction. So $y\in f(A_0)\setminus f(A_1)$. With (ii)(b),
+        $f(A_0)\setminus f(A_1)=f(A_0\setminus A_1)$.
+\end{itemize}
+
+Conversely, suppose equality holds in (ii)(a) and (ii)(b) for all $A_0,A_1\subseteq A$, and
+suppose $f(x)=f(x')$ with $x\neq x'$. Take $A_0=\{x\}$, $A_1=\{x'\}$. Then
+$f(A_0\cap A_1)=f(\emptyset)=\emptyset$, but $f(A_0)\cap f(A_1)=\{f(x)\}\neq\emptyset$,
+contradicting equality in (ii)(a). Hence $f$ is injective.

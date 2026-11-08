@@ -1,0 +1,31 @@
+\submittedby{Harisankar B}
+
+Throughout, recall that $x\in f^{-1}(C)$ if and only if $f(x)\in C$.
+
+\paragraph{(i)} Let $B_0\subseteq B_1$ and $x\in f^{-1}(B_0)$. Then $f(x)\in B_0\subseteq B_1$,
+so $x\in f^{-1}(B_1)$. Hence $f^{-1}(B_0)\subseteq f^{-1}(B_1)$.
+
+\paragraph{(ii)} For $x\in A$,
+\begin{align*}
+x\in f^{-1}(B_0\cup B_1)
+&\iff f(x)\in B_0 \text{ or } f(x)\in B_1\\
+&\iff x\in f^{-1}(B_0) \text{ or } x\in f^{-1}(B_1)
+\iff x\in f^{-1}(B_0)\cup f^{-1}(B_1).
+\end{align*}
+
+\paragraph{(iii)} For $x\in A$,
+\begin{align*}
+x\in f^{-1}(B_0\cap B_1)
+&\iff f(x)\in B_0 \text{ and } f(x)\in B_1\\
+&\iff x\in f^{-1}(B_0) \text{ and } x\in f^{-1}(B_1)
+\iff x\in f^{-1}(B_0)\cap f^{-1}(B_1).
+\end{align*}
+
+\paragraph{(iv)} For $x\in A$,
+\begin{align*}
+x\in f^{-1}(B_0\setminus B_1)
+&\iff f(x)\in B_0 \text{ and } f(x)\notin B_1\\
+&\iff x\in f^{-1}(B_0) \text{ and } x\notin f^{-1}(B_1)
+\iff x\in f^{-1}(B_0)\setminus f^{-1}(B_1).
+\end{align*}
+In each of (ii)--(iv) the two sets have the same elements, so they are equal.

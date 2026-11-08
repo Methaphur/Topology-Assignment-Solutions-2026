@@ -1,0 +1,16 @@
+\submittedby{Harisankar B}
+
+We use the following observation repeatedly: if $S=A\times B$ and $(a,b),(a',b')\in S$, then
+$a,a'\in A$ and $b,b'\in B$, so also $(a,b'),(a',b)\in S$.
+
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Yes.} $\{(x,y)\mid x\in\Z\}=\Z\times\R$.
+  \item \textbf{Yes.} $\{(x,y)\mid 0\le x<1\}=[0,1)\times\R$.
+  \item \textbf{No.} Let $S=\{(x,y)\mid x<y\}$ and suppose $S=A\times B$. Since $(0,1)\in S$ we
+        get $1\in B$, and since $(1,2)\in S$ we get $1\in A$. Hence $(1,1)\in A\times B=S$,
+        i.e.\ $1<1$, a contradiction.
+  \item \textbf{Yes.} $\{(x,y)\mid x\in\Z,\ y\notin\Q\}=\Z\times(\R\setminus\Q)$.
+  \item \textbf{No.} Let $S=\{(x,y)\mid x^2+y^2\le 2026\}$, put $r=\sqrt{2026}$, and suppose
+        $S=A\times B$. Since $(r,0)\in S$ we get $r\in A$, and since $(0,r)\in S$ we get
+        $r\in B$. Hence $(r,r)\in S$, i.e.\ $2r^2=4052\le 2026$, a contradiction.
+\end{enumerate}

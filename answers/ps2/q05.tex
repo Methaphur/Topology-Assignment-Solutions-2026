@@ -1,0 +1,27 @@
+\submittedby{Harisankar B}
+
+For $P=(x,y)\in\R^2$ write $\lVert P\rVert=\sqrt{x^2+y^2}$ for its distance from the origin $O$.
+Thus $P\sim Q$ if and only if $\lVert P\rVert=\lVert Q\rVert$.
+
+\paragraph{(i)} Since $\sim$ is defined by equality of the real numbers $\lVert\cdot\rVert$, it
+inherits the properties of equality:
+\begin{itemize}
+  \item \emph{Reflexive:} $\lVert P\rVert=\lVert P\rVert$, so $P\sim P$.
+  \item \emph{Symmetric:} if $\lVert P\rVert=\lVert Q\rVert$ then $\lVert Q\rVert=\lVert P\rVert$,
+        so $P\sim Q\Rightarrow Q\sim P$.
+  \item \emph{Transitive:} if $\lVert P\rVert=\lVert Q\rVert$ and $\lVert Q\rVert=\lVert R\rVert$
+        then $\lVert P\rVert=\lVert R\rVert$, so $P\sim Q$, $Q\sim R\Rightarrow P\sim R$.
+\end{itemize}
+Hence $\sim$ is an equivalence relation.
+
+\paragraph{(ii)} Let $r=\lVert P\rVert\ge 0$. Then
+\[ [P]=\{Q\in\R^2\mid \lVert Q\rVert=r\}=\{(x,y)\in\R^2\mid x^2+y^2=r^2\}. \]
+If $P\neq O$ (so $r>0$), $[P]$ is the circle of radius $r$ centred at the origin passing
+through $P$. If $P=O$, then $[P]=\{O\}$, a single point (a ``circle of radius $0$'').
+
+\paragraph{(iii)} The equivalence classes partition $\R^2$ into the origin together with the
+family of concentric circles $\{x^2+y^2=r^2\}$, $r>0$, centred at the origin. Every point of
+the plane lies on exactly one such circle (the one of radius equal to its distance from $O$),
+and distinct radii give disjoint circles. The map $[P]\mapsto\lVert P\rVert$ is a bijection
+from the set of equivalence classes $\R^2/{\sim}$ onto $[0,\infty)$, so the classes are
+labelled exactly by the possible radii.

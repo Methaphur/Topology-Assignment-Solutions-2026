@@ -1,0 +1,22 @@
+\submittedby{Harisankar B}
+
+\paragraph{(i)} Let $a\in A_0$. Then $f(a)\in f(A_0)$, so $a\in f^{-1}(f(A_0))$. Hence
+$A_0\subseteq f^{-1}(f(A_0))$.
+
+Suppose $f$ is injective and let $x\in f^{-1}(f(A_0))$. Then $f(x)\in f(A_0)$, so
+$f(x)=f(a)$ for some $a\in A_0$. By injectivity $x=a\in A_0$. Thus
+$f^{-1}(f(A_0))\subseteq A_0$, and equality holds for every $A_0\subseteq A$.
+
+Conversely, suppose equality holds for every $A_0\subseteq A$, and let $f(x)=f(y)$. Taking
+$A_0=\{x\}$, we have $f(y)=f(x)\in f(\{x\})$, so
+$y\in f^{-1}(f(\{x\}))=\{x\}$, i.e.\ $y=x$. Hence $f$ is injective.
+
+\paragraph{(ii)} Let $y\in f(f^{-1}(B_0))$. Then $y=f(x)$ for some $x\in f^{-1}(B_0)$, i.e.\
+$f(x)\in B_0$. Hence $y\in B_0$, and $f(f^{-1}(B_0))\subseteq B_0$.
+
+Suppose $f$ is surjective and let $y\in B_0$. Choose $x\in A$ with $f(x)=y$. Then
+$f(x)\in B_0$, so $x\in f^{-1}(B_0)$ and $y=f(x)\in f(f^{-1}(B_0))$. Thus
+$B_0\subseteq f(f^{-1}(B_0))$, and equality holds for every $B_0\subseteq B$.
+
+Conversely, suppose equality holds for every $B_0\subseteq B$. Taking $B_0=B$ and using
+$f^{-1}(B)=A$, we get $f(A)=f(f^{-1}(B))=B$. Hence $f$ is surjective.
