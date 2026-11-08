@@ -1,0 +1,27 @@
+% Source: Solutions/Srijit-PS2-Q12-15.pdf, p. 1 (typed). Restated problem statement omitted.
+\submittedby{Srijit Bhadra}
+
+\emph{Solution:} We know,
+$\Int(A)\cap\Bd(A)=\Int(A)\cap\bar{A}\cap\overline{X\setminus A}$. For the sake of
+contradiction, assume there is a point
+$x\in\Int(A)\cap\Bd(A)\implies x\in\Int(A)\cap\bar{A}\cap\overline{X\setminus A}$. As
+$x\in\overline{X\setminus A}$, every neighbourhood of $x$ must intersect $X\setminus A$.
+% REVIEW: the next line should read Int(A) ∩ (X \ A) ≠ ∅ (no closure bar): Int(A) is an open
+%         neighbourhood of x, so it meets X \ A, contradicting Int(A) ⊆ A. With the bar,
+%         "impossible as Int(A) ⊆ A" does not follow directly. Kept as written.
+Thus, $\Int(A)\cap\overline{X\setminus A}\neq\emptyset$. But this is impossible as
+$\Int(A)\subseteq A$ ($\Rightarrow\!\Leftarrow$). Thus, $\Int(A)\cap\Bd(A)=\emptyset$.
+
+For the second part, let $x\in\bar{A}$. Again, this happens if and only if every neighborhood of
+$x$ intersects $A$. Now, either there exists a neighborhood $U$ of $x$ such that
+$x\in U\subseteq A$, or there is no such neighborhood. In the first case,
+$x\in U\subseteq A\implies x\in\Int(A)$ since $\Int(A)$ is the largest open set contained in
+$A$. In the second case, every neighborhood $V$ of $x$ intersects
+$X\setminus A\implies x\in\overline{X\setminus A}\implies x\in\Bd(A)$. Combining the two cases,
+$x\in\Int(A)\cup\Bd(A)$. Since $x\in\bar{A}$ was chosen arbitrarily,
+$\bar{A}\subseteq\Int(A)\cup\Bd(A)$.
+
+For the other way inclusion, notice that $\Int(A)\subseteq A\subseteq\bar{A}$. Also,
+$\Bd(A)=\bar{A}\cap\overline{X\setminus A}\subseteq\bar{A}$. Therefore,
+$\Int(A)\cup\Bd(A)\subseteq\bar{A}$. Hence, we conclude that $\bar{A}=\Int(A)\cup\Bd(A)$.
+\hfill$\square$

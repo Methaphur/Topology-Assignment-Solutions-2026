@@ -1,0 +1,26 @@
+% Source: Solutions/Srijit-PS2-Q12-15.pdf, pp. 1-2 (typed). Restated problem statement omitted.
+% REVIEW: (1) the proof tacitly assumes x1 < x2 (never stated; WLOG is needed).
+%         (2) (-inf, x2) = U_{a<x2} (a, x2) fails when X has a least element m: m lies in the
+%             ray but in no (a, x2). The rays are open anyway (they are subbasis elements of
+%             the order topology), so the conclusion stands. Kept as written.
+\submittedby{Srijit Bhadra}
+
+\emph{Solution:} Let $X\neq\emptyset$ and $\mathscr{T}$ be the order topology on $X$. Let
+$x_1,x_2\in X$ such that $x_1\neq x_2$. Consider the basic open set
+$(x_1,x_2)=\{x\in X : x_1<x<x_2\}\in\mathscr{T}$. Now, there can be two cases:
+
+\textbf{Case 1.} \underline{$(x_1,x_2)=\emptyset$.} Observe that
+\[ (-\infty,x_2)=\bigcup_{a\in X,\ a<x_2}(a,x_2)\in\mathscr{T}. \]
+Similarly,
+\[ (x_1,\infty)=\bigcup_{b\in X,\ b>x_1}(x_1,b)\in\mathscr{T}. \]
+Also, $x_1\in(-\infty,x_2)$ and $x_2\in(x_1,\infty)$. Crucially,
+$(-\infty,x_2)\cap(x_1,\infty)=\emptyset$.
+
+\textbf{Case 2.} \underline{$(x_1,x_2)\neq\emptyset$.} Take any point $c\in(x_1,x_2)$. As we saw
+earlier, $(-\infty,c)$ and $(c,\infty)$ are open in $X$. Note that $x_1\in(-\infty,c)$,
+$x_2\in(c,\infty)$, and $(-\infty,c)\cap(c,\infty)=\emptyset$.
+
+Thus, in both cases, we found two disjoint open sets in $X$ with one containing $x_1$ and the
+other containing $x_2$. As $x_1,x_2\in X$ were chosen arbitrarily, we can say that
+$(X,\mathscr{T})$ is Hausdorff. Since $(X,\mathscr{T})$ was also chosen arbitrarily, we can say
+that every order topology is Hausdorff. \hfill$\square$
