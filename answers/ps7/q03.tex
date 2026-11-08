@@ -1,0 +1,53 @@
+% Source: Solutions/Karan-Gangadharan-PS7-Q1-4.tex (LaTeX source). "Question 2(a)" renumbered to "Problem 7.2(a)".
+\submittedby{Karan Gangadharan}
+
+\begin{proof}
+Let
+\[ \pi_1\colon\R\times\R\to\R \]
+be the projection onto the first coordinate, defined by $\pi_1(x,y)=x$. Let
+\[ A=\{(x,y)\in\R\times\R : x\ge0\text{ or }y=0\}. \]
+Define $g\colon A\to\R$ by restricting $\pi_1$ to $A$. Thus, $g(x,y)=x$.
+
+We shall show that $g$ is a quotient map but is neither open nor closed.
+
+\medskip
+\textbf{(i) $g$ is a quotient map:}
+Since $g$ is the restriction of the continuous projection map $\pi_1$, it is continuous. Also,
+$g$ is surjective, because for every $x\in\R$,
+\[ (x,0)\in A\quad\text{and}\quad g(x,0)=x. \]
+Now, consider the map $f\colon\R\to A$ defined by $f(x)=(x,0)$. Clearly, $f$ is continuous and
+\[ (g\circ f)(x)=g(x,0)=x. \]
+Therefore, $g\circ f=I_\R$. By Problem 7.2(a), since $g$ and $f$ are continuous and
+$g\circ f=I_\R$, it follows that
+\[ \boxed{g\text{ is a quotient map.}} \]
+
+\medskip
+\textbf{(ii) $g$ is not an open map:}
+Consider the set
+\[ U=A\cap\bigl((-1,1)\times(1/2,3/2)\bigr). \]
+Since $(-1,1)\times(1/2,3/2)$ is open in $\R^2$, $U$ is open in $A$. Now, by the definition of
+$A$, if $(x,y)\in U$, then $x\ge0$, since $y\neq0$. Consequently,
+\[ g(U)=[0,1). \]
+But $[0,1)$ is not open in $\R$. Thus, $g$ does not map every open subset of $A$ onto an open
+subset of $\R$. Hence,
+\[ \boxed{g\text{ is not an open map.}} \]
+
+\medskip
+\textbf{(iii) $g$ is not a closed map:}
+Consider the subset
+\[ F=\left\{\left(\frac1n,n\right) : n\in\N\right\}. \]
+Clearly, $F\subseteq A$, since $1/n>0$ for every $n\in\N$. We claim that $F$ is closed in $A$.
+Indeed, $F$ is closed in $\R^2$, because the second coordinates of its points tend to infinity,
+so it has no accumulation point in $\R^2$. Therefore, $F$ is also closed in the subspace $A$.
+Now,
+\[ g(F)=g\left(\left\{\left(\frac1n,n\right) : n\in\N\right\}\right)
+       =\left\{\frac1n : n\in\N\right\}. \]
+But
+\[ \frac1n\longrightarrow0\quad\text{as }n\longrightarrow\infty, \]
+and $0\notin g(F)$. Hence, $g(F)$ is not closed in $\R$. Therefore, $g$ does not map every
+closed subset of $A$ onto a closed subset of $\R$. Thus,
+\[ \boxed{g\text{ is not a closed map.}} \]
+
+Combining (i), (ii) and (iii), we conclude that
+\[ \boxed{g\colon A\to\R\text{ is a quotient map which is neither open nor closed.}} \qedhere \]
+\end{proof}

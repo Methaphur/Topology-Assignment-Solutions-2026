@@ -1,0 +1,603 @@
+\[
+\text{The quotient topology on } A \text{ induced by } p
+\text{ is given by}
+\]
+
+\[
+\tau_A=\{U\subseteq A:p^{-1}(U)\text{ is open in }\mathbb{R}\}.
+\]
+
+Since
+\[
+p^{-1}(\{a\})=(-\infty,0),
+\]
+\[
+p^{-1}(\{b\})=(0,\infty),
+\]
+\[
+p^{-1}(\{c\})=\{0\},
+\]
+and
+\[
+p^{-1}(\{a,b\})=\mathbb{R}\setminus\{0\},
+\]
+we observe that the open subsets of \(A\) are
+\[
+\varnothing,\quad \{a\},\quad \{b\},\quad
+\{a,b\},\quad \{a,b,c\}.
+\]
+
+Hence, the quotient topology on \(A\) is
+\[
+\boxed{
+\tau_A=
+\{\varnothing,\{a\},\{b\},\{a,b\},\{a,b,c\}\}.
+}
+\]
+\]
+
+\begin{proof}
+(a) Let \(p:X\to Y\) be a continuous map. Suppose there exists a
+continuous map \(f:Y\to X\) such that
+\[
+p\circ f=I_Y,
+\]
+where \(I_Y\) is the identity map on \(Y\).
+
+We know that \(p\) is continuous. Also, since
+\[
+p(f(y))=y,\qquad \forall y\in Y,
+\]
+the map \(p\) is surjective.
+
+Now, let \(U\subseteq Y\) be such that \(p^{-1}(U)\) is open
+in \(X\).
+
+Since \(f\) is continuous, we have
+\[
+f^{-1}\big(p^{-1}(U)\big)
+\]
+open in \(Y\).
+
+But
+\[
+f^{-1}\big(p^{-1}(U)\big)
+=(p\circ f)^{-1}(U)
+=I_Y^{-1}(U)
+=U.
+\]
+
+Therefore, \(U\) is open in \(Y\).
+
+Thus, \(p\) is a continuous surjective map satisfying
+\[
+U\text{ is open in }Y
+\iff p^{-1}(U)\text{ is open in }X.
+\]
+
+Hence, \(p\) is a quotient map.
+
+\[
+\boxed{p\text{ is a quotient map.}}
+\]
+
+\medskip
+
+(b) Let \(A\subseteq X\) and let \(r:X\to A\) be a
+retraction such that
+\[
+r(a)=a,\qquad \forall a\in A.
+\]
+
+We know that \(r\) is continuous by definition.
+
+Also, since \(r(a)=a\) for every \(a\in A\), the map \(r\)
+is surjective.
+
+Now, let \(U\subseteq A\) be such that \(r^{-1}(U)\)
+is open in \(X\).
+
+Since \(A\) has the subspace topology, we have
+\[
+r^{-1}(U)\cap A
+\]
+open in \(A\).
+
+But, using the property of retraction,
+\[
+\begin{aligned}
+r^{-1}(U)\cap A
+&=\{x\in A:r(x)\in U\}\\
+&=\{x\in A:x\in U\}\\
+&=U.
+\end{aligned}
+\]
+
+Therefore, \(U\) is open in \(A\).
+
+Thus, \(r\) is a continuous surjective map such that
+\[
+U\text{ is open in }A
+\iff r^{-1}(U)\text{ is open in }X.
+\]
+
+Hence, \(r\) is a quotient map.
+
+\[
+\boxed{\text{Every retraction is a quotient map.}}
+\]
+\end{proof}
+
+\begin{proof}
+Let
+\[
+\pi_1:\mathbb{R}\times\mathbb{R}\to\mathbb{R}
+\]
+be the projection onto the first coordinate, defined by
+\[
+\pi_1(x,y)=x.
+\]
+
+Let
+\[
+A=\{(x,y)\in\mathbb{R}\times\mathbb{R}:x\geq 0
+\text{ or }y=0\}.
+\]
+
+Define \(g:A\to\mathbb{R}\) by restricting \(\pi_1\) to \(A\).
+Thus,
+\[
+g(x,y)=x.
+\]
+
+We shall show that \(g\) is a quotient map but is neither
+open nor closed.
+
+\medskip
+
+\textbf{(i) \(g\) is a quotient map:}
+
+Since \(g\) is the restriction of the continuous projection
+map \(\pi_1\), it is continuous.
+
+Also, \(g\) is surjective, because for every \(x\in\mathbb{R}\),
+\[
+(x,0)\in A
+\quad\text{and}\quad
+g(x,0)=x.
+\]
+
+Now, consider the map
+\[
+f:\mathbb{R}\to A
+\]
+defined by
+\[
+f(x)=(x,0).
+\]
+
+Clearly, \(f\) is continuous and
+\[
+(g\circ f)(x)=g(x,0)=x.
+\]
+
+Therefore,
+\[
+g\circ f=I_{\mathbb{R}}.
+\]
+
+By Question 2(a), since \(g\) and \(f\) are continuous
+and \(g\circ f=I_{\mathbb{R}}\), it follows that
+\[
+\boxed{g\text{ is a quotient map.}}
+\]
+
+\medskip
+
+\textbf{(ii) \(g\) is not an open map:}
+
+Consider the set
+\[
+U=A\cap\big((-1,1)\times(1/2,3/2)\big).
+\]
+
+Since \((-1,1)\times(1/2,3/2)\) is open in
+\(\mathbb{R}^2\), \(U\) is open in \(A\).
+
+Now, by the definition of \(A\), if \((x,y)\in U\),
+then \(x\geq 0\), since \(y\neq 0\).
+
+Consequently,
+\[
+g(U)=[0,1).
+\]
+
+But \([0,1)\) is not open in \(\mathbb{R}\).
+
+Thus, \(g\) does not map every open subset of \(A\)
+onto an open subset of \(\mathbb{R}\).
+
+Hence,
+\[
+\boxed{g\text{ is not an open map.}}
+\]
+
+\medskip
+
+\textbf{(iii) \(g\) is not a closed map:}
+
+Consider the subset
+\[
+F=\left\{\left(\frac{1}{n},n\right):
+n\in\mathbb{N}\right\}.
+\]
+
+Clearly, \(F\subseteq A\), since \(1/n>0\) for every
+\(n\in\mathbb{N}\).
+
+We claim that \(F\) is closed in \(A\).
+
+Indeed, \(F\) is closed in \(\mathbb{R}^2\), because
+the second coordinates of its points tend to infinity,
+so it has no accumulation point in \(\mathbb{R}^2\).
+Therefore, \(F\) is also closed in the subspace \(A\).
+
+Now,
+\[
+\begin{aligned}
+g(F)
+&=g\left(\left\{\left(\frac{1}{n},n\right):
+n\in\mathbb{N}\right\}\right)\\
+&=\left\{\frac{1}{n}:n\in\mathbb{N}\right\}.
+\end{aligned}
+\]
+
+But
+\[
+\frac{1}{n}\longrightarrow 0
+\quad\text{as }n\longrightarrow\infty,
+\]
+and \(0\notin g(F)\).
+
+Hence, \(g(F)\) is not closed in \(\mathbb{R}\).
+
+Therefore, \(g\) does not map every closed subset of
+\(A\) onto a closed subset of \(\mathbb{R}\).
+
+Thus,
+\[
+\boxed{g\text{ is not a closed map.}}
+\]
+
+Combining (i), (ii) and (iii), we conclude that
+\[
+\boxed{
+g:A\to\mathbb{R}\text{ is a quotient map which is
+neither open nor closed.}
+}
+\]
+\end{proof}
+
+\begin{proof}
+\textbf{(a)} Define an equivalence relation on
+\(X=\mathbb{R}^2\) by
+\[
+(x_0,y_0)\sim(x_1,y_1)
+\iff x_0+y_0^2=x_1+y_1^2.
+\]
+
+Let \(X^*=X/\sim\) be the corresponding quotient space.
+
+We shall show that \(X^*\) is homeomorphic to \(\mathbb{R}\).
+
+Define a map
+\[
+g:X\to\mathbb{R}
+\]
+by
+\[
+g(x,y)=x+y^2.
+\]
+
+Since \(g\) is a polynomial function, it is continuous.
+Also, \(g\) is surjective, since for every
+\(t\in\mathbb{R}\),
+\[
+g(t,0)=t.
+\]
+
+Now, define a map
+\[
+f:\mathbb{R}\to X
+\]
+by
+\[
+f(t)=(t,0).
+\]
+
+Clearly, \(f\) is continuous and
+\[
+(g\circ f)(t)=g(t,0)=t.
+\]
+
+Thus,
+\[
+g\circ f=I_{\mathbb{R}}.
+\]
+
+Therefore, by Question 2(a), \(g\) is a quotient map.
+
+Let
+\[
+q:X\to X^*
+\]
+be the natural quotient map defined by
+\[
+q(x,y)=[(x,y)].
+\]
+
+Define
+\[
+\overline{g}:X^*\to\mathbb{R}
+\]
+by
+\[
+\overline{g}([(x,y)])=x+y^2.
+\]
+
+We show that \(\overline{g}\) is a homeomorphism.
+
+\textit{(i) \(\overline{g}\) is well-defined:}
+
+Suppose
+\[
+[(x_0,y_0)]=[(x_1,y_1)].
+\]
+
+Then, by the definition of the equivalence relation,
+\[
+x_0+y_0^2=x_1+y_1^2.
+\]
+
+Hence,
+\[
+\overline{g}([(x_0,y_0)])
+=
+\overline{g}([(x_1,y_1)]).
+\]
+
+Therefore, \(\overline{g}\) is well-defined.
+
+\textit{(ii) \(\overline{g}\) is bijective:}
+
+Suppose
+\[
+\overline{g}([(x_0,y_0)])
+=
+\overline{g}([(x_1,y_1)]).
+\]
+
+Then
+\[
+x_0+y_0^2=x_1+y_1^2.
+\]
+
+Thus,
+\[
+(x_0,y_0)\sim(x_1,y_1),
+\]
+which implies
+\[
+[(x_0,y_0)]=[(x_1,y_1)].
+\]
+
+Therefore, \(\overline{g}\) is injective.
+
+Further, since \(g\) is surjective, for every
+\(t\in\mathbb{R}\), there exists \((x,y)\in X\)
+such that
+\[
+\overline{g}([(x,y)])=t.
+\]
+
+Hence, \(\overline{g}\) is surjective.
+
+Therefore, \(\overline{g}\) is bijective.
+
+\textit{(iii) \(\overline{g}\) is a homeomorphism:}
+
+We have
+\[
+g=\overline{g}\circ q.
+\]
+
+Since \(g\) is continuous and \(q\) is a quotient map,
+the quotient property of \(q\) implies that
+\(\overline{g}\) is continuous.
+
+Also, let \(U\) be any open subset of \(X^*\).
+Since \(\overline{g}\) is injective, we have
+\[
+g^{-1}(\overline{g}(U))=q^{-1}(U).
+\]
+
+Since \(q\) is a quotient map and \(U\) is open in
+\(X^*\), \(q^{-1}(U)\) is open in \(X\).
+
+Thus, \(g^{-1}(\overline{g}(U))\) is open in \(X\).
+Since \(g\) is a quotient map, \(\overline{g}(U)\)
+is open in \(\mathbb{R}\).
+
+Therefore, \(\overline{g}\) is an open map.
+
+Hence, \(\overline{g}\) is a continuous bijective open
+map, and consequently it is a homeomorphism.
+
+Thus,
+\[
+\boxed{X^*\cong\mathbb{R}.}
+\]
+
+\medskip
+
+\textbf{(b)} Define an equivalence relation on
+\(X=\mathbb{R}^2\) by
+\[
+(x_0,y_0)\sim(x_1,y_1)
+\iff x_0^2+y_0^2=x_1^2+y_1^2.
+\]
+
+Let \(X^*=X/\sim\) be the corresponding quotient space.
+
+We shall show that \(X^*\) is homeomorphic to
+\([0,\infty)\).
+
+Define a map
+\[
+g:X\to[0,\infty)
+\]
+by
+\[
+g(x,y)=x^2+y^2.
+\]
+
+Since \(g\) is a polynomial function, it is continuous.
+Also, \(g\) is surjective, since for every
+\(t\in[0,\infty)\),
+\[
+g(\sqrt{t},0)=t.
+\]
+
+Now, define a map
+\[
+f:[0,\infty)\to X
+\]
+by
+\[
+f(t)=(\sqrt{t},0).
+\]
+
+Clearly, \(f\) is continuous and
+\[
+(g\circ f)(t)=g(\sqrt{t},0)=t.
+\]
+
+Thus,
+\[
+g\circ f=I_{[0,\infty)}.
+\]
+
+Therefore, by Question 2(a), \(g\) is a quotient map.
+
+Let
+\[
+q:X\to X^*
+\]
+be the natural quotient map defined by
+\[
+q(x,y)=[(x,y)].
+\]
+
+Define
+\[
+\overline{g}:X^*\to[0,\infty)
+\]
+by
+\[
+\overline{g}([(x,y)])=x^2+y^2.
+\]
+
+We show that \(\overline{g}\) is a homeomorphism.
+
+\textit{(i) \(\overline{g}\) is well-defined:}
+
+Suppose
+\[
+[(x_0,y_0)]=[(x_1,y_1)].
+\]
+
+Then, by the definition of the equivalence relation,
+\[
+x_0^2+y_0^2=x_1^2+y_1^2.
+\]
+
+Hence,
+\[
+\overline{g}([(x_0,y_0)])
+=
+\overline{g}([(x_1,y_1)]).
+\]
+
+Therefore, \(\overline{g}\) is well-defined.
+
+\textit{(ii) \(\overline{g}\) is bijective:}
+
+Suppose
+\[
+\overline{g}([(x_0,y_0)])
+=
+\overline{g}([(x_1,y_1)]).
+\]
+
+Then
+\[
+x_0^2+y_0^2=x_1^2+y_1^2.
+\]
+
+Thus,
+\[
+(x_0,y_0)\sim(x_1,y_1),
+\]
+which implies
+\[
+[(x_0,y_0)]=[(x_1,y_1)].
+\]
+
+Therefore, \(\overline{g}\) is injective.
+
+Further, since \(g\) is surjective, for every
+\(t\in[0,\infty)\), there exists \((x,y)\in X\)
+such that
+\[
+\overline{g}([(x,y)])=t.
+\]
+
+Hence, \(\overline{g}\) is surjective.
+
+Therefore, \(\overline{g}\) is bijective.
+
+\textit{(iii) \(\overline{g}\) is a homeomorphism:}
+
+We have
+\[
+g=\overline{g}\circ q.
+\]
+
+Since \(g\) is continuous and \(q\) is a quotient map,
+the quotient property of \(q\) implies that
+\(\overline{g}\) is continuous.
+
+Also, let \(U\) be any open subset of \(X^*\).
+Since \(\overline{g}\) is injective, we have
+\[
+g^{-1}(\overline{g}(U))=q^{-1}(U).
+\]
+
+Since \(q\) is a quotient map and \(U\) is open in
+\(X^*\), \(q^{-1}(U)\) is open in \(X\).
+
+Thus, \(g^{-1}(\overline{g}(U))\) is open in \(X\).
+Since \(g\) is a quotient map, \(\overline{g}(U)\)
+is open in \([0,\infty)\).
+
+Therefore, \(\overline{g}\) is an open map.
+
+Hence, \(\overline{g}\) is a continuous bijective open
+map, and consequently it is a homeomorphism.
+
+Thus,
+\[
+\boxed{X^*\cong[0,\infty).}
+\]
+
+\end{proof}

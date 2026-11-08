@@ -1,0 +1,43 @@
+% Source: Solutions/Karan-Gangadharan-PS7-Q1-4.tex (LaTeX source).
+\submittedby{Karan Gangadharan}
+
+\begin{proof}
+\textbf{(a)} Let $p\colon X\to Y$ be a continuous map. Suppose there exists a continuous map
+$f\colon Y\to X$ such that
+\[ p\circ f=I_Y, \]
+where $I_Y$ is the identity map on $Y$.
+
+We know that $p$ is continuous. Also, since
+\[ p(f(y))=y,\qquad\forall y\in Y, \]
+the map $p$ is surjective.
+
+Now, let $U\subseteq Y$ be such that $p^{-1}(U)$ is open in $X$. Since $f$ is continuous, we
+have $f^{-1}\bigl(p^{-1}(U)\bigr)$ open in $Y$. But
+\[ f^{-1}\bigl(p^{-1}(U)\bigr)=(p\circ f)^{-1}(U)=I_Y^{-1}(U)=U. \]
+Therefore, $U$ is open in $Y$.
+
+Thus, $p$ is a continuous surjective map satisfying
+\[ U\text{ is open in }Y\iff p^{-1}(U)\text{ is open in }X. \]
+Hence, $p$ is a quotient map.
+\[ \boxed{p\text{ is a quotient map.}} \]
+
+\medskip
+\textbf{(b)} Let $A\subseteq X$ and let $r\colon X\to A$ be a retraction such that
+\[ r(a)=a,\qquad\forall a\in A. \]
+We know that $r$ is continuous by definition. Also, since $r(a)=a$ for every $a\in A$, the map
+$r$ is surjective.
+
+Now, let $U\subseteq A$ be such that $r^{-1}(U)$ is open in $X$. Since $A$ has the subspace
+topology, we have $r^{-1}(U)\cap A$ open in $A$. But, using the property of retraction,
+\begin{align*}
+  r^{-1}(U)\cap A &= \{x\in A : r(x)\in U\}\\
+                  &= \{x\in A : x\in U\}\\
+                  &= U.
+\end{align*}
+Therefore, $U$ is open in $A$.
+
+Thus, $r$ is a continuous surjective map such that
+\[ U\text{ is open in }A\iff r^{-1}(U)\text{ is open in }X. \]
+Hence, $r$ is a quotient map.
+\[ \boxed{\text{Every retraction is a quotient map.}} \qedhere \]
+\end{proof}

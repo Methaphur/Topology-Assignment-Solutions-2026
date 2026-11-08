@@ -1,0 +1,101 @@
+% Source: Solutions/Karan-Gangadharan-PS7-Q1-4.tex (LaTeX source). "Question 2(a)" renumbered to "Problem 7.2(a)".
+\submittedby{Karan Gangadharan}
+
+\begin{proof}
+\textbf{(a)} Define an equivalence relation on $X=\R^2$ by
+\[ (x_0,y_0)\sim(x_1,y_1)\iff x_0+y_0^2=x_1+y_1^2. \]
+Let $X^*=X/{\sim}$ be the corresponding quotient space. We shall show that $X^*$ is
+homeomorphic to $\R$.
+
+Define a map $g\colon X\to\R$ by
+\[ g(x,y)=x+y^2. \]
+Since $g$ is a polynomial function, it is continuous. Also, $g$ is surjective, since for every
+$t\in\R$, $g(t,0)=t$.
+
+Now, define a map $f\colon\R\to X$ by $f(t)=(t,0)$. Clearly, $f$ is continuous and
+\[ (g\circ f)(t)=g(t,0)=t. \]
+Thus, $g\circ f=I_\R$. Therefore, by Problem 7.2(a), $g$ is a quotient map.
+
+Let $q\colon X\to X^*$ be the natural quotient map defined by $q(x,y)=[(x,y)]$. Define
+$\overline g\colon X^*\to\R$ by
+\[ \overline g([(x,y)])=x+y^2. \]
+We show that $\overline g$ is a homeomorphism.
+
+\textit{(i) $\overline g$ is well-defined:}
+Suppose $[(x_0,y_0)]=[(x_1,y_1)]$. Then, by the definition of the equivalence relation,
+$x_0+y_0^2=x_1+y_1^2$. Hence,
+$\overline g([(x_0,y_0)])=\overline g([(x_1,y_1)])$. Therefore, $\overline g$ is well-defined.
+
+\textit{(ii) $\overline g$ is bijective:}
+Suppose $\overline g([(x_0,y_0)])=\overline g([(x_1,y_1)])$. Then $x_0+y_0^2=x_1+y_1^2$. Thus,
+$(x_0,y_0)\sim(x_1,y_1)$, which implies $[(x_0,y_0)]=[(x_1,y_1)]$. Therefore, $\overline g$ is
+injective. Further, since $g$ is surjective, for every $t\in\R$, there exists $(x,y)\in X$ such
+that $\overline g([(x,y)])=t$. Hence, $\overline g$ is surjective. Therefore, $\overline g$ is
+bijective.
+
+\textit{(iii) $\overline g$ is a homeomorphism:}
+We have
+\[ g=\overline g\circ q. \]
+Since $g$ is continuous and $q$ is a quotient map, the quotient property of $q$ implies that
+$\overline g$ is continuous.
+
+Also, let $U$ be any open subset of $X^*$. Since $\overline g$ is injective, we have
+\[ g^{-1}\bigl(\overline g(U)\bigr)=q^{-1}(U). \]
+Since $q$ is a quotient map and $U$ is open in $X^*$, $q^{-1}(U)$ is open in $X$. Thus,
+$g^{-1}(\overline g(U))$ is open in $X$. Since $g$ is a quotient map, $\overline g(U)$ is open
+in $\R$. Therefore, $\overline g$ is an open map.
+
+Hence, $\overline g$ is a continuous bijective open map, and consequently it is a homeomorphism.
+Thus,
+\[ \boxed{X^*\cong\R.} \]
+
+\medskip
+\textbf{(b)} Define an equivalence relation on $X=\R^2$ by
+\[ (x_0,y_0)\sim(x_1,y_1)\iff x_0^2+y_0^2=x_1^2+y_1^2. \]
+Let $X^*=X/{\sim}$ be the corresponding quotient space. We shall show that $X^*$ is
+homeomorphic to $[0,\infty)$.
+
+Define a map $g\colon X\to[0,\infty)$ by
+\[ g(x,y)=x^2+y^2. \]
+Since $g$ is a polynomial function, it is continuous. Also, $g$ is surjective, since for every
+$t\in[0,\infty)$, $g(\sqrt t,0)=t$.
+
+Now, define a map $f\colon[0,\infty)\to X$ by $f(t)=(\sqrt t,0)$. Clearly, $f$ is continuous
+and
+\[ (g\circ f)(t)=g(\sqrt t,0)=t. \]
+Thus, $g\circ f=I_{[0,\infty)}$. Therefore, by Problem 7.2(a), $g$ is a quotient map.
+
+Let $q\colon X\to X^*$ be the natural quotient map defined by $q(x,y)=[(x,y)]$. Define
+$\overline g\colon X^*\to[0,\infty)$ by
+\[ \overline g([(x,y)])=x^2+y^2. \]
+We show that $\overline g$ is a homeomorphism.
+
+\textit{(i) $\overline g$ is well-defined:}
+Suppose $[(x_0,y_0)]=[(x_1,y_1)]$. Then, by the definition of the equivalence relation,
+$x_0^2+y_0^2=x_1^2+y_1^2$. Hence,
+$\overline g([(x_0,y_0)])=\overline g([(x_1,y_1)])$. Therefore, $\overline g$ is well-defined.
+
+\textit{(ii) $\overline g$ is bijective:}
+Suppose $\overline g([(x_0,y_0)])=\overline g([(x_1,y_1)])$. Then
+$x_0^2+y_0^2=x_1^2+y_1^2$. Thus, $(x_0,y_0)\sim(x_1,y_1)$, which implies
+$[(x_0,y_0)]=[(x_1,y_1)]$. Therefore, $\overline g$ is injective. Further, since $g$ is
+surjective, for every $t\in[0,\infty)$, there exists $(x,y)\in X$ such that
+$\overline g([(x,y)])=t$. Hence, $\overline g$ is surjective. Therefore, $\overline g$ is
+bijective.
+
+\textit{(iii) $\overline g$ is a homeomorphism:}
+We have
+\[ g=\overline g\circ q. \]
+Since $g$ is continuous and $q$ is a quotient map, the quotient property of $q$ implies that
+$\overline g$ is continuous.
+
+Also, let $U$ be any open subset of $X^*$. Since $\overline g$ is injective, we have
+\[ g^{-1}\bigl(\overline g(U)\bigr)=q^{-1}(U). \]
+Since $q$ is a quotient map and $U$ is open in $X^*$, $q^{-1}(U)$ is open in $X$. Thus,
+$g^{-1}(\overline g(U))$ is open in $X$. Since $g$ is a quotient map, $\overline g(U)$ is open
+in $[0,\infty)$. Therefore, $\overline g$ is an open map.
+
+Hence, $\overline g$ is a continuous bijective open map, and consequently it is a homeomorphism.
+Thus,
+\[ \boxed{X^*\cong[0,\infty).} \qedhere \]
+\end{proof}
