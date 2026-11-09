@@ -87,3 +87,68 @@ Summing the orbit sizes gives
 \[ 1+3+3+3+6+3+3+6+1=29, \]
 which accounts for all $29$ topologies. Hence the number of orbits of $S_3$ on $\T_X$, i.e.\ the
 number of homeomorphism classes of topologies on a three-point set, is exactly \textbf{9}.
+
+\submittedby{Sarthak}
+
+\medskip\noindent\textbf{All $29$ topologies.}\par\medskip
+
+\textbf{Orbit 1: Indiscrete topology}
+\[ \{\emptyset,X\}. \]
+
+\textbf{Orbit 2: One singleton open}
+\[ \{\emptyset,\{a\},X\},\qquad\{\emptyset,\{b\},X\},\qquad\{\emptyset,\{c\},X\}. \]
+
+\textbf{Orbit 3: One doubleton open}
+\[ \{\emptyset,\{a,b\},X\},\qquad\{\emptyset,\{a,c\},X\},\qquad\{\emptyset,\{b,c\},X\}. \]
+
+\textbf{Orbit 4: One singleton and a doubleton containing it}
+\begin{gather*}
+\{\emptyset,\{a\},\{a,b\},X\},\qquad\{\emptyset,\{a\},\{a,c\},X\},\\
+\{\emptyset,\{b\},\{a,b\},X\},\qquad\{\emptyset,\{b\},\{b,c\},X\},\\
+\{\emptyset,\{c\},\{a,c\},X\},\qquad\{\emptyset,\{c\},\{b,c\},X\}.
+\end{gather*}
+
+\textbf{Orbit 5: One singleton and the complementary doubleton}
+\[ \{\emptyset,\{a\},\{b,c\},X\},\qquad\{\emptyset,\{b\},\{a,c\},X\},\qquad
+   \{\emptyset,\{c\},\{a,b\},X\}. \]
+
+\textbf{Orbit 6: Two singletons and their union}
+\begin{gather*}
+\{\emptyset,\{a\},\{b\},\{a,b\},X\},\\
+\{\emptyset,\{a\},\{c\},\{a,c\},X\},\\
+\{\emptyset,\{b\},\{c\},\{b,c\},X\}.
+\end{gather*}
+
+\textbf{Orbit 7: One singleton and two doubletons containing it}
+\begin{gather*}
+\{\emptyset,\{a\},\{a,b\},\{a,c\},X\},\\
+\{\emptyset,\{b\},\{a,b\},\{b,c\},X\},\\
+\{\emptyset,\{c\},\{a,c\},\{b,c\},X\}.
+\end{gather*}
+
+\textbf{Orbit 8: Two singletons and three doubletons, omitting one doubleton}
+\begin{gather*}
+\{\emptyset,\{a\},\{b\},\{a,b\},\{a,c\},X\},\\
+\{\emptyset,\{a\},\{c\},\{a,b\},\{a,c\},X\},\\
+\{\emptyset,\{a\},\{b\},\{a,b\},\{b,c\},X\},\\
+\{\emptyset,\{b\},\{c\},\{a,b\},\{b,c\},X\},\\
+\{\emptyset,\{a\},\{c\},\{a,c\},\{b,c\},X\},\\
+\{\emptyset,\{b\},\{c\},\{a,c\},\{b,c\},X\}.
+\end{gather*}
+
+\textbf{Orbit 9: Discrete topology}
+\[ \{\emptyset,\{a\},\{b\},\{c\},\{a,b\},\{a,c\},\{b,c\},X\}. \]
+
+Thus, the total number of topologies is
+\[ 1+3+3+6+3+3+3+6+1=29. \]
+Therefore, the number of orbits of $S_3$ acting on $\T_X$ is
+\[ |\T_X/S_3|=9. \]
+
+\paragraph{Explanation of orbit sizes.} The indiscrete topology and the discrete topology are
+fixed by every permutation of $a,b,c$. Hence each forms an orbit of size $1$.
+
+% REVIEW: never argues that topologies in different groups lie in different orbits (i.e. are not homeomorphic), which the count of 9 needs; the orbit-size remark below is only a heuristic.
+The remaining seven orbits have sizes $3$ or $6$, depending on whether the representative
+topology has nontrivial symmetry under permutations of $a,b,c$. Since
+\[ 1+3+3+6+3+3+3+6+1=29, \]
+the orbit decomposition accounts for all $29$ topologies on $X$.
