@@ -1,0 +1,18 @@
+\submittedby{Mayuri}
+
+Let $\B$ be a base for the topology on $X$.
+
+\paragraph{($\Longrightarrow$)} If $X$ is compact, then every open cover of $X$ has a finite
+subcover. A cover consisting of elements of $\B$ is in particular an open cover (basis elements
+are open), so it has a finite subcover.
+
+\paragraph{($\Longleftarrow$)} Suppose every open cover of $X$ consisting of elements of $\B$
+has a finite subcover. Let $\mathcal{U}$ be an arbitrary open cover of $X$. For each $x\in X$
+choose $U_x\in\mathcal{U}$ with $x\in U_x$, and since $U_x$ is open and $\B$ is a base, choose
+$B_x\in\B$ with $x\in B_x\subseteq U_x$.
+
+Then $\{B_x : x\in X\}$ is a cover of $X$ (each $x\in B_x$) by elements of $\B$. By hypothesis,
+there are $x_1,\dots,x_n\in X$ with $X=B_{x_1}\cup\dots\cup B_{x_n}$. Since
+$B_{x_i}\subseteq U_{x_i}$, we get
+\[ X=U_{x_1}\cup\dots\cup U_{x_n}, \]
+so $\{U_{x_1},\dots,U_{x_n}\}$ is a finite subcover of $\mathcal{U}$. Hence $X$ is compact. \qed

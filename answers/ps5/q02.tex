@@ -1,0 +1,23 @@
+\submittedby{Mayuri}
+
+\emph{$\R^2\setminus\Q^2$ is connected.} We show it is path connected, which implies connected.
+Let $x,y\in\R^2\setminus\Q^2$ with $x\neq y$.
+
+For a point $p\in\R^2$, consider the lines through $p$; they are parametrized by their
+direction angle $\theta\in[0,\pi)$, so there are uncountably many. For each $q\in\Q^2$ there is
+exactly one line through $x$ and $q$ (note $q\neq x$ since $x\notin\Q^2$). Since $\Q^2$ is
+countable, only countably many lines through $x$ meet $\Q^2$. So all but countably many lines
+through $x$ are contained entirely in $\R^2\setminus\Q^2$. The same holds for $y$.
+
+Choose a line $L_x$ through $x$ missing $\Q^2$. Then choose a line $L_y$ through $y$ missing
+$\Q^2$ with a direction different from that of $L_x$ (possible, since uncountably many
+directions are available and only countably many are bad, and we exclude just one). Then $L_x$
+and $L_y$ are not parallel, so they meet at a single point $p$. Go from $x$ to $p$ along $L_x$,
+then from $p$ to $y$ along $L_y$. This is a path in $\R^2\setminus\Q^2$ from $x$ to $y$. Hence
+$\R^2\setminus\Q^2$ is path connected, and therefore connected.
+
+\emph{$\R\setminus\Q$ is not connected.} Let $U=(-\infty,0)\cap(\R\setminus\Q)$ and
+$V=(0,\infty)\cap(\R\setminus\Q)$. Both are open in the subspace $\R\setminus\Q$ and they are
+disjoint. Since $0\in\Q$, we have $0\notin\R\setminus\Q$, so $U\cup V=\R\setminus\Q$. Both are
+nonempty ($-\sqrt2\in U$, $\sqrt2\in V$). So $\R\setminus\Q$ is the union of two disjoint
+nonempty open sets, hence disconnected. \qed

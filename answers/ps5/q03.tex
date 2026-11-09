@@ -1,0 +1,19 @@
+\submittedby{Mayuri}
+
+No, it is not necessary.
+
+\emph{Counterexample.} Let $X=[0,1]$ and $Y=(0,1)$, both with the subspace topology from $\R$.
+\begin{itemize}
+  \item $f\colon X\to Y$, $f(x)=\frac14+\frac{x}{2}$. This is continuous and injective, with image
+        $\bigl[\frac14,\frac34\bigr]$, and the inverse
+        $\bigl[\frac14,\frac34\bigr]\to[0,1]$, $y\mapsto 2y-\frac12$, is continuous. So $f$ is a
+        homeomorphism onto its image, i.e.\ an embedding.
+  \item $g\colon Y\to X$, the inclusion $g(y)=y$. It is an embedding, since the topology on $Y$ is
+        the subspace topology inherited from $\R$, which is also the subspace topology inherited
+        from $X$.
+\end{itemize}
+But $X$ and $Y$ are not homeomorphic: $X=[0,1]$ is compact (Heine--Borel), whereas $Y=(0,1)$ is
+not, since the open cover $\bigl\{\bigl(\frac1n,1\bigr) : n\ge 2\bigr\}$ has no finite subcover
+(a finite subfamily has union $\bigl(\frac1N,1\bigr)$ for the largest $n=N$ used, which misses
+$\frac{1}{2N}$, a point of $Y$). Compactness is preserved by homeomorphisms, so
+$X\not\cong Y$. \qed

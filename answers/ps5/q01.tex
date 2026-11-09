@@ -1,0 +1,28 @@
+\submittedby{Mayuri}
+
+We show that $X=\R^n\setminus\{0\}$ is path connected if and only if $n>1$ (here $n\ge 1$).
+
+\emph{Case $n=1$.} Then $X=(-\infty,0)\cup(0,\infty)$, a union of two disjoint nonempty open
+sets, so $X$ is not connected, hence not path connected. Directly: if
+$\gamma\colon[0,1]\to X$ were a path from $-1$ to $1$, the intermediate value theorem would give
+$t$ with $\gamma(t)=0\notin X$, a contradiction.
+
+\emph{Case $n\ge 2$.} Let $x,y\in X$. Recall the segment
+$[x,y]=\{(1-t)x+ty : t\in[0,1]\}$ is the image of a path (a straight line path).
+
+If $0\notin[x,y]$, the straight line path from $x$ to $y$ lies in $X$.
+
+Otherwise $0=(1-t)x+ty$ for some $t\in[0,1]$. Since $x,y\neq 0$ we have $t\in(0,1)$, so $x$ and
+$y$ are linearly dependent: $y=-cx$ with $c=\frac{1-t}{t}>0$. Since $n\ge 2$, choose
+$z\in\R^n$ linearly independent from $x$ (then also from $y$, as $y$ is a nonzero multiple of
+$x$). In particular $z\neq 0$.
+
+\begin{claim}
+$0\notin[x,z]$.
+\end{claim}
+If $0=(1-s)x+sz$ with $s\in[0,1]$, then $s\neq 0$ (as $x\neq 0$) and $s\neq 1$ (as $z\neq 0$),
+so $z=-\bigl(\frac{1-s}{s}\bigr)x$, contradicting linear independence. The same argument shows
+$0\notin[z,y]$.
+
+Hence the segment from $x$ to $z$ followed by the segment from $z$ to $y$ is a path in $X$ from
+$x$ to $y$. So $X$ is path connected. \qed
