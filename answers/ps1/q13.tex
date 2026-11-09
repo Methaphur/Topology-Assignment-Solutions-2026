@@ -1,0 +1,54 @@
+\submittedby{Satyajit}
+
+Let $\B_1,\B_2,\B_3$ be the open balls, open rectangles $(\alpha,\beta)\times(\gamma,\delta)$,
+and open triangles (interiors of non-degenerate triangles) in $\R^2$. Let $\T_E$ denote the
+Euclidean topology and $B(p,\varepsilon)$ the open ball of radius $\varepsilon$ about $p$.
+
+Recall: $\B$ is a \textbf{basis} on $Y$ if (B1) every point of $Y$ lies in some member of
+$\B$, and (B2) if $y\in B\cap B'$ with $B,B'\in\B$, there is $B''\in\B$ with
+$y\in B''\subseteq B\cap B'$.
+
+\paragraph{Two lemmas used for all three collections.}
+
+\textbf{Lemma A.} Every member of $\B_1,\B_2,\B_3$ is Euclidean-open.\\
+\emph{Proof.} Balls are open. A rectangle is a product of open intervals, hence open. An open
+triangle is an intersection of three open half-planes, hence open. $\square$
+
+\textbf{Lemma B.} For every $p\in\R^2$ and $\varepsilon>0$, each $\B_i$ has a member $B$ with
+$p\in B\subseteq B(p,\varepsilon)$.\\
+\emph{Proof.} \emph{Balls:} $B(p,\varepsilon)$ itself. \emph{Rectangles:} for $p=(p_1,p_2)$
+take
+$R=(p_1-\tfrac\varepsilon2,p_1+\tfrac\varepsilon2)\times(p_2-\tfrac\varepsilon2,p_2+\tfrac\varepsilon2)$.
+A point of $R$ is at distance
+$<\sqrt{(\varepsilon/2)^2+(\varepsilon/2)^2}=\tfrac{\varepsilon}{\sqrt2}<\varepsilon$ from
+$p$. \emph{Triangles:} take the open equilateral triangle with centroid $p$ and circumradius
+$\varepsilon/2$. It lies in the closed disc of radius $\varepsilon/2$ about $p$, hence in
+$B(p,\varepsilon)$, and contains its centroid $p$. $\square$
+
+\paragraph{(i) Basis axioms.}
+\textbf{(B1)} Given $p$, Lemma B with $\varepsilon=1$ gives a member of $\B_i$ containing $p$.
+
+\textbf{(B2)} Let $B,B'\in\B_i$ and $p\in B\cap B'$. By Lemma A, $B\cap B'$ is Euclidean-open,
+so there is $\varepsilon>0$ with $B(p,\varepsilon)\subseteq B\cap B'$. By Lemma B there is
+$B''\in\B_i$ with $p\in B''\subseteq B(p,\varepsilon)\subseteq B\cap B'$.
+
+So $\B_1,\B_2,\B_3$ are bases. $\blacksquare$
+
+\paragraph{(ii) The identity maps are continuous.}
+\textbf{Claim: $\T_i=\T_E$ for $i=1,2,3$.}
+\begin{itemize}[nosep]
+  \item $\T_i\subseteq\T_E$: members of $\T_i$ are unions of members of $\B_i$, which are
+        Euclidean-open (Lemma A).
+  \item $\T_E\subseteq\T_i$: let $G$ be Euclidean-open and $p\in G$. Pick $\varepsilon$ with
+        $B(p,\varepsilon)\subseteq G$ and, by Lemma B, $B_p\in\B_i$ with
+        $p\in B_p\subseteq B(p,\varepsilon)\subseteq G$. Then $G=\bigcup_{p\in G}B_p\in\T_i$.
+\end{itemize}
+Now let $f\colon(\R^2,\T_i)\to(\R^2,\T_j)$, $f(x)=x$. If $G\in\T_j$, then
+$f^{-1}(G)=G\in\T_j=\T_E=\T_i$. So $f$ is continuous for all $i,j\in\{1,2,3\}$.
+$\blacksquare$
+
+\paragraph{(iii) Conclusion.}
+The identity $(\R^2,\T_i)\to(\R^2,\T_j)$ is continuous exactly when every $G\in\T_j$ is in
+$\T_i$, i.e.\ $\T_j\subseteq\T_i$. By (ii) this holds for all pairs $(i,j)$, in both
+directions, so $\T_i\subseteq\T_j$ and $\T_j\subseteq\T_i$. Hence
+\[ \T_1=\T_2=\T_3\ (=\T_E).\qquad\blacksquare \]

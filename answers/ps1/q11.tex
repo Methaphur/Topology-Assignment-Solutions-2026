@@ -1,0 +1,42 @@
+\submittedby{Satyajit}
+
+Call the first family $\mathcal{A}=\Pow(X\setminus\{a\})$ (sets \emph{not} containing $a$;
+every subset of $X\setminus\{a\}$ is in it) and the second family
+$\mathcal{C}=\{V\subseteq X : a\in V \text{ and } X\setminus V \text{ is finite}\}$ (sets
+containing $a$ with finite complement). Note that every member of $\T_a$ either does not
+contain $a$ (and is in $\mathcal{A}$) or contains $a$ (and then is in $\mathcal{C}$).
+
+\textbf{Claim: $\T_a$ is a topology.}
+
+\textbf{(T1) $\emptyset,X\in\T_a$.} $\emptyset\subseteq X\setminus\{a\}$, so
+$\emptyset\in\mathcal{A}$. Also $a\in X$ and $X\setminus X=\emptyset$ is finite, so
+$X\in\mathcal{C}$.
+
+\textbf{(T2) Arbitrary unions.} Let $\{V_\lambda\}_{\lambda\in\Lambda}\subseteq\T_a$ and
+$V=\bigcup_\lambda V_\lambda$.
+\begin{itemize}[nosep]
+  \item If no $V_\lambda$ contains $a$ (this includes $\Lambda=\emptyset$), then every
+        $V_\lambda\subseteq X\setminus\{a\}$, so $V\subseteq X\setminus\{a\}$ and
+        $V\in\mathcal{A}$.
+  \item If some $V_{\lambda_0}\ni a$, then $V_{\lambda_0}\in\mathcal{C}$, so
+        $X\setminus V_{\lambda_0}$ is finite. Since $V_{\lambda_0}\subseteq V$ we get
+        $X\setminus V\subseteq X\setminus V_{\lambda_0}$, hence $X\setminus V$ is finite; and
+        $a\in V$. So $V\in\mathcal{C}$.
+\end{itemize}
+
+\textbf{(T3) Finite intersections.} By induction it suffices to treat $U,V\in\T_a$.
+\begin{itemize}[nosep]
+  \item If $a\notin U$ or $a\notin V$, then $a\notin U\cap V$, i.e.\
+        $U\cap V\subseteq X\setminus\{a\}$, so $U\cap V\in\mathcal{A}$.
+  \item If $a\in U$ and $a\in V$, then $U,V\in\mathcal{C}$, so $X\setminus U$ and
+        $X\setminus V$ are finite. Then $X\setminus(U\cap V)=(X\setminus U)\cup(X\setminus V)$
+        is finite, and $a\in U\cap V$. So $U\cap V\in\mathcal{C}$.
+\end{itemize}
+Hence $\T_a$ is a topology. $\blacksquare$
+
+\paragraph{What happens if $X$ is finite?} Every $V\subseteq X$ has finite complement (a subset
+of the finite set $X$). So any $V\ni a$ lies in $\mathcal{C}$, and any $V\not\ni a$ lies in
+$\mathcal{A}$. Therefore $\T_a=\Pow(X)$, the \textbf{discrete topology}.
+
+(For infinite $X$ it is \emph{not} discrete: $\{a\}$ is not open, because $a\in\{a\}$ but
+$X\setminus\{a\}$ is infinite.)

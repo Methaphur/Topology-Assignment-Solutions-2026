@@ -1,0 +1,42 @@
+\submittedby{Satyajit}
+
+We use the usual convention for logical connectives: ``and'' has precedence over ``or''. Thus,
+the condition defining the second family is interpreted as
+\[ a\in V\quad\text{or}\quad\bigl(b\in V\text{ and }X\setminus V\text{ is finite}\bigr). \]
+
+\textbf{Answer.} The collection $\T$ is \textbf{not a topology} on $X$. We show that it is not
+closed under finite intersections.
+
+\textbf{Counterexample.} Consider
+\[ U=\{a,b\},\qquad V=X\setminus\{a\}. \]
+We first verify that both sets belong to $\T$.
+
+Since $a\in U$, the set $U$ belongs to the second family, and hence $U\in\T$.
+
+Next, $b\in V$ and
+\[ X\setminus V=\{a\}, \]
+which is finite. Therefore $V\in\T$ as well.
+
+However,
+\[ U\cap V=\{a,b\}\cap(X\setminus\{a\})=\{b\}. \]
+We now show that $\{b\}\notin\T$.
+
+First, $\{b\}\notin\Pow(X\setminus\{a,b\})$, because $b\notin X\setminus\{a,b\}$. Also,
+$a\notin\{b\}$, while $X\setminus\{b\}$ is infinite, since $X$ is infinite. Thus $\{b\}$ does
+not satisfy
+\[ a\in W\quad\text{or}\quad\bigl(b\in W\text{ and }X\setminus W\text{ is finite}\bigr) \]
+either. Consequently, $\{b\}\notin\T$.
+
+We have therefore found $U,V\in\T$ such that
+\[ U\cap V=\{b\}\notin\T. \]
+Hence $\T$ is not closed under finite intersections, and so
+\[ \boxed{\T\text{ is not a topology on }X.} \]
+\hfill$\square$
+
+% REVIEW: only the "a or (b and cofinite)" reading is answered. Under the other grouping "(a in V or b in V) and X\V finite", T IS a topology (e.g. two cofinite sets meeting in neither a nor b give a subset of X\{a,b}); the remark below names that reading but does not settle it.
+\begin{remark}[On the logical grouping]
+If the intended condition had instead been
+\[ (a\in V\text{ or }b\in V)\text{ and }X\setminus V\text{ is finite}, \]
+then it would define a different collection. The counterexample above addresses the expression
+as printed, using the standard precedence of ``and'' over ``or''.
+\end{remark}
