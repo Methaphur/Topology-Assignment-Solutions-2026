@@ -1,0 +1,19 @@
+\submittedby{Karmukilan}
+
+Let $\tau_1$ be the topology that $A$ inherits as a subspace of $Y$, and $\tau_2$ the topology
+that $A$ inherits as a subspace of $X$. We show $\tau_1=\tau_2$.
+
+\begin{proof}
+Explicitly,
+\[ \tau_1=\{A\cap W : W \text{ open in } Y\},\qquad \tau_2=\{A\cap U : U \text{ open in } X\}. \]
+
+\textbf{$\tau_1\subseteq\tau_2$:} Let $A\cap W\in\tau_1$ with $W$ open in $Y$. Then $W=Y\cap U$
+for some $U$ open in $X$. Since $A\subseteq Y$,
+\[ A\cap W=A\cap(Y\cap U)=(A\cap Y)\cap U=A\cap U\in\tau_2. \]
+
+\textbf{$\tau_2\subseteq\tau_1$:} Let $A\cap U\in\tau_2$ with $U$ open in $X$. Then
+$W:=Y\cap U$ is open in $Y$, and since $A\subseteq Y$,
+\[ A\cap U=(A\cap Y)\cap U=A\cap(Y\cap U)=A\cap W\in\tau_1. \]
+
+Therefore $\tau_1=\tau_2$.
+\end{proof}

@@ -1,0 +1,23 @@
+\submittedby{Karmukilan}
+
+Let $\B$ be a basis for the topology of $X$.
+
+\begin{proof}
+\textbf{(i) $\Rightarrow$ (ii).} We prove the contrapositive. Suppose some neighborhood $U$ of
+$x$ satisfies $U\cap A=\emptyset$. Then $A\subseteq X\setminus U$, and $X\setminus U$ is closed
+since $U$ is open. As $\cl{A}$ is the smallest closed set containing $A$, we get
+$\cl{A}\subseteq X\setminus U$. Since $x\in U$, $x\notin X\setminus U$, hence $x\notin\cl{A}$.
+
+\textbf{(ii) $\Rightarrow$ (iii).} Every basis element $B\in\B$ is open, so a basis element
+containing $x$ is a neighborhood of $x$. By (ii) it intersects $A$.
+
+\textbf{(iii) $\Rightarrow$ (i).} Again by contrapositive. Suppose $x\notin\cl{A}$. Then
+$U:=X\setminus\cl{A}$ is open (since $\cl{A}$ is closed) and contains $x$. Because $\B$ is a
+basis, there is $B\in\B$ with $x\in B\subseteq U$. Then
+\[ B\cap A\subseteq U\cap A\subseteq(X\setminus\cl{A})\cap A=\emptyset, \]
+since $A\subseteq\cl{A}$. So $B$ is a basis element containing $x$ that does not intersect $A$,
+and (iii) fails.
+
+Thus (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii) $\Rightarrow$ (i), and the three statements are
+equivalent.
+\end{proof}

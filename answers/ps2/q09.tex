@@ -1,0 +1,16 @@
+\submittedby{Karmukilan}
+
+\emph{Conventions.} A subspace $Y\subseteq X$ carries the topology
+$\{Y\cap U : U \text{ open in } X\}$. A \emph{neighborhood} of $x$ is an open set containing
+$x$. The closure $\cl{A}$ is the intersection of all closed sets containing $A$; it is the
+smallest closed set containing $A$.
+
+\begin{proof}
+Since $V$ is closed in the subspace $Y$, the set $Y\setminus V$ is open in $Y$. By definition
+of the subspace topology, there is an open set $U\subseteq X$ with
+\[ Y\setminus V=Y\cap U. \]
+Taking complements inside $Y$ gives
+\[ V=Y\setminus(Y\setminus V)=Y\setminus(Y\cap U)=Y\cap(X\setminus U). \]
+Here $X\setminus U$ is closed in $X$ because $U$ is open in $X$, and $Y$ is closed in $X$ by
+hypothesis. Hence $V$ is an intersection of two closed subsets of $X$, so $V$ is closed in $X$.
+\end{proof}
