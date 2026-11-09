@@ -1,0 +1,24 @@
+% Source: Solutions/Kanishk-PS2-Q6-8.tex (LaTeX source).
+\submittedby{Kanishk}
+
+Let $S$ be the collection of sets of the form
+\[
+  (a,\infty)=\{x\in X:a<x\}
+  \qquad\text{and}\qquad
+  (-\infty,b)=\{x\in X:x<b\}.
+\]
+
+For two rays of the same type, we have
+\[
+  (a,\infty)\cap(c,\infty)=(\max\{a,c\},\infty)
+  \qquad\text{and}\qquad
+  (-\infty,b)\cap(-\infty,d)=(-\infty,\min\{b,d\}).
+\]
+Also, for two rays of opposite types,
+\[
+  (a,\infty)\cap(-\infty,b)=(a,b).
+\]
+
+% REVIEW: the subbasis condition that the elements of S cover X is never checked (it fails when X is a single point, where S = {emptyset}); the inclusion "rays are open in the order topology" is also left implicit.
+Thus, finite intersections of elements of $S$ give open intervals and open rays, which form a
+basis for the order topology. Hence, $S$ is a subbasis and generates the order topology on $X$.

@@ -1,0 +1,35 @@
+% Source: Solutions/Kanishk-PS2-Q6-8.tex (LaTeX source).
+\submittedby{Kanishk}
+
+\paragraph{(1)}
+We prove this by induction on $k$.
+
+For $k=1$, the result is clear since $A_1$ is countable.
+
+Suppose that $A_1\times A_2\times\cdots\times A_k$ is countable. Since $A_{k+1}$ is also
+countable and the product of two countable sets is countable, we get that
+\[
+  (A_1\times\cdots\times A_k)\times A_{k+1}
+\]
+is countable. Therefore, by induction, $\prod_{i=1}^{k}A_i$ is countable for every
+$k\in\N$.
+
+\paragraph{(2)}
+No, the infinite Cartesian product is not necessarily countable. Consider
+\[
+  A_n=\{0,1\},\qquad n\in\N.
+\]
+Suppose that $\prod_{n=1}^{\infty}A_n$ is countable. Then we can list all its elements as
+\[
+  x_1,x_2,x_3,\ldots,
+  \qquad\text{where}\qquad
+  x_i=(x_{i1},x_{i2},\ldots).
+\]
+Define a new sequence $y=(y_1,y_2,\ldots)$ by
+\[
+  y_n=1-x_{nn}.
+\]
+Clearly, $y$ belongs to the infinite product, since every entry is either $0$ or $1$. But $y$
+is different from every $x_n$, since their $n$-th entries are different.
+
+This is a contradiction. Hence, $\prod_{n=1}^{\infty}A_n$ is not necessarily countable.

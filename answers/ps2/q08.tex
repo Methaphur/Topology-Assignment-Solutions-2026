@@ -1,0 +1,44 @@
+% Source: Solutions/Kanishk-PS2-Q6-8.tex (LaTeX source).
+\submittedby{Kanishk}
+
+Suppose first that $\{x\}$ is open in the order topology. Then there exists a basic open set
+$B$ such that
+\[
+  x\in B\subseteq\{x\}.
+\]
+Hence, $B=\{x\}$.
+
+If $x$ is neither the minimum nor the maximum element, then $B$ must be an open interval
+$(a,b)$, where $a<x<b$. Since $(a,b)=\{x\}$, there is no element between $a$ and $x$, or
+between $x$ and $b$. Thus, $a$ is the immediate predecessor and $b$ is the immediate
+successor of $x$.
+
+If $x$ is the minimum element, then
+\[
+  (-\infty,b)=\{x\},
+\]
+so $b$ is the immediate successor of $x$. Similarly, if $x$ is the maximum element, then
+\[
+  (a,\infty)=\{x\},
+\]
+so $a$ is the immediate predecessor of $x$.
+
+Conversely, suppose that $x$ has an immediate predecessor $a$ and an immediate successor $b$.
+Then
+\[
+  (a,b)=\{x\}.
+\]
+Since $(a,b)$ is open, $\{x\}$ is open.
+
+If $x$ is the minimum element and has an immediate successor $b$, then
+\[
+  (-\infty,b)=\{x\},
+\]
+which is open. Similarly, if $x$ is the maximum element and has an immediate predecessor $a$,
+then
+\[
+  (a,\infty)=\{x\},
+\]
+which is open.
+
+Therefore, the given conditions are necessary and sufficient for $\{x\}$ to be open.
