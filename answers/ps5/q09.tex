@@ -1,0 +1,41 @@
+% Source: Solutions/Jai-PS5-Q7-10.pdf, p. 2 (typed)
+\submittedby{Jai}
+
+We use three standard facts, proved here for completeness.
+
+\begin{lemma}[A]
+A closed subset of a compact space is compact.
+\end{lemma}
+\begin{proof}
+Let $C\subseteq X$ be closed, $X$ compact, and let $\{U_\alpha\}$ be an open cover of $C$ by open
+sets of $X$. Then $\{U_\alpha\}\cup\{X\setminus C\}$ is an open cover of $X$, so it has a finite
+subcover. Discarding $X\setminus C$ (which contains no point of $C$) leaves a finite subcover of
+$C$.
+\end{proof}
+
+\begin{lemma}[B]
+A continuous image of a compact space is compact.
+\end{lemma}
+\begin{proof}
+Let $K$ be compact, $f\colon K\to Y$ continuous, and $\{V_\alpha\}$ an open cover of $f(K)$.
+Then $\{f^{-1}(V_\alpha)\}$ is an open cover of $K$; pick a finite subcover
+$f^{-1}(V_{\alpha_1}),\dots,f^{-1}(V_{\alpha_n})$. Then $V_{\alpha_1},\dots,V_{\alpha_n}$ cover
+$f(K)$.
+\end{proof}
+
+\begin{lemma}[C]
+A compact subset $K$ of a Hausdorff space $Y$ is closed.
+\end{lemma}
+\begin{proof}
+Let $y\in Y\setminus K$. For each $k\in K$, by the Hausdorff property choose disjoint open sets
+$U_k\ni k$ and $V_k\ni y$. The sets $\{U_k\}_{k\in K}$ cover $K$, so there are
+$k_1,\dots,k_n$ with $K\subseteq U_{k_1}\cup\dots\cup U_{k_n}$. Then
+$V=V_{k_1}\cap\dots\cap V_{k_n}$ is an open neighbourhood of $y$ disjoint from
+$U_{k_1}\cup\dots\cup U_{k_n}\supseteq K$. Hence $Y\setminus K$ is open.
+\end{proof}
+
+\begin{proof}[Solution to Problem 5.9]
+Let $C\subseteq X$ be closed. By Lemma~A, $C$ is compact. Since $f$ is continuous, $f(C)$ is
+compact by Lemma~B. Since $Y$ is Hausdorff, $f(C)$ is closed in $Y$ by Lemma~C. Hence $f$ maps
+closed sets to closed sets, i.e.\ $f$ is a closed map.
+\end{proof}

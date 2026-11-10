@@ -1,0 +1,27 @@
+% Source: Solutions/Jai-PS5-Q7-10.pdf, p. 3 (typed)
+\submittedby{Jai}
+
+\begin{proof}
+Let $C\subseteq X\times Y$ be closed. We show that $X\setminus\pi_X(C)$ is open.
+
+Let $x_0\in X\setminus\pi_X(C)$. Then $(x_0,y)\notin C$ for every $y\in Y$. Since
+$X\times Y\setminus C$ is open, for each $y\in Y$ there is a basic open set $U_y\times V_y$ with
+\[ (x_0,y)\in U_y\times V_y\subseteq(X\times Y)\setminus C, \]
+where $U_y\subseteq X$ and $V_y\subseteq Y$ are open. The sets $\{V_y\}_{y\in Y}$ form an open
+cover of the compact space $Y$, so there exist $y_1,\dots,y_n\in Y$ with
+\[ Y=V_{y_1}\cup\dots\cup V_{y_n}. \]
+Put $U=U_{y_1}\cap\dots\cap U_{y_n}$ (with $U=X$ if $Y=\emptyset$). Then $U$ is an open
+neighbourhood of $x_0$.
+
+\begin{claim}
+$U\cap\pi_X(C)=\emptyset$.
+\end{claim}
+Suppose instead that $x\in U\cap\pi_X(C)$. Then $(x,y)\in C$ for some $y\in Y$. Choose $i$ with
+$y\in V_{y_i}$. Since $x\in U\subseteq U_{y_i}$, we get
+\[ (x,y)\in U_{y_i}\times V_{y_i}\subseteq(X\times Y)\setminus C, \]
+contradicting $(x,y)\in C$. This proves the claim.
+
+Thus every point $x_0$ of $X\setminus\pi_X(C)$ has an open neighbourhood
+$U\subseteq X\setminus\pi_X(C)$, so $X\setminus\pi_X(C)$ is open and $\pi_X(C)$ is closed. Hence
+$\pi_X$ is a closed map.
+\end{proof}

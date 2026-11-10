@@ -1,0 +1,31 @@
+% Source: Solutions/Jai-PS5-Q7-10.pdf, pp. 1-2 (typed)
+\submittedby{Jai}
+
+\textbf{Answer.} No, $[0,1]$ is not compact.
+
+\begin{proof}
+Recall that in the cocountable topology, $U\subseteq\R$ is open if and only if $U=\emptyset$ or
+$\R\setminus U$ is countable. Let
+\[ C=\bigl\{c_n=\tfrac1n : n\in\N\bigr\}\subseteq[0,1], \]
+a countably infinite set. Define
+\[ U_0=\R\setminus C,\qquad U_n=\R\setminus\{c_k : k\ne n\}\quad(n\in\N). \]
+Each of these sets has countable complement, so each is open in $\R$. Note that
+\[ U_0\cap C=\emptyset,\qquad U_n\cap C=\{c_n\}. \]
+
+\textbf{The family covers $[0,1]$.} If $x\in[0,1]\setminus C$, then $x\in U_0$; if $x=c_n$ for
+some $n$, then $x\in U_n$. Hence $\{U_n\cap[0,1]\}_{n\ge0}$ is an open cover of $[0,1]$ in the
+subspace topology.
+
+\textbf{No finite subcover.} Let $F\subseteq\{0\}\cup\N$ be finite. Choose $m\in\N$ with
+$m\notin F$. Then
+\[ c_m\notin\bigcup_{n\in F}U_n, \]
+since $U_0$ contains no point of $C$, and for $n\in F\setminus\{0\}$ the only point of $C$ in
+$U_n$ is $c_n\ne c_m$. So no finite subfamily covers $[0,1]$.
+
+Thus $[0,1]$ is not compact in the cocountable topology.
+\end{proof}
+
+\begin{remark}
+In fact, the same argument shows that a subset of $\R$ is compact in the cocountable topology if
+and only if it is finite.
+\end{remark}

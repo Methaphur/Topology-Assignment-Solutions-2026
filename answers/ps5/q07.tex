@@ -1,0 +1,28 @@
+% Source: Solutions/Jai-PS5-Q7-10.pdf, p. 1 (typed)
+\submittedby{Jai}
+
+\begin{proof}
+Let $d$ denote the metric on $X$, so that $d(f(x),f(y))=d(x,y)$ for all $x,y\in X$.
+
+\textbf{Step 1: $f$ is continuous and injective.} Given $\varepsilon>0$, take $\delta=\varepsilon$;
+then $d(x,y)<\delta$ implies $d(f(x),f(y))=d(x,y)<\varepsilon$, so $f$ is continuous. If
+$f(x)=f(y)$, then $d(x,y)=d(f(x),f(y))=0$, so $x=y$; hence $f$ is injective.
+
+\textbf{Step 2: $f$ is surjective.} Suppose, for contradiction, that there is $y\in X\setminus f(X)$.
+Since $X$ is compact and $f$ is continuous, $f(X)$ is compact, hence closed in the metric space
+$X$. Therefore there exists $\varepsilon>0$ such that $B(y,\varepsilon)\cap f(X)=\emptyset$, i.e.
+\[ d(y,f(x))\ge\varepsilon\qquad\text{for all } x\in X. \]
+Define a sequence $(x_n)_{n\ge0}$ by $x_n=f^n(y)$ (with $f^0=\id_X$). For $n>m\ge0$, since $f^m$
+is an isometry,
+\[ d(x_n,x_m)=d\bigl(f^m(f^{\,n-m}(y)),\,f^m(y)\bigr)=d\bigl(f^{\,n-m}(y),\,y\bigr)
+   =d\bigl(y,f(f^{\,n-m-1}(y))\bigr)\ge\varepsilon, \]
+because $n-m\ge1$. Thus any two distinct terms of the sequence are at distance at least
+$\varepsilon$, so no subsequence of $(x_n)$ is Cauchy and hence none converges. This contradicts
+the fact that a compact metric space is sequentially compact. Hence $f$ is surjective.
+
+\textbf{Step 3: $f^{-1}$ is continuous.} By Steps 1 and 2, $f$ is a bijection. For $a,b\in X$,
+\[ d\bigl(f^{-1}(a),f^{-1}(b)\bigr)=d\bigl(f(f^{-1}(a)),f(f^{-1}(b))\bigr)=d(a,b), \]
+so $f^{-1}$ is also an isometry, hence continuous by Step 1.
+
+Therefore $f$ is a continuous bijection with continuous inverse, i.e.\ a homeomorphism.
+\end{proof}
