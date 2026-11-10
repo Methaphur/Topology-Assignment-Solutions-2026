@@ -49,10 +49,6 @@
 % ------------------------------- coverage ----------------------------
 \section*{Coverage}
 \addcontentsline{toc}{section}{Coverage}
-Solved problems are shown in \textcolor{solvedgreen}{\textbf{green}};
-pending ones in \textcolor{black!35}{grey}.
-
-\medskip
 \begin{tabular}{@{}l p{0.68\linewidth} r@{}}
   \toprule
   \textbf{Set} & \textbf{Problems} & \textbf{Solved} \\
@@ -69,7 +65,11 @@ pending ones in \textcolor{black!35}{grey}.
 \end{tabular}
 
 \clearpage
-\tableofcontents
+\section*{\contentsname}
+\begin{multicols}{2}
+\small\setlength{\parskip}{0.15em}
+\makeatletter\@starttoc{toc}\makeatother
+\end{multicols}
 \clearpage
 \pagestyle{fancy}
 
