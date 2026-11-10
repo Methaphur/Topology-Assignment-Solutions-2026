@@ -1,0 +1,32 @@
+% Source: Solutions/Alokjeet-PS7-Q5-6.pdf (typed). Restated problem dropped.
+\submittedby{Alokjeet Sahoo}
+
+\begin{proof}
+We are given that $p\colon X\to Y$ is an open map and that $A$ is an open subset of $X$.
+Consider the restriction of $p$ to $A$, defined by
+\[ q\colon A\longrightarrow p(A),\qquad q(x)=p(x),\quad x\in A. \]
+We need to show that $q$ is open.
+
+Note that a map is open if the image of every open subset of its domain is open in its
+codomain.
+
+Let $U$ be an arbitrary open subset of $A$. Since $U$ is open in the subspace topology on
+$A$, there exists an open subset $V$ of $X$ such that
+\[ U=A\cap V. \]
+Now, both $A$ and $V$ are open in $X$. Therefore, their intersection is also open in $X$.
+Hence, $U$ is open in $X$.
+
+Since $p\colon X\to Y$ is an open map, the image of every open subset of $X$ is open in $Y$.
+Consequently, $p(U)$ is open in $Y$.
+
+On the other hand, since $U\subseteq A$, we have
+\[ p(U)\subseteq p(A). \]
+Also, by the definition of the restriction $q$, we obtain
+\[ q(U)=p(U). \]
+Thus, $q(U)$ is an open subset of $Y$ contained in $p(A)$. By the definition of the subspace
+topology, $q(U)$ is therefore open in $p(A)$.
+
+Since $U$ was an arbitrary open subset of $A$, the image of every open subset of $A$ under $q$
+is open in $p(A)$. Therefore,
+\[ q\colon A\to p(A)\ \text{is an open map.} \qedhere \]
+\end{proof}

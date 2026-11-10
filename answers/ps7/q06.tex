@@ -1,0 +1,150 @@
+% Source: Solutions/Alokjeet-PS7-Q5-6.pdf (typed). Restated setup and parts dropped; the "Recall" sentence kept.
+% The student's numbered displays (1), (2) are reproduced with \tag.
+\submittedby{Alokjeet Sahoo}
+
+Recall that a basis for the $K$-topology consists of sets of the form
+\[ (a,b)\qquad\text{and}\qquad (a,b)\setminus K, \]
+where $a,b\in\R$ and $a<b$.
+
+\paragraph{(a)}
+\begin{proof}
+We shall prove the two assertions separately.
+
+\textbf{Step 1: Prove that $Y$ satisfies the $T_1$ axiom.}
+Recall that a topological space is said to satisfy the $T_1$ axiom if every singleton subset
+is closed.
+
+Under the quotient map $p$, all the points of $K$ are identified to a single point. Let this
+point be denoted by $y_0=p(K)$. Thus, the equivalence classes are
+\[ p^{-1}(\{y_0\})=K \]
+and
+\[ p^{-1}(\{p(x)\})=\{x\},\qquad x\in\R\setminus K. \]
+
+We first observe that $K$ is closed in $\R_K$. Indeed, $\R\setminus K$ is open in the
+$K$-topology. To see this, note that every point outside $K$ has a basic neighbourhood
+contained in $\R\setminus K$. For the point $0$, we can take a neighbourhood of the form
+\[ (-\varepsilon,\varepsilon)\setminus K. \]
+For any other point outside $K$, we can choose a sufficiently small ordinary open interval
+avoiding $K$. Hence, $K$ is closed in $\R_K$.
+
+Also, every singleton $\{x\}$ is closed in $\R_K$, since the $K$-topology is finer than the
+usual topology on $\R$, which is a $T_1$ space.
+
+Now, consider an arbitrary point $y\in Y$. There are two possibilities:
+
+\emph{Case 1:} If $y=y_0=p(K)$, then
+\[ p^{-1}(\{y\})=K, \]
+which is closed in $\R_K$.
+
+\emph{Case 2:} If $y=p(x)$ for some $x\in\R\setminus K$, then
+\[ p^{-1}(\{y\})=\{x\}, \]
+which is also closed in $\R_K$.
+
+Therefore, in both cases, $p^{-1}(\{y\})$ is closed in $\R_K$. By the definition of the
+quotient topology, a subset $F$ of $Y$ is closed if and only if $p^{-1}(F)$ is closed in
+$\R_K$. Consequently, $\{y\}$ is closed in $Y$. Since $y$ was arbitrary, every singleton
+subset of $Y$ is closed. Thus,
+\[ Y \text{ satisfies the } T_1 \text{ axiom.} \]
+
+\textbf{Step 2: Prove that $Y$ is not Hausdorff.}
+Recall that a topological space is Hausdorff if every pair of distinct points can be
+separated by disjoint open neighbourhoods. We shall show that the two distinct points
+\[ y_0=p(K)\qquad\text{and}\qquad y_1=p(0) \]
+cannot be separated by disjoint open neighbourhoods. Notice that $0\notin K$, so
+$y_0\neq y_1$.
+
+Suppose, on the contrary, that $Y$ is Hausdorff. Then there exist disjoint open
+neighbourhoods $U$ and $V$ of $y_0$ and $y_1$, respectively. Thus,
+\[ y_0\in U,\qquad y_1\in V,\qquad U\cap V=\varnothing. \]
+Since $p$ is a quotient map, the sets $p^{-1}(U)$ and $p^{-1}(V)$ are open in $\R_K$.
+Furthermore, since $y_0\in U$ and $p^{-1}(\{y_0\})=K$, we have
+\[ K\subseteq p^{-1}(U). \]
+Similarly, since $y_1=p(0)\in V$, we have
+\[ 0\in p^{-1}(V). \]
+Now, $p^{-1}(V)$ is an open neighbourhood of $0$ in the $K$-topology. By the definition of
+the $K$-topology, every open neighbourhood of $0$ contains a set of the form
+\[ (-\varepsilon,\varepsilon)\setminus K \]
+for some $\varepsilon>0$. Therefore,
+\begin{equation*}
+(-\varepsilon,\varepsilon)\setminus K\subseteq p^{-1}(V). \tag{1}
+\end{equation*}
+Since
+\[ \frac1n\longrightarrow 0\qquad\text{as } n\longrightarrow\infty, \]
+we can choose $n$ sufficiently large so that
+\[ 0<\frac1n<\frac{\varepsilon}{2}. \]
+Put $k=\frac1n$. Then $k\in K$ and
+\[ k\in p^{-1}(U). \]
+Since $p^{-1}(U)$ is open in $\R_K$ and contains $k$, there exists $\delta>0$ such that
+\begin{equation*}
+(k-\delta,k+\delta)\setminus K\subseteq p^{-1}(U). \tag{2}
+\end{equation*}
+By choosing $\delta$ sufficiently small, we may also assume that
+\[ \delta<\varepsilon-k. \]
+Consequently,
+\[ (k-\delta,k+\delta)\subseteq(-\varepsilon,\varepsilon). \]
+Since every nonempty open interval contains points outside $K$, we can choose
+\[ z\in(k-\delta,k+\delta)\setminus K. \]
+Using (2), we obtain
+\[ z\in p^{-1}(U). \]
+Also, since $z\in(-\varepsilon,\varepsilon)\setminus K$, relation (1) gives
+\[ z\in p^{-1}(V). \]
+Therefore,
+\[ p^{-1}(U)\cap p^{-1}(V)\neq\varnothing. \]
+But this is impossible, because inverse images preserve intersections and
+\[ p^{-1}(U)\cap p^{-1}(V)=p^{-1}(U\cap V)=p^{-1}(\varnothing)=\varnothing. \]
+We have obtained a contradiction. Hence, the two distinct points $p(K)$ and $p(0)$ cannot be
+separated by disjoint open neighbourhoods. Therefore,
+\[ Y \text{ is not Hausdorff.} \]
+
+Combining the two steps, we conclude that
+\[ Y \text{ is } T_1 \text{ but is not Hausdorff.} \qedhere \]
+\end{proof}
+
+\paragraph{(b)}
+\begin{proof}
+We shall use the fact that the diagonal of a topological space is closed in its product with
+itself if and only if the space is Hausdorff. Since, by part (a), $Y$ is not Hausdorff, its
+diagonal
+\[ \Delta_Y=\{(y,y):y\in Y\} \]
+is not closed in $Y\times Y$.
+
+Now, consider the inverse image of $\Delta_Y$ under the map $p\times p$. By definition,
+\begin{align*}
+(p\times p)^{-1}(\Delta_Y)
+&=\{(x_1,x_2)\in\R_K\times\R_K : (p(x_1),p(x_2))\in\Delta_Y\}\\
+&=\{(x_1,x_2)\in\R_K\times\R_K : p(x_1)=p(x_2)\}.
+\end{align*}
+Recall that two points of $\R_K$ have the same image under $p$ precisely when either they are
+equal or both belong to $K$. Therefore,
+\[ (p\times p)^{-1}(\Delta_Y)=\Delta_{\R_K}\cup(K\times K), \]
+where
+\[ \Delta_{\R_K}=\{(x,x):x\in\R\} \]
+is the diagonal of $\R_K\times\R_K$.
+
+We now show that this inverse image is closed in $\R_K\times\R_K$.
+
+First, observe that $\R_K$ is Hausdorff because its topology is finer than the usual topology
+on $\R$, which is Hausdorff. It is a standard result that the diagonal of a Hausdorff space is
+closed in its product with itself. Hence,
+\[ \Delta_{\R_K} \]
+is closed in $\R_K\times\R_K$.
+
+Secondly, from part (a), we know that $K$ is closed in $\R_K$. Therefore, by the product
+topology,
+\[ K\times K \]
+is closed in $\R_K\times\R_K$.
+
+Since the union of finitely many closed sets is closed, we conclude that
+\[ \Delta_{\R_K}\cup(K\times K) \]
+is closed in $\R_K\times\R_K$. Thus,
+\[ (p\times p)^{-1}(\Delta_Y) \text{ is closed in } \R_K\times\R_K. \]
+
+Finally, recall the defining property of a quotient map. A surjective map $f\colon X\to Z$ is
+a quotient map if and only if, for every subset $B\subseteq Z$,
+\[ B \text{ is closed in } Z \iff f^{-1}(B) \text{ is closed in } X. \]
+In particular, if $p\times p$ were a quotient map, the closedness of
+$(p\times p)^{-1}(\Delta_Y)$ would imply that $\Delta_Y$ is closed in $Y\times Y$. However, we
+have already established that $\Delta_Y$ is not closed, since $Y$ is not Hausdorff. This is a
+contradiction. Therefore,
+\[ p\times p\colon\R_K\times\R_K\longrightarrow Y\times Y \text{ is not a quotient map.} \qedhere \]
+\end{proof}
